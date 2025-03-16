@@ -28,6 +28,12 @@ export default defineConfig({
                         ],
                         collapsed: true,
                     },
+                    {
+                        text: "Build Systems", link: "/resources/build-systems", items: [
+
+                        ],
+                        collapsed: true,
+                    },
                     { text: "Markdown Examples", link: "/resources/markdown-examples" },
                     { text: "Runtime API Examples", link: "/resources/api-examples" },
                 ],
