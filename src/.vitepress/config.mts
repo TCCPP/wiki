@@ -16,6 +16,18 @@ export default defineConfig({
             {
                 text: "Resources",
                 items: [
+                    {
+                        text: "C", items: [
+                            { text: "Getting Started with C", link: "/resources/c/getting-started" },
+                        ],
+                        collapsed: true,
+                    },
+                    {
+                        text: "C++", items: [
+                            { text: "Getting Started with C++", link: "/resources/cpp/getting-started" },
+                        ],
+                        collapsed: true,
+                    },
                     { text: "Markdown Examples", link: "/resources/markdown-examples" },
                     { text: "Runtime API Examples", link: "/resources/api-examples" },
                 ],
