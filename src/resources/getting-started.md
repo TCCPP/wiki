@@ -28,7 +28,7 @@ For C
 #include <stdio.h>
 
 int main() {
-    printf("Hello World\n"); // or puts without \n
+    puts("Hello, World!");
 }
 ```
 
