@@ -48,9 +48,13 @@ You should now see an empty screen with the "Solution Explorer" on either side o
 
 ## Getting Started with C
 
-::: info
-TODO: Add documentation for C
-::: 
+Visual Studio does not have a "C Project" option.
+
+To use C in Visual Studio:
+* Use `.c` files
+* Turn on the "Compile as C" option
+
+You can find this option under Project Properties (right click your Project and click Properties) > C/C++ > Advanced > Compile As > Compile as C Code (/TC)
 
 ## Running Your Program
 
