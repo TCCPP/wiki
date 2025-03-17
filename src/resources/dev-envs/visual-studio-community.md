@@ -48,7 +48,7 @@ You should now see an empty screen with the "Solution Explorer" on either side o
 
 ## Getting Started with C
 
-Visual Studio does not have a "C Project" option.
+Visual Studio does not have a "C Project" option. You should use a C++ project, even for C.
 
 To use C in Visual Studio:
 * Use `.c` files
