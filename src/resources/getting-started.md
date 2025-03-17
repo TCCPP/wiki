@@ -28,7 +28,7 @@ For C
 #include <stdio.h>
 
 int main() {
-    puts("Hello, World!");
+	puts("Hello, World!");
 }
 ```
 
@@ -37,7 +37,7 @@ For C++
 #include <iostream>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+	std::cout << "Hello, World!" << std::endl;
 }
 ```
 
