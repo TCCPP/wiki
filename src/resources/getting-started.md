@@ -27,8 +27,7 @@ For C
 ```c
 #include <stdio.h>
 
-int main()
-{
+int main(){
     printf("Hello World\n"); // or puts without \n
 }
 ```
