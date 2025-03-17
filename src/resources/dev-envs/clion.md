@@ -40,7 +40,7 @@ A terminal should pop up at the bottom that says "Hello, World!".
 
 ## Useful settings in CLion
 
-* If you want to disable the one line JetBrains AI completions, create a file called `.noai` in the projects root directory.
+* If you want to disable the one line JetBrains AI completions, create a file called `.noai` in the project's root directory.
 * Disable smart identation: Settings > Editor > Code Style > Uncheck: "Detect and use existing file idents for editing"
 * Configure your keybindings as you wish in the settings
 * Configure your code style like identation, line breaks, naming, etc. : Settings > Editor > Code Style > C/C++
