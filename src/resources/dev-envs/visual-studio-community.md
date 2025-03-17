@@ -1,30 +1,4 @@
-# Getting Started with C++
-
-C++ is a high level, general purpose programming language created by Bjarne Stroustrup. The language was originally
-designed as an extension of the C programming language. C++ allows the programmer a high level of freedom in their
-programs. This high amount of freedom gives developers a large amount of control over how the program interacts with
-the computer system running the application, but it also means that it is easy to introduce undesired behavior to
-the software.
-
-## What is C++ good at?
-
-C++ as a language is targeted towards software development where performane and high levels of control over computing
-resources is required. The language shares many use cases with other languages like C, Rust, and Zig. Here are some of
-the common cases where C++ is used:
-
-* Embedded Software
-* Real-Time Systems
-* High Frequency Trading
-* Video Games and Simulations
-* Office and Productivity Software
-* Artificial Intelligence
-
-There are also applications where C++ is not the best fit, such as web frontend. Programming languages are tools; it is
-important to choose a tool that is suited to the task at hand.
-
-## Getting Started on Windows
-
-### Visual Studio Community 2022
+# Setting Up Visual Studio Community
 
 Visual Studio Community Edition is the simplest way to get started building programs with C++ on Windows. VS Community
 Edition is not to be mixed up with Microsoft's Visual Studio Code product. Visual Studio can be downloaded from the
@@ -66,43 +40,21 @@ If you want to look at "What's New?" later on, you can find this under the "Help
 
 ![Visual Studio - Empty Project](/assets/vs-empty-project.png)
 
+## Getting Started with C++
+
 You should now see an empty screen with the "Solution Explorer" on either side of your screen. Right click on the
 "Source Files" and add a new file named "main.cpp". You are now ready to write
-[Your First Program](#your-first-program).
+[Your First Program](/resources/getting-started#your-first-program).
+
+## Getting Started with C
+
+::: info
+TODO: Add documentation for C
+::: 
+
+## Running Your Program
 
 Once you've written your first program, click "Local Windows Debugger" at the top of your screen. You can also use the
 F5 key on your keyboard. Visual Studio will automatically build your program for you when you run your program. You can
 build your program without running it by pressing the "Build Solution" or "Build &lt;Project Name&gt;" menu items in
-the "Build" menu bar item. 
-
-### Visual Studio Code and MINGW64
-### Visual Studio Code and MSVC
-
-## Getting Started on Linux
-
-### Visual Studio Code
-### Neovim
-
-## Getting Started on Mac
-
-### Visual Studio Code
-### XCode
-
-## Your First Program
-
-In order to ensure your development environment is set up correctly, copy the provided code and try to run the code.
-
-```cpp
-#include <iostream>
-
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-}
-```
-
-If all goes correctly, you should have a terminal with "Hello, World!" printed in it.
-
-::: tip
-It is important to make sure all files are saved before you try to build and run your code. If not, your changes will
-not be reflected in the executable you build.
-:::
+the "Build" menu bar item.

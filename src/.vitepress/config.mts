@@ -16,15 +16,16 @@ export default defineConfig({
             {
                 text: "Resources",
                 items: [
+                    { text: "Getting Started", link: "/resources/getting-started" },
                     {
                         text: "C", items: [
-                            { text: "Getting Started with C", link: "/resources/c/getting-started" },
+                            {  },
                         ],
                         collapsed: true,
                     },
                     {
                         text: "C++", items: [
-                            { text: "Getting Started with C++", link: "/resources/cpp/getting-started" },
+                            { text: "What is C++", link: "/resources/cpp/what-is-cpp" },
                         ],
                         collapsed: true,
                     },
@@ -34,8 +35,13 @@ export default defineConfig({
                         ],
                         collapsed: true,
                     },
-                    { text: "Markdown Examples", link: "/resources/markdown-examples" },
-                    { text: "Runtime API Examples", link: "/resources/api-examples" },
+                    {
+                        text: "Development Environments",
+                        items: [
+                            { text: "Visual Studio Community", link: "/resources/dev-envs/visual-studio-community" },
+                        ],
+                        collapsed: true,
+                    },
                 ],
             },
         ],
