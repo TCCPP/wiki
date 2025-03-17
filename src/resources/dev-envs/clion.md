@@ -45,7 +45,7 @@ A terminal should pop up at the bottom that says "Hello, World!".
 * Configure your keybindings as you wish in the settings
 * Configure your code style like identation, line breaks, naming, etc. : Settings > Editor > Code Style > C/C++
 
-## Using the debugger in C++
+## Using the debugger in CLion
 
 If you selected a correctly installed toolchain, CLions debugger works out of the box.<br>
 Let's try using it! Here is a simple code snippet:
