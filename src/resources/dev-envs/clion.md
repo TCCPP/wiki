@@ -26,13 +26,13 @@ CLion ships with MinGW GCC on Windows. If you want to install MSVC, use the Visu
 
 After you installed and activated CLion with your JetBrains account, you should see this page:
 
-![alt text](/assets/clion/clion-1.png)
+![CLion welcome menu](/assets/clion/clion-1.png)
 
 Click "New Project". Select C++ Executable, name your project and select a C++ standard. C++23 is a good choice if you don't know what to use.
 
 The next thing you will see is this:
 
-![alt text](/assets/clion/clion-2.png)
+![CLion project wizard](/assets/clion/clion-2.png)
 
 If you have other toolchains like MSVC installed, they will appear here. If you don't just click "Ok".<br>
 Try and see if your setup works by pressing the green play button or press Shift + F10.<br>
@@ -60,14 +60,14 @@ int main(){
 ```
 
 Let's place 2 breakpoints, one on the `x *= 3;` line, and one on the `return 0;` line. You can place breakpoints by clicking the line numbers. It should look something like this: <br>
-![alt text](/assets/clion/clion-3.png)
+![CLion breakpoints](/assets/clion/clion-3.png)
 
 Press the little green bug icon in the top right, or press CTRL + F9. Your program should start and immediately break on the first breakpoint. At the bottom of the window, the debug menu appeared with your local `x` variable. This is where you will be able to inspect variables when you use the debugger.<br>
-![alt text](/assets/clion/clion-5.png)
+![Clion debugger gui](/assets/clion/clion-5.png)
 
 
 The debug menu has 4 very important buttons:<br>
-![alt text](/assets/clion/clion-4.png)
+![CLion debugger buttons](/assets/clion/clion-4.png)
 
 * Resume Program: When your program is paused, use this to continue execution
 * Step over: Step to the next line. This will skip any function calls on the current line.
