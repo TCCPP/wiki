@@ -18,9 +18,8 @@ export default defineConfig({
                 items: [
                     { text: "Getting Started", link: "/resources/getting-started" },
                     {
-                        text: "C", items: [
-                            {  },
-                        ],
+                        text: "C",
+                        items: [{}],
                         collapsed: true,
                     },
                     {
@@ -123,9 +122,9 @@ export default defineConfig({
                         collapsed: true,
                     },
                     {
-                        text: "Build Systems", link: "/resources/build-systems", items: [
-
-                        ],
+                        text: "Build Systems",
+                        link: "/resources/build-systems",
+                        items: [],
                         collapsed: true,
                     },
                     {
