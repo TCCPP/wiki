@@ -1,4 +1,4 @@
-# Setting Up Visual Studio Community
+# Setting Up CLion
 
 CLion is a commercial IDE from JetBrains. You can download CLion [here](https://www.jetbrains.com/clion/download).
 
