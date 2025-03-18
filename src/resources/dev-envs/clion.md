@@ -1,6 +1,7 @@
 # CLion
 
-CLion is a commercial IDE from JetBrains. Altough it is expensive for regular users, it is free for university students. <br>
+CLion is a commercial IDE from JetBrains.<br>
+Although it is expensive for regular users, it is free for university students. <br>
 You can check if you school is on the list in the swot repo: <https://github.com/JetBrains/swot>
 
 ## Applying for a license
@@ -10,8 +11,7 @@ Use your university email address. After you complete the application form you w
 
 ## Downloading CLion
 
-You can download CLion at: <https://www.jetbrains.com/clion/download>
-
+You can download CLion [here](https://www.jetbrains.com/clion/download).
 
 During installation, tick the "Add bin folder to PATH" and "Add Open Folder as Project" options.
 
