@@ -1,59 +1,59 @@
-import { onUnmounted, readonly, type Ref, ref, watch } from 'vue'
-import { inBrowser } from '../shared'
+import { onUnmounted, readonly, type Ref, ref, watch } from "vue";
+import { inBrowser } from "../shared";
 
 interface UseFlyoutOptions {
-  el: Ref<HTMLElement | undefined>
-  onFocus?(): void
-  onBlur?(): void
+    el: Ref<HTMLElement | undefined>;
+    onFocus?(): void;
+    onBlur?(): void;
 }
 
-export const focusedElement = ref<HTMLElement>()
+export const focusedElement = ref<HTMLElement>();
 
-let active = false
-let listeners = 0
+let active = false;
+let listeners = 0;
 
 export function useFlyout(options: UseFlyoutOptions) {
-  const focus = ref(false)
+    const focus = ref(false);
 
-  if (inBrowser) {
-    !active && activateFocusTracking()
+    if (inBrowser) {
+        !active && activateFocusTracking();
 
-    listeners++
+        listeners++;
 
-    const unwatch = watch(focusedElement, (el) => {
-      if (el === options.el.value || options.el.value?.contains(el!)) {
-        focus.value = true
-        options.onFocus?.()
-      } else {
-        focus.value = false
-        options.onBlur?.()
-      }
-    })
+        const unwatch = watch(focusedElement, el => {
+            if (el === options.el.value || options.el.value?.contains(el!)) {
+                focus.value = true;
+                options.onFocus?.();
+            } else {
+                focus.value = false;
+                options.onBlur?.();
+            }
+        });
 
-    onUnmounted(() => {
-      unwatch()
+        onUnmounted(() => {
+            unwatch();
 
-      listeners--
+            listeners--;
 
-      if (!listeners) {
-        deactivateFocusTracking()
-      }
-    })
-  }
+            if (!listeners) {
+                deactivateFocusTracking();
+            }
+        });
+    }
 
-  return readonly(focus)
+    return readonly(focus);
 }
 
 function activateFocusTracking() {
-  document.addEventListener('focusin', handleFocusIn)
-  active = true
-  focusedElement.value = document.activeElement as HTMLElement
+    document.addEventListener("focusin", handleFocusIn);
+    active = true;
+    focusedElement.value = document.activeElement as HTMLElement;
 }
 
 function deactivateFocusTracking() {
-  document.removeEventListener('focusin', handleFocusIn)
+    document.removeEventListener("focusin", handleFocusIn);
 }
 
 function handleFocusIn() {
-  focusedElement.value = document.activeElement as HTMLElement
+    focusedElement.value = document.activeElement as HTMLElement;
 }
