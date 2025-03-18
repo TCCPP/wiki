@@ -16,7 +16,7 @@ To get started on Windows, select one of the following guides to set up a develo
 ## Getting Started on Mac
 
 * Visual Studio Code (TODO)
-* XCode (TODO)
+* [XCode](/resources/dev-envs/xcode)
 * CLion (TODO)
 
 ## Your First Program
