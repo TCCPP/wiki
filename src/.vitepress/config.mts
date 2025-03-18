@@ -39,6 +39,7 @@ export default defineConfig({
                         text: "Development Environments",
                         items: [
                             { text: "Visual Studio Community", link: "/resources/dev-envs/visual-studio-community" },
+                            { text: "CLion", link: "/resources/dev-envs/clion" }
                         ],
                         collapsed: true,
                     },
