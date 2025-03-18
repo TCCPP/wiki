@@ -31,5 +31,11 @@ If you have other toolchains like MSVC installed, they will appear here. If you 
 
 ## Running Your Program
 
+CLion will automatically create a source file named `main.cpp` for you with a Hello World program.
+
 Try and see if your setup works by pressing the green play button or press Shift + F10.
 A terminal should pop up at the bottom that says "Hello, World!".
+
+::: info
+CLion uses a build system called CMake. You can edit your build configuration in a file called `CMakeLists.txt`. This tutorial will not go into CMake, you can read our CMake article for more information.
+:::
