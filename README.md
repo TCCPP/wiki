@@ -35,5 +35,6 @@ Some guidelines for contribution:
   - Pointers/references on the left
 - Run the site locally and test how your contributions look. Make sure everything renders correctly, update formatting
   if needed.
+- Columns should be no wider than 120 characters.
 
 As this site evolves these guidelines will too.
