@@ -18,21 +18,19 @@ export default defineConfig({
                 items: [
                     { text: "Getting Started", link: "/resources/getting-started" },
                     {
-                        text: "C", items: [
-                            {  },
-                        ],
+                        text: "C",
+                        items: [{}],
                         collapsed: true,
                     },
                     {
-                        text: "C++", items: [
-                            { text: "What is C++", link: "/resources/cpp/what-is-cpp" },
-                        ],
+                        text: "C++",
+                        items: [{ text: "What is C++", link: "/resources/cpp/what-is-cpp" }],
                         collapsed: true,
                     },
                     {
-                        text: "Build Systems", link: "/resources/build-systems", items: [
-
-                        ],
+                        text: "Build Systems",
+                        link: "/resources/build-systems",
+                        items: [],
                         collapsed: true,
                     },
                     {

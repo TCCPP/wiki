@@ -7,7 +7,7 @@ module.exports = {
     proseWrap: "always",
     overrides: [
         {
-            files: "*.{yml,md}",
+            files: "*.{yml,yaml,md}",
             options: {
                 tabWidth: 2,
             },
