@@ -30,7 +30,7 @@ Some guidelines for contribution:
 - Mind your audience: If you're contributing beginner-oriented content, try to keep things as simple as possible,
   linking to more advanced topics if needed.
 - Try to maintain consistent style. Some very rough points to touch on:
-  - Indent with one tab character
+  - Indent with four spaces
   - Braces on the same line, e.g. `int main() {`
   - Pointers/references on the left, e.g. `void* ptr`
 - Run the site locally and test how your contributions look. Make sure everything renders correctly, update formatting
