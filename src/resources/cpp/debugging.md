@@ -4,4 +4,8 @@
 
 ## Debugger Fundamentals
 
-::: info Put IDE specific debugging information here :::
+::: info
+
+Put IDE specific debugging information here
+
+:::
