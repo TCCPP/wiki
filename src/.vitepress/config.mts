@@ -214,6 +214,10 @@ export default defineConfig({
                                     text: "Visual Studio Community",
                                     link: "/resources/dev-envs/visual-studio-community",
                                 },
+                                {
+                                    text: "Visual Studio Code - MinGW",
+                                    link: "/resources/dev-envs/visual-studio-code-mingw",
+                                },
                                 { text: "CLion", link: "/resources/dev-envs/clion" },
                             ],
                             collapsed: true,
