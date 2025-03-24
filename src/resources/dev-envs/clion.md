@@ -27,7 +27,9 @@ The next thing you will see is this:
 
 ![CLion project wizard](/assets/clion/clion-2.png)
 
-If you have other toolchains like MSVC installed, they will appear here. If you don't just click "Ok".
+::: info
+If you have other toolchains, such as MSVC, installed, they will appear here.
+:::
 
 ## Running Your Program
 
