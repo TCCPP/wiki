@@ -1,22 +1,27 @@
 # Language Basics
 
-Before we dive into the bulk of the tutorial, let's discuss a few of the key pieces of the language that you will use in
-every C++ program you will ever write. The goal of this section is to get you to a point where you can understand simple
-C++ programs. In future sections, we will build upon these concepts while introducing new concepts. It is important to
-introduce common terminology early so you can effectively communicate about C++ using widely agreed upon definitions.
-
-So what actually is a computer program? From just about any perspective you take on this question, it boils down to a
-sequence of instructions that the computer executes. A C++ program is composed of many statements, which are turned into
-a sequence of instructions that the computer can execute.
+Before we dive into the bulk of the tutorial,
+let's discuss a few of the key pieces of the language that you will use in every C++ program you will ever write.
+The goal of this section is to get you to a point where you can understand simple C++ programs.
+In future sections, we will build upon these concepts while introducing new concepts.
+It is important to introduce common terminology early,
+so you can effectively communicate about C++ using widely agreed upon definitions.
 
 ## Program Structure
 
-The primary construct of the C++ programming language is a statement. Statements are used to build the logic for how
-your program will be executed by the computer. Statements are executed in the order in which they are visited. In C++,
-your program will begin execution in the main function, commonly refered to as the entry point. This is unlike other
-languages, such as Python or JavaScript, where execution of your code begins at the top of the file. The majority of
-statements must be written within functions. There are some exceptions to this rule of thumb, and we'll go over these in
-later chapters.
+A *C++ program* is made of *translation units*,
+which are roughly equivalent to the `.cpp` files where you put your code.
+Basically, a program is made of one more multiple `.cpp` files.
+
+Within these `.cpp` files,
+there are *declarations* such as global variables, functions, etc.
+Functions contain *statements*,
+which tell the computer what to do.
+Statements are executed from top to bottom.
+
+In C++, your program begins execution in the `main` function,
+commonly referred to as the *entry point* of the program.
+Here is a simple example of a C++ program:
 
 ```cpp
 int main() {
@@ -24,146 +29,181 @@ int main() {
 }
 ```
 
-This is the simplest form of the main function. It has a single statement within it, `return 0;`. One thing you should
-note as we continue, statements typically end with a semicolon (`;`). If you do not use a semicolon where it is needed,
-you will experience compilation errors.
+The program is made of a single translation unit in `some_file.cpp`,
+which contains only the declaration of the `main` function,
+which has a single statement within it: `return 0;`.
+The `return` statement tells the computer to return from the function with some result.
+In this case, the result `0` indicates that the program completed successfully.
+
+Note that statements typically end with a semicolon (`;`).
+If you do not use a semicolon where it is needed, you will experience compilation errors.
 
 ::: info For Advanced Developers
 
-Functions that do not return `void` must have an explicit `return` statement. The `main` function is unique, as the
+Functions that do not return `void` must have an explicit `return` statement.
+The `main` function is unique, as the
 compiler will implicitly insert a `return 0;` at the end of the function if execution can reach the end of `main`
 without returning.
 
 :::
 
-In C++, we have many different types of statements. To start, we will discuss the two most common types of statements:
-Declaration and Expression.
+## Comments
+
+Programs can also contain comments, which are pieces of text within your code.
+These are usually used to document why you've written code a certain way.
+C++ has two types of comments:
+
+```cpp
+// This is a single-line comment.
+
+/* This is a
+   multi-line comment. */
+```
+
+*Line comments* or *single-line comments* start with `//` and go until the end of the line.
+
+*Block comments* start with `/*` and end with `*/`.
+They don't actually have to be multiple lines long,
+but that's why they're typically used instead of line comments.
+
+## Statements
+
+In C++, we have many different types of statements.
+To start, we will discuss some of the most common statements.
 
 ### Declaration Statements
 
-Declaration statements provide the compiler with knowledge about the existence of some named piece of your program. The
-simplest thing to declare is a variable. Once you have declared to your compiler that something exists, you can use it
-later in your program with other types of statements.
+Declaration statements "add stuff" to your program; doing so is called *declaring*.
+For example, we can declare *variables*.
+Once you have declared to your compiler that something exists,
+you can use it later in your program with other types of statements.
 
 ```cpp
-int foo = 0; // Declaration Statement
+// Declaration statement declares a variable.
+int foo = 0;
 ```
 
-Breaking down the statement, we will start by identifying the name of the variable `foo`. To the left of `foo`, we see
-the type of the variable, `int`. Variables in C++ are required to have a type in the declaration, and a variable cannot
-change type after it is declared. The equals symbol (`=`) is used to provide the variable `foo` with a value. The right
-side of the `=` statement is an expression used to specify the value to assign. In this case, we are assigning `foo` the
-value of `0`.
+Breaking down the statement,
+we will start by identifying the name of the variable `foo`.
+To the left of `foo`, we see the type of the variable, `int`.
+Variables in C++ are required to have a type in the declaration,
+and a variable cannot change type after it is declared.
+The equals symbol (`=`) is used to provide the variable `foo` with a value.
+The right side of the `=` statement is an expression used to specify the value to assign.
+In this case, we are assigning `foo` the value of `0`.
 
 ### Expression Statements
 
-Expression statements are used to instruct the computer to perform an action. Many of the lines of code you will end up
-writing are expression statements. By writing many expression statements, we can tell the computer to perform more and
-more complex tasks.
+Expression statements are used to instruct the computer to perform an action.
 
 ```cpp
-int foo = 1;   // Declaration Statement
-foo = foo + 2; // Expression Statement
+int foo = 0;   // declaration statement
+foo = foo + 2; // expression statement
 ```
 
-The above snippet creates `foo` with an initial value of `1`, then evaluates `foo + 2` before assigning the value back
-to the variable `foo`.
+The above snippet creates `foo` with an initial value of `1`,
+then evaluates `foo + 2` before assigning the value back to the variable `foo`.
 
-### Identifiers
+## Identifiers
 
-In C++, the way things are named is with a concept called identifiers. In the statement examples above, `foo` is an
-identifier. Identifiers must be given a name in a specific format. The first character of an identifier must be a latin
-letter (`a-z`, case insensitive) or an underscore (`_`). All subsequent characters must be a digit (`0-9`), a latin
-letter (`a-z`, case insensitive) or an underscore (`_`). Idenfitiers have no maximum length imposed by the language, so
-you should make your identifiers descriptive.
+In C++, *identifiers* give our declarations a name.
+In the example above, `foo` is an identifier.
+Identifiers can contain alphabetic characters, `_`, digits, and certain Unicode characters,
+but they cannot start with a digit.
 
 ::: info For Advanced Developers
 
-The C++ standard mandates Unicode support in identifier names. However, the status of Unicode support across vendors
-varies widely. Unicode code point in identifiers is also unconventional.
+While Unicode characters can be used in C++ identifiers,
+the degree of support for this has changed throughout the years.
+Many C++ developers prefer to use only ASCII characters in their code,
+which is most portable and easiest to type on all keyboards.
+For example, most developers would call a variable `alpha` instead of `α`.
 
 :::
 
-```cpp
-// A variable describing the freezing point of water in Fahrenheit
-int freezing_point_f = 32;
-```
-
-## Comments
-
-Programs can rapidly increase in complexity. Instead of trying to keep all of the information in your head, you can
-utilize comments in your code. Comments are pieces of text ignored by the compiler, typically used for programmer
-convenience. Comments come in two flavors: single line and multiline.
-
-```cpp
-// This is a single line comment
-```
-
-Single line comments start with two consecutive forward slashes (`//`). This comment goes until the end of the line.
-These are commonly used to just leave quick thoughts in your code.
-
-```cpp
-/*
- * This is a multiline comment
- */
-```
-
-Multiline comments start with a `/*` and last until a `*/`. These are commonly used to leave longer thoughts in your
-code, such as detailed documentation. You may frequently see many developers use `//` on multiple lines in a row instead
-of using the dedicated multiline comment style.
 
 ## Keywords
 
-C++ reserves a set of words in the language for its own use. Developers may use these keywords, but meaning cannot be
-provided to these keywords. In the above example on [Expression Statements](#expression-statements), `int` is a keyword.
-You can find a list of all keywords on [cppreference](https://en.cppreference.com/w/cpp/keyword). Fundamental types are
-an example of keywords. These types will be covered in more detail [later](#fundamental-data-types-and-literals).
+C++ reserves a set of words in the language for its own use.
+Developers may use these keywords, but they cannot be used as identifiers.
+You can find a list of all keywords on [cppreference](https://en.cppreference.com/w/cpp/keyword).
 
-In addition to keywords, C++ has a concept of identifiers with special meanings. These are frequently available for use,
-but are reserved for the language to use in certain contexts. We will cover these in more detail in later chapters.
 
 ```cpp
 int my_integer_value = 0; // int is a keyword
 float pi = 3.14f;         // float is a keyword
+
+int int = 0;              // error: cannot use "int" as an identifier (variable name)
 ```
+
+::: info For Advanced Developers
+
+In addition to these "true keywords",
+C++ also has "contextual keywords", formally called *identifiers with special meaning*,
+such as `override`.
+We will cover these in later chapters.
+
+:::
 
 ## Initialization Versus Assignment
 
-When we first create a variable in C++, it undergoes a process called initialization. Initialization is the process of
-providing a variable with an initial value.
+When we first create a variable in C++, it undergoes *initialization*.
+Initialization is the process of providing a variable with an initial value.
 
 ```cpp
 int foo = 0;
 ```
 
-The above statement is one of the most common ways to initialize a variable. It gives the variable `foo` an initial
-value of `0`. There are many ways to initialize a variable, each having its own pros and cons. The different types of
-initialization will be discussed in more detail in another section.
+The above statement is one of the most common ways to initialize a variable.
+It gives the variable `foo` an initial value of `0`.
+There are many ways to initialize a variable, each having its own pros and cons.
+The different types of initialization will be discussed in more detail in another section.
 
-Assignment is a process that takes place after a variable already exists. It is the process of assigning a new value to
-an existing variable.
+Assignment is a process that takes place after a variable already exists.
+It is the process of assigning a new value to an existing variable.
 
 ```cpp
-int foo = 0; // Initialization
-foo = 2;     // Assignment
+int foo = 0; // initialization (begins with the type of the variable)
+foo = 2;     // assignment (no type specified)
 ```
 
-Like initialization, assignment has several different forms that will be discussed in more dtail in a later chapter.
+Like initialization, assignment has several different forms that will be discussed in more detail in a later chapter.
 
 ## Fundamental Data Types and Literals
 
-Data types are a way in code to represent a unit of data. Programmers will build data types using other data types. C++
-provides developers with a set of data types built into the language, called fundamental types. Fundamental types cannot
-be split further without losing meaning. You can think of these types as the "atoms" of your programs.
+All values in C++ have a *type*,
+and variables can only hold values of a specified type.
 
-### Booleans
+The most simple types are *fundamental types*.
+You have already seen variables of (fundamental) type `int` in the examples above,
+and values such as `0` (also of type `int`).
+We will go over some commonly used fundamental types in the following section.
 
-The most fundamental type that can hold a value is a boolean. A boolean is a representation of `true` or `false`.
+### `void`
+
+`void` is a fundamental type that has no value.
+You can use it as the result of functions that only "do stuff", but have no result, like:
+
+```cpp
+void shutdown(); // Shuts down the computer.
+```
+
+### `bool`
+
+The type `bool` can either hold the values `true` and `false`.
+You can use it to store the result of logic, like:
+
+```cpp
+bool b = 1 > 0; // True if one is greater than zero.
+```
 
 ### Integer Types
 
-An integer type in C++ is the same as the integer concept in math. Integer types represent real numbers with no decimal
-part. C++ provides integer types that can support different ranges of values.
+*Integer types* in C++ are similar to integers in math.
+They can store (possibly negative) whole numbers like `1` or `-1`,
+but no fractions, like `0.5`.
+
+See below a list of *signed integer types*:
 
 | Type          | Minimum Range                                           | Minimum Width in Bits |
 | ------------- | ------------------------------------------------------- | --------------------- |
@@ -173,8 +213,8 @@ part. C++ provides integer types that can support different ranges of values.
 | `long`        | [−2,147,483,648, 2,147,483,647]                         | 32                    |
 | `long long`   | [−9,223,372,036,854,775,808, 9,223,372,036,854,775,807] | 64                    |
 
-The above types are called signed types. This means that these types can represent negative values. C++ also has
-unsigned types, only supporting non-negative types.
+Additionally, there are *unsigned integer types*,
+which cannot store negative values.
 
 | Type                 | Minimum Range                   | Minimum Width in Bits |
 | -------------------- | ------------------------------- | --------------------- |
@@ -186,80 +226,96 @@ unsigned types, only supporting non-negative types.
 
 ::: info
 
-These are just minimum ranges for values. Many platforms use different data models. On 64-bit Windows, the signed and
-unsigned variants of `int` is 32 bits in width. On 64-bit \*nix systems, a signed or unsigned `int` is 32 bits and a
-signed or unsigned `long` is 64 bits.
+As seen in the table, these ranges are minimums, and the exact size can vary.
+For example, `int` and `unsigned int` are usually 32-bit, so they're wider than the 16-bit minimum.
+`long` and `unsigned long` are 64-bit On 64-bit \*nix systems, and 32-bit on Windows.
+
+The C++ standard library provides exact-width aliases like `std::int32_t`.
 
 :::
 
 ### Character Types
 
-In addition to `signed char` and `unsigned char`, C++ has a type `char`. All three of these types are used for character
-representation. The standard does not specify if `char` is signed or unsigned, but its signedness is determined by the
-compiler and is usually the most optimal representation for a single byte character on the platform. On x86-64, char is
-typically signed, whereas on ARM64, it is typically unsigned.
+In addition to `signed char` and `unsigned char`, C++ has a type `char`.
+All three of these types are used for character representation, and are one byte large.
+The standard does not specify if `char` is signed or unsigned, but is is a distinct type.
+On x86-64, `char` is typically signed, whereas on ARM64, it is typically unsigned.
 
-For characters that are not able to be represented in a single byte, C++ provides other distinct types for wider
-character storage.
+Throughout the years, further character types were added to C++:
 
-- `wchar_t` - A character type that is typically wider than the `char` type. On \*nix platforms, it is typically 32 bits
-  in width. On windows platforms, it is typically 16 bits in width.
-- `char8_t` - A character type that can represent any UTF-8 character representation.
-- `char16_t` - A character type that can represent any UTF-16 code point.
-- `char32_t` - A character type that can represent any UTF-32 code point.
+- `wchar_t` - A character type that is typically wider than the `char` type.
+  It is typically 32-bit on \*nix platforms, and 16-bit on Windows.
+- `char8_t` - A character type that can represent any UTF-8 code unit.
+- `char16_t` - A character type that can represent any UTF-16 code unit.
+- `char32_t` - A character type that can represent any UTF-32 code unit.
 
-### Floating Point Types
+### Floating-Point Types
 
-A floating point type is a real number that can have a decimal part. However, floating point types cannot represent all
-decimal numbers, as computers are only capable of processing numbers of a fixed size. Thus, computers use various
-representations to approximate decimals.
+A floating-point type can represent
+- integers (e.g. `0`),
+- numbers with fractional parts (e.g. `0.5`),
+- positive or negative infinity, and
+- NaN (not a number).
 
-There are three fundamental floating point types in C++, `float`, `double`, and `long double`. The range of
-representable values for a `double` is required to be at least as large as that of a `float`, and the `long double` must
-have a range at least that of a `double`. The language does not provide many strong guarantees about the properties of
-the various floating point types.
+However, since floating-point numbers are fixed-size,
+they can only represent certain fractional numbers exactly.
+For example, `0.1` cannot be represented exactly by a floating-point number,
+and neither can be extremely tiny or extremely large numbers.
 
-::: info IEEE-754 Floating Point Model
+There are at least three fundamental floating-point types in C++: `float`, `double`, and `long double`.
+The range of representable values for a `double` is required to be at least as large as that of a `float`,
+and the `long double` must have a range at least that of a `double`.
+The language does not provide many strong guarantees about the properties of the various floating-point types.
 
-Because C++ needs to support many different types of computers, it does not enforce that floating points are represented
-in a specific way. For the sake of this tutorial, we will assume that you are working on a device that uses the IEEE-754
-floating point specification. This is the case for almost all consumer hardware. The rest of the tutorial will make the
-assumption that a `float` is an IEEE-754 binary32 format float and that a `double` is an IEEE-754 binary64 format float.
+::: info IEEE-754 floating-point Model
+
+Because C++ needs to support many different types of computers, it does not enforce that floating-points are represented
+in a specific way.
+For the sake of this tutorial, we will assume that you are working on a device that uses the IEEE-754
+floating-point specification.
+This is the case for almost all consumer hardware.
+The rest of the tutorial will make the assumption
+that a `float` is an IEEE-754 binary32 format float and
+that a `double` is an IEEE-754 binary64 format float.
 
 | Type     | Range                  | Width |
 | -------- | ---------------------- | ----- |
 | `float`  | $\pm 3.402 * 10^{38}$  | 32    |
 | `double` | $\pm 1.797 * 10^{308}$ | 64    |
 
-The type `long double` has the restriction that its range must be at least as large as a `double`. On many x86-64
-platforms, it is implemented as an IEEE-754 binary64 extended format, where the width of the type is 80 bits. However,
-MSVC is an exception to this rule, where it is only 64 bits. On other platforms, it may be implemented as a IEEE-754
-binary128 format float.
+The type `long double` has the restriction that its range must be at least as large as a `double`.
+On many x86-64 platforms, it is implemented as an IEEE-754 binary64 extended format,
+where the width of the type is 80 bits.
+However, MSVC is an exception to this rule, where it is only 64 bits.
+On other platforms, it may be implemented as a IEEE-754 binary128 format float.
 
 :::
 
 ### Literals
 
-Literals are a way that C++ allows us to provide a value directly in the code. You may recall above where the code
-snippets were creating variables using numbers in the code. Those numbers are referred to as literals.
+Literals are a way that C++ allows us to provide a value directly in the code.
+You may recall above where the code snippets were creating variables using numbers in the code.
+Those numbers are referred to as literals.
 
-Integer literals are just numbers in code with no trailing decimal portion. By adding a `u`, you can tell the compiler
-that the literal represents an unsigned integer type. Floating point literals are numbers in code with a trailing
-decimal portion. Without a `f` at the end, the compiler will treat the number as a `double`. By adding a trailing `f`,
-the compiler now treats it as a `float.
+Integer literals are just numbers in code with no trailing fractional part.
+By adding a `u`, you can tell the compiler that the literal represents an unsigned integer type.
+Floating-point literals are numbers in code with a trailing fractional part.
+Without a `f` at the end, the compiler will treat the number as a `double`.
+By adding a trailing `f`, the compiler now treats it as a `float.
 
 ```cpp
 int foo = 3; // This is an integer literal
 int ufoo = 3u; // This is an unsigned integer literal
-float bar = 3.14f; // This is a floating point literal for a float
-double baz = 3.14; // This is a floating point literal for a double
+float bar = 3.14f; // This is a floating-point literal for a float
+double baz = 3.14; // This is a floating-point literal for a double
 ```
 
 ## Basic Operators
 
-Operators are a type of expression that uses symbols to provide meaning. For example, `+` is an operator. As you may
-have assumed, `+` is typically used to add values together. Here, we'll introduce a handful of operators that you can
-use with the types you learned about above:
+Operators are a type of expression that uses symbols to provide meaning.
+For example, `+` is an operator.
+As you may have assumed, `+` is typically used to add values together.
+Here, we'll introduce a handful of operators that you can use with the types you learned about above:
 
 | Operator | Name           | Function                                  |
 | -------- | -------------- | ----------------------------------------- |
@@ -272,22 +328,27 @@ use with the types you learned about above:
 
 ::: info The Assignment Operator
 
-As we saw above, the equal sign (`=`) can be used both for initialiing a variable and for assigning new values to
-variables. Even though both use `=`, it is important to remember there is a difference between initialization and
-assignment of variables. The distinction between the two will be explored further in a later chapter.
+As we saw above, the equal sign (`=`) can be used both for initializing a variable and for assigning new values to
+variables.
+Even though both use `=`, it is important to remember there is a difference between initialization and
+assignment of variables.
+The distinction between the two will be explored further in a later chapter.
 
 :::
 
-In your exploration of the language so far, you may have noticed that there is a `^` operator. In math, you may think of
-this as a power operator. In C++, this operator has a different meaning that will be discussed in a later chapter on
+In your exploration of the language so far, you may have noticed that there is a `^` operator.
+In math, you may think of this as a power/exponentiation operator.
+In C++, this operator has a different meaning that will be discussed in a later chapter on
 [bitwise operators](/resources/cpp/operators#bitwise-operators).
 
 ## Wrapping Up
 
-In the above sections, we've covered the basics of a C++ program. At this point, you should know the basics of how a C++
+In the above sections, we've covered the basics of a C++ program.
+At this point, you should know the basics of how a C++
 program is structured, how to create a variable, some of the types that C++ provides you, and some of the operations
-provided to you on those types. Additionally, you should be able to write a comment in your code. Let's bring this
-together and write a simple program that changes Fahrenheit to Celsius.
+provided to you on those types.
+Additionally, you should be able to write a comment in your code.
+Let's bring this together and write a simple program that changes Fahrenheit to Celsius.
 
 The equation to convert the two is very simple: $C = (F - 32) / (9 / 5)$.
 
@@ -303,5 +364,7 @@ int main() {
 }
 ```
 
-This simple program converts from Fahrenheit to Celsius, but it doesn't print anything out. In the next chapter, we will
+This simple program converts from Fahrenheit to Celsius,
+but it doesn't print anything out.
+In the next chapter, we will
 be discussing how to view values in our program.
