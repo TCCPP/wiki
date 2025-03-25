@@ -4,9 +4,9 @@
 
 To get started on Windows, select one of the following guides to set up a development environment.
 
-* [Visual Studio Community](/resources/dev-envs/visual-studio-community) (Recommended for Beginners)
-* Visual Studio Code with MINGW64 (TODO)
-* [CLion](/resources/dev-envs/clion)
+- [Visual Studio Community](/resources/dev-envs/visual-studio-community) (Recommended for Beginners)
+- Visual Studio Code with MINGW64 (TODO)
+- [CLion](/resources/dev-envs/clion)
 
 ## Getting Started on Linux
 
