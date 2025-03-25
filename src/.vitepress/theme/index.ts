@@ -1,7 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from "vue";
 import type { Theme } from "vitepress";
-import DefaultTheme from "vitepress/theme";
+import theme from "../../components/vitepress-default";
 import "./style.css";
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -12,9 +12,9 @@ import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 library.add(faFaucet, faChevronLeft, faChevronRight, faGithub, faArrowUpRightFromSquare, faDiscord);
 
 export default {
-    extends: DefaultTheme,
+    extends: theme,
     Layout: () => {
-        return h(DefaultTheme.Layout, null, {
+        return h(theme.Layout, null, {
             // https://vitepress.dev/guide/extending-default-theme#layout-slots
         });
     },
