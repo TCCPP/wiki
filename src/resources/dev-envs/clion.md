@@ -7,7 +7,7 @@ After completing the installation, you should be prompted to log into your JetBr
 
 If this doesn't happen, you can log in from the menu later after creating a project: Help -> Register...
 
-## Installing a compiler
+## Installing a Compiler
 
 CLion ships with MinGW GCC on Windows.
 
