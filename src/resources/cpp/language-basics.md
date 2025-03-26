@@ -6,7 +6,8 @@ C++ programs. In future sections, we will build upon these concepts while introd
 introduce common terminology early so you can effectively communicate about C++ using widely agreed upon definitions.
 
 So what actually is a computer program? From just about any perspective you take on this question, it boils down to a
-sequence of instructions that the computer executes. Each of these instructions is referred to as a statement.
+sequence of instructions that the computer executes. A C++ program is composed of many statements, which are turned into
+a sequence of instructions that the computer can execute.
 
 ## Program Structure
 
@@ -24,14 +25,14 @@ int main() {
 ```
 
 This is the simplest form of the main function. It has a single statement within it, `return 0;`. One thing you should
-note as we continue, statements typically end with a semicolon (';'). If you do not use a semicolon where it is needed,
+note as we continue, statements typically end with a semicolon (`;`). If you do not use a semicolon where it is needed,
 you will experience compilation errors.
 
-::: info
+::: info For Advanced Developers
 
-For Advanced Developers: The `main` function has special properties and restrictions compared to other functions. In
-most functions with non-void returns, you must return a value. In `main`, if the end of the function is reached without
-a return, an implicit `return 0;` is added.
+Functions that do not return `void` must have an explicit `return` statement. The `main` function is unique, as the
+compiler will implicitly insert a `return 0;` at the end of the function if execution can reach the end of `main`
+without returning.
 
 :::
 
@@ -40,7 +41,7 @@ Declaration and Expression.
 
 ### Declaration Statements
 
-Declaration statements provide the compiler with knowledge about the existance of some named piece of your program. The
+Declaration statements provide the compiler with knowledge about the existence of some named piece of your program. The
 simplest thing to declare is a variable. Once you have declared to your compiler that something exists, you can use it
 later in your program with other types of statements.
 
@@ -48,8 +49,11 @@ later in your program with other types of statements.
 int foo = 0; // Declaration Statement
 ```
 
-The above snippet creates a variable call `foo`, tells the compiler that it is an integer, and provides it with an
-initial value of `0`.
+Breaking down the statement, we will start by identifying the name of the variable `foo`. To the left of `foo`, we see
+the type of the variable, `int`. Variables in C++ are required to have a type in the declaration, and a variable cannot
+change type after it is declared. The equals symbol (`=`) is used to provide the variable `foo` with a value. The right
+side of the `=` statement is an expression used to specify the value to assign. In this case, we are assigning `foo` the
+value of `0`.
 
 ### Expression Statements
 
@@ -62,7 +66,7 @@ int foo = 1;   // Declaration Statement
 foo = foo + 2; // Expression Statement
 ```
 
-The above snippet creates `foo` with an initial value of `1`, then evaluates `foo + 1` before assigning the value back
+The above snippet creates `foo` with an initial value of `1`, then evaluates `foo + 2` before assigning the value back
 to the variable `foo`.
 
 ### Identifiers
@@ -73,22 +77,21 @@ letter (`a-z`, case insensitive) or an underscore (`_`). All subsequent characte
 letter (`a-z`, case insensitive) or an underscore (`_`). Idenfitiers have no maximum length imposed by the language, so
 you should make your identifiers descriptive.
 
-::: info
+::: info For Advanced Developers
 
-For Advanced Developers: Identifiers may also start with unicode characters with the property `XID_Start` and any
-character thereafter may be a unicode character with the property `XID_Continue`. However, Unicode support among
-compilers is limited.
+The C++ standard mandates Unicode support in identifier names. However, the status of Unicode support across vendors
+varies widely. Unicode code point in identifiers is also unconventional.
 
 :::
 
 ```cpp
-// A variable describing the freezing point of water in Fahrenheight
+// A variable describing the freezing point of water in Fahrenheit
 int freezing_point_f = 32;
 ```
 
 ## Comments
 
-Programs can rapidly increate in complexity. Instead of trying to keep all of the information in your head, you can
+Programs can rapidly increase in complexity. Instead of trying to keep all of the information in your head, you can
 utilize comments in your code. Comments are pieces of text ignored by the compiler, typically used for programmer
 convenience. Comments come in two flavors: single line and multiline.
 
@@ -124,7 +127,7 @@ int my_integer_value = 0; // int is a keyword
 float pi = 3.14f;         // float is a keyword
 ```
 
-## Initialization vs Assignment
+## Initialization Versus Assignment
 
 When we first create a variable in C++, it undergoes a process called initialization. Initialization is the process of
 providing a variable with an initial value.
@@ -184,7 +187,7 @@ unsigned types, only supporting non-negative types.
 ::: info
 
 These are just minimum ranges for values. Many platforms use different data models. On 64-bit Windows, the signed and
-unsigned variants of `int` is 32 bits in width. On 64 bit \*nix systems, a signed or unsigned `int` is 32 bits and a
+unsigned variants of `int` is 32 bits in width. On 64-bit \*nix systems, a signed or unsigned `int` is 32 bits and a
 signed or unsigned `long` is 64 bits.
 
 :::
@@ -208,31 +211,32 @@ character storage.
 ### Floating Point Types
 
 A floating point type is a real number that can have a decimal part. However, floating point types cannot represent all
-decimal numbers, as computers have a fixed size for processing numbers. Thus, computers use various representations to
-approximate decimals.
+decimal numbers, as computers are only capable of processing numbers of a fixed size. Thus, computers use various
+representations to approximate decimals.
 
-::: info
+There are three fundamental floating point types in C++, `float`, `double`, and `long double`. The range of
+representable values for a `double` is required to be at least as large as that of a `float`, and the `long double` must
+have a range at least that of a `double`. The language does not provide many strong guarantees about the properties of
+the various floating point types.
+
+::: info IEEE-754 Floating Point Model
 
 Because C++ needs to support many different types of computers, it does not enforce that floating points are represented
 in a specific way. For the sake of this tutorial, we will assume that you are working on a device that uses the IEEE-754
 floating point specification. This is the case for almost all consumer hardware. The rest of the tutorial will make the
-assumption that a `float` is an IEEE-754 single precision float and that a `double` is an IEEE-754 double precision
-float.
-
-:::
+assumption that a `float` is an IEEE-754 binary32 format float and that a `double` is an IEEE-754 binary64 format float.
 
 | Type     | Range                  | Width |
 | -------- | ---------------------- | ----- |
 | `float`  | $\pm 3.402 * 10^{38}$  | 32    |
 | `double` | $\pm 1.797 * 10^{308}$ | 64    |
 
-The language also provides a type `long double`, which is at least as large as a `double`.
+The type `long double` has the restriction that its range must be at least as large as a `double`. On many x86-64
+platforms, it is implemented as an IEEE-754 binary64 extended format, where the width of the type is 80 bits. However,
+MSVC is an exception to this rule, where it is only 64 bits. On other platforms, it may be implemented as a IEEE-754
+binary128 format float.
 
-### Void
-
-The last of the fundamental types we are going to cover is the concept of `void`. `void` is a data type that represents
-an empty set of values. You cannot create an object of type `void`, but it can be used in useful ways that will be
-discussed later.
+:::
 
 ### Literals
 
@@ -266,9 +270,11 @@ use with the types you learned about above:
 | `%`      | Remainder      | Returns the remainder of integer division |
 | `=`      | Assignment     | Assigns a value to a variable             |
 
-::: info
+::: info The Assignment Operator
 
-The assignment operator can be used both for initialization and assignment of variables.
+As we saw above, the equal sign (`=`) can be used both for initialiing a variable and for assigning new values to
+variables. Even though both use `=`, it is important to remember there is a difference between initialization and
+assignment of variables. The distinction between the two will be explored further in a later chapter.
 
 :::
 
