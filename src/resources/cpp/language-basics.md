@@ -16,9 +16,8 @@ int main() {
 }
 ```
 
-The program is made of a single translation unit in `some_file.cpp`, which contains only the declaration of the `main`
-function, which has a single statement within it: `return 0;`. The `return` statement tells the computer to return from
-the function with some result. In this case, the result `0` indicates that the program completed successfully.
+The `return` statement tells the computer to return from the function with some result. In this case, the result `0`
+indicates that the program completed successfully.
 
 Note that statements typically end with a semicolon (`;`). If you do not use a semicolon where it is needed, you will
 experience compilation errors.
