@@ -3,15 +3,9 @@
 Before we dive into the bulk of the tutorial, let's discuss a few of the key pieces of the language that you will use in
 every C++ program you will ever write. The goal of this section is to get you to a point where you can understand simple
 C++ programs. In future sections, we will build upon these concepts while introducing new concepts. It is important to
-introduce common terminology early, so you can effectively communicate about C++ using widely agreed upon definitions.
+introduce common terminology early, so you can effectively communicate about C++ using widely agreed-upon definitions.
 
 ## Program Structure
-
-A _C++ program_ is made of _translation units_, which are roughly equivalent to the `.cpp` files where you put your
-code. Basically, a program is made of one more multiple `.cpp` files.
-
-Within these `.cpp` files, there are _declarations_ such as global variables, functions, etc. Functions contain
-_statements_, which tell the computer what to do. Statements are executed from top to bottom.
 
 In C++, your program begins execution in the `main` function, commonly referred to as the _entry point_ of the program.
 Here is a simple example of a C++ program:
