@@ -228,7 +228,7 @@ representable values for a `double` is required to be at least as large as that 
 have a range at least that of a `double`. The language does not provide many strong guarantees about the properties of
 the various floating-point types.
 
-::: info IEEE-754 floating-point Model
+::: info IEEE-754 Floating-Point Model
 
 Because C++ needs to support many different types of computers, it does not enforce that floating-points are represented
 in a specific way. For the sake of this tutorial, we will assume that you are working on a device that uses the IEEE-754
