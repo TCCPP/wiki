@@ -144,15 +144,6 @@ The most simple types are _fundamental types_. You have already seen variables o
 examples above, and values such as `0` (also of type `int`). We will go over some commonly used fundamental types in the
 following section.
 
-### `void`
-
-`void` is a fundamental type that has no value. You can use it as the result of functions that only "do stuff", but have
-no result, like:
-
-```cpp
-void shutdown(); // Shuts down the computer.
-```
-
 ### `bool`
 
 The type `bool` can either hold the values `true` and `false`. You can use it to store the result of logic, like:
