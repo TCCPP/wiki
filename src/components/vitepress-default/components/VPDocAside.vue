@@ -34,13 +34,4 @@ const { theme } = useData();
 .spacer {
     flex-grow: 1;
 }
-
-.VPDocAside :deep(.spacer + .VPDocAsideSponsors),
-.VPDocAside :deep(.spacer + .VPDocAsideCarbonAds) {
-    margin-top: 24px;
-}
-
-.VPDocAside :deep(.VPDocAsideSponsors + .VPDocAsideCarbonAds) {
-    margin-top: 16px;
-}
 </style>

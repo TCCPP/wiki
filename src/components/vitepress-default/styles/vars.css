@@ -484,7 +484,8 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-    --vp-nav-height: 64px;
+    --vp-nav-height: 80px;
+    --vp-nav-margin: 10px;
     --vp-nav-bg-color: var(--vp-c-bg);
     --vp-nav-screen-bg-color: var(--vp-c-bg);
     --vp-nav-logo-height: 24px;
@@ -492,6 +493,7 @@
 
 .hide-nav {
     --vp-nav-height: 0px;
+    --vp-nav-margin: 0px;
 }
 
 .hide-nav .VPSidebar {

@@ -88,7 +88,7 @@ watch(
 
 @media (min-width: 960px) {
     .VPSidebar {
-        padding-top: var(--vp-nav-height);
+        padding-top: calc(var(--vp-nav-height) + var(--vp-nav-margin));
         width: var(--vp-sidebar-width);
         max-width: 100%;
         background-color: var(--vp-sidebar-bg-color);
@@ -112,10 +112,10 @@ watch(
         top: -64px;
         left: 0;
         z-index: 1;
-        margin-top: calc(var(--vp-nav-height) * -1);
+        margin-top: calc((var(--vp-nav-height)) * -1);
         margin-right: -32px;
         margin-left: -32px;
-        height: var(--vp-nav-height);
+        height: calc(var(--vp-nav-height) + var(--vp-nav-margin));
         background-color: var(--vp-sidebar-bg-color);
     }
 }

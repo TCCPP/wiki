@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import footnote from "markdown-it-footnote";
+import { wiki_icons_plugin } from "../components/markdown/wiki-icons";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -20,12 +21,12 @@ export default defineConfig({
                 items: [
                     { text: "Getting Started", link: "/resources/getting-started" },
                     {
-                        text: "C",
+                        text: "C Introduction",
                         items: [{}],
                         collapsed: true,
                     },
                     {
-                        text: "C++",
+                        text: "C++ Introduction",
                         items: [
                             { text: "What is C++", link: "/resources/cpp/what-is-cpp" },
                             {
@@ -205,6 +206,14 @@ export default defineConfig({
                         ],
                         collapsed: true,
                     },
+                    {
+                        text: "General Resources",
+                        items: [
+                            { text: "Standards", link: "/resources/general/standards" },
+                            { text: "Compiler Development", link: "/resources/general/compiler-development" },
+                        ],
+                        collapsed: true,
+                    },
                 ],
             },
         ],
@@ -215,6 +224,7 @@ export default defineConfig({
         math: true,
         config: md => {
             md.use(footnote);
+            md.use(wiki_icons_plugin);
         },
     },
     cleanUrls: true,

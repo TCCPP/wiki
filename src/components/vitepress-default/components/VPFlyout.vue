@@ -90,7 +90,7 @@ function onBlur() {
     display: flex;
     align-items: center;
     padding: 0 12px;
-    height: var(--vp-nav-height);
+    height: calc(var(--vp-nav-height) + var(--vp-nav-margin));
     color: var(--vp-c-text-1);
     transition: color 0.5s;
 }
@@ -98,7 +98,7 @@ function onBlur() {
 .text {
     display: flex;
     align-items: center;
-    line-height: var(--vp-nav-height);
+    line-height: calc(var(--vp-nav-height) + var(--vp-nav-margin));
     font-size: 14px;
     font-weight: 500;
     color: var(--vp-c-text-1);
@@ -122,7 +122,7 @@ function onBlur() {
 
 .menu {
     position: absolute;
-    top: calc(var(--vp-nav-height) / 2 + 20px);
+    top: calc((var(--vp-nav-height) + var(--vp-nav-margin)) / 2 + 20px);
     right: 0;
     opacity: 0;
     visibility: hidden;

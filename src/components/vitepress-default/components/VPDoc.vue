@@ -38,6 +38,10 @@ const pageName = computed(() => route.path.replace(/[./]+/g, "_").replace(/_html
                 <div class="content-container">
                     <slot name="doc-before" />
                     <main class="main">
+                        <div class="construction">
+                            <h1>Under Construction</h1>
+                            <p>This site is a work in progress, contributions are welcome!</p>
+                        </div>
                         <Content
                             class="vp-doc"
                             :class="[pageName, theme.externalLinkIcon && 'external-link-icon-enabled']"
@@ -54,7 +58,20 @@ const pageName = computed(() => route.path.replace(/[./]+/g, "_").replace(/_html
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.construction {
+    box-shadow: 0 0 0 5px rgb(235, 229, 58);
+    outline: dashed 5px black;
+    margin-bottom: 40px;
+    padding: 15px;
+    h1 {
+        font-size: 20px;
+        margin: 0 0 5px;
+    }
+    p {
+    }
+}
+
 .VPDoc {
     padding: 32px 24px 96px;
     width: 100%;
@@ -127,7 +144,10 @@ const pageName = computed(() => route.path.replace(/[./]+/g, "_").replace(/_html
 .aside-container {
     position: fixed;
     top: 0;
-    padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + var(--vp-doc-top-height, 0px) + 48px);
+    padding-top: calc(
+        var(--vp-nav-height) + var(--vp-nav-margin) + var(--vp-layout-top-height, 0px) + var(--vp-doc-top-height, 0px) +
+            48px
+    );
     width: 224px;
     height: 100vh;
     overflow-x: hidden;
@@ -152,7 +172,7 @@ const pageName = computed(() => route.path.replace(/[./]+/g, "_").replace(/_html
 .aside-content {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - (var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 48px));
+    min-height: calc(100vh - (var(--vp-nav-height) + var(--vp-nav-margin) + var(--vp-layout-top-height, 0px) + 48px));
     padding-bottom: 32px;
 }
 

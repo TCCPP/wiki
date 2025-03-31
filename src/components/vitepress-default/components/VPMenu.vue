@@ -30,7 +30,7 @@ defineProps<{
     background-color: var(--vp-c-bg-elv);
     box-shadow: var(--vp-shadow-3);
     transition: background-color 0.5s;
-    max-height: calc(100vh - var(--vp-nav-height));
+    max-height: calc(100vh - var(--vp-nav-height) - var(--vp-nav-margin));
     overflow-y: auto;
 }
 

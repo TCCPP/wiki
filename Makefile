@@ -31,3 +31,7 @@ build: prereqs ## Builds the website
 .PHONY: format
 format: prereqs ## Format files
 	npm run format
+
+.PHONY: test
+test: prereqs ## runs tests
+	npm run test

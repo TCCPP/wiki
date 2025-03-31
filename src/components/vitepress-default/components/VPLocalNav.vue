@@ -89,7 +89,7 @@ const classes = computed(() => {
 
 @media (min-width: 960px) {
     .VPLocalNav {
-        top: var(--vp-nav-height);
+        top: calc(var(--vp-nav-height) + var(--vp-nav-margin));
     }
 
     .VPLocalNav.has-sidebar {

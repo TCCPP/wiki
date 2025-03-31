@@ -9,16 +9,28 @@ Code is under the MIT license, site content is CC BY-SA.
 
 Contributions are welcome!
 
+## Getting Started
+
 Prerequisites: node 18 or newer and ideally make.
 
 To get started: Run `make dev`.
 
 If you do not have make, run `npm i` then `npm run dev`.
 
+## Markdown Info
+
 The site uses VitePress, which allows for content to easily be written in markdown and custom stuff to be done in Vue.
-All normal markdown is supported. Additionally, VitePress comes with a handful of useful extensions (github
-note/warning/etc blocks, line highlighting for code, emojis, math equations, and more) which can be seen at
-https://vitepress.dev/guide/markdown. Additionally, we use the following markdown extensions:
+All normal markdown is supported and VitePress comes with a handful of useful extensions (github note/warning/etc
+blocks, line highlighting for code, emojis, math equations, and more).
+
+These are good overviews of what vitepress lets you do for markdown pages:
+
+- https://vitepress.dev/guide/markdown
+- https://vitepress.dev/guide/asset-handling
+- https://vitepress.dev/guide/frontmatter
+- https://vitepress.dev/guide/using-vue
+
+Additionally, we use the following markdown extensions:
 
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
 
@@ -50,6 +62,10 @@ Some guidelines for contribution:
 - Try to explain things succinctly
 - Mind your audience: If you're contributing beginner-oriented content, try to keep things as simple as possible,
   linking to more advanced topics if needed.
+- Columns should be no wider than 120 characters.
+- We use an auto-formatter for markdown files which automatically wraps paragraphs at the column width. We don't do
+  things like "semantic line breaks," and if you try to write such the autoformatter will clobber it. Code must be
+  formatted manually.
 - Try to maintain consistent style. Some very rough points to touch on:
   - Indent with four spaces
   - Braces on the same line, e.g. `int main() {`
@@ -60,6 +76,5 @@ Some guidelines for contribution:
     - `SCREAM_CASE` for macros
 - Run the site locally and test how your contributions look. Make sure everything renders correctly, update formatting
   if needed.
-- Columns should be no wider than 120 characters.
 
 As this site evolves these guidelines will too.
