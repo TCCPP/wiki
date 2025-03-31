@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import footnote from "markdown-it-footnote";
+import { wiki_icons_plugin } from "../components/markdown/wiki-icons";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -214,6 +215,7 @@ export default defineConfig({
         math: true,
         config: md => {
             md.use(footnote);
+            md.use(wiki_icons_plugin);
         },
     },
     cleanUrls: true,
