@@ -38,7 +38,12 @@ int main()
 
 ## Structure of lambdas
 
-A lambda `[](){}` consist of 3 main parts, the **capture list** `[]`, **parameters** `()` and the **body** `{}`. You will *almost* always need all these 3 components to make a valid lambda. In specific cases the parameter list may be omitted, but I would generally recommend against omitting this regardless if it's allowed or not.
+A lambda consists of at least three parts:
+- `[]`, the introducer, containing captures.
+- `()`, the parameters (optional since C++23).
+- `{}`, the body of the lambda.
+
+There are many further optional parts, but `[](){}` or `[]{}` are the bare minimum, depending on the language version.
 
 ### Parameters `()`
 
