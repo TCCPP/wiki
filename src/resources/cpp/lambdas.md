@@ -38,7 +38,12 @@ int main()
 
 ## Structure of lambdas
 
-A lambda `[](){}` consist of 3 main parts, the **capture list** `[]`, **parameters** `()` and the **body** `{}`. You will *almost* always need all these 3 components to make a valid lambda. In specific cases the parameter list may be omitted, but I would generally recommend against omitting this regardless if it's allowed or not.
+A lambda consists of at least three parts:
+- `[]`, the introducer, containing captures.
+- `()`, the parameters (optional since C++23).
+- `{}`, the body of the lambda.
+
+There are many further optional parts, but `[](){}` or `[]{}` are the bare minimum, depending on the language version.
 
 ### Parameters `()`
 
@@ -52,7 +57,7 @@ The lambda body is the exact same as the body of the function. It's hold the cod
 
 ### Capture list
 
-As the name implies the capture list allows us to capture values into the lambda as it's constructed. Unlike the parameters where we specify which values we want to pass in when we invoke the lambda. This tends to be particularly common when you want to bring external state into a generic algorithm.
+As the name implies, the capture list allows us to capture values into the lambda as it's constructed. Unlike the parameters where we specify which values we want to pass in when we invoke the lambda. This tends to be particularly common when you want to bring external state into a generic algorithm.
 
 Take for example a simple program where you want to multiply every number with a number the user provides.
 
