@@ -57,7 +57,7 @@ The lambda body is the exact same as the body of the function. It's hold the cod
 
 ### Capture list
 
-As the name implies the capture list allows us to capture values into the lambda as it's constructed. Unlike the parameters where we specify which values we want to pass in when we invoke the lambda. This tends to be particularly common when you want to bring external state into a generic algorithm.
+As the name implies, the capture list allows us to capture values into the lambda as it's constructed. Unlike the parameters where we specify which values we want to pass in when we invoke the lambda. This tends to be particularly common when you want to bring external state into a generic algorithm.
 
 Take for example a simple program where you want to multiply every number with a number the user provides.
 
