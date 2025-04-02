@@ -7,8 +7,6 @@
 - references
 - classes
 
-
-
 ## What is a lambda?
 
 Lambdas are similar to functions, however they are not identical they specifically are [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)) what might be a term you are familiar with from other languages.
@@ -39,8 +37,9 @@ int main()
 ## Structure of lambdas
 
 A lambda consists of at least three parts:
+
 - `[]`, the introducer, containing captures.
-- `()`, the parameters (optional since C++23).
+- `()`, the parameters (optional in some cases).
 - `{}`, the body of the lambda.
 
 There are many further optional parts, but `[](){}` or `[]{}` are the bare minimum, depending on the language version.
