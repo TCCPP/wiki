@@ -11,7 +11,7 @@
 
 ## What is a lambda?
 
-Lambdas are similar to function, however they are not identical they specifically are [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)) what might be a term you are familiar with from other languages.
+Lambdas are similar to functions, however they are not identical they specifically are [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)) what might be a term you are familiar with from other languages.
 
 if they are similar to functions one might ask why would I ever need a lambda? They have multiple usages but the simplest and most common one is for predicates in algorithms. Algorithms are nice and generic and you want their behavior to be slightly different depending on your specific use case.
 
@@ -72,7 +72,7 @@ int main()
     // Here we declare a local lambda object. We capture the variable multiply_number so it can be used in the lambda. We return the value of the passed in value with multiply_number.
     auto func = [multiply_number](const int& n) {
         return n * multiply_number;
-        };
+    };
 
     // Here we use this lambda object in the algorithm transform. This algorithm takes a ranges to iterate over, an output destination (the begin of the same vector in this case) and the predicate (our lambda)
     std::transform(v.cbegin(), v.cend(), v.begin(), func);
@@ -84,7 +84,7 @@ You might have noticed that the lambda uses the same variable name inside the la
 ```cpp
 auto func = [num = multiply_number](const int& n) {
     return n * multiply_number;
-    };
+};
 ```
 
 Here we make a copy of multiply_number called num, we do not need to specify the type here.
@@ -94,7 +94,7 @@ Making a copy of a value might be undesirable and if wanted we can also capture 
 ```cpp
 auto func = [&multiply_number](const int& n) {
     return n * multiply_number;
-    };
+};
 ```
 
 You can mix this syntax to capture multiple variables.
@@ -105,7 +105,7 @@ int b = 2;
 int c = 3;
 auto func = [a, &b, d = c](const int& n) {
     return a + b + d;
-    };
+};
 ```
 
 Here we capture `a` by value, `b` as a reference and `c` as a copy into the variable `d` in the lambda.
@@ -120,12 +120,12 @@ int d = 4;
 // a,b, c are copied into the lambda. d is not copied as it's not used.
 auto func = [=](const int& n) {
     return a + b + c;
-    };
+};
 
 // a,b, c are captured as a reference into the lambda.
 auto func2 = [&](const int& n) {
     return a + b + c;
-    };
+};
 ```
 
 You can also mix this with the syntax you learned above to capture specifically by reference or value. So for example by default we make a copy except the specific value we capture as a reference.
@@ -138,7 +138,7 @@ int d = 4;
 // a,b are copied into the lambda. d is not copied as it's not used. and c is captured as a reference into the lambda.
 auto func = [=, &c](const int& n) {
     return a + b + c;
-    };
+};
 ```
 
 ## `this` keyword
