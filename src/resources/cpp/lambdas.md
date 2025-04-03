@@ -2,16 +2,20 @@
 
 ## Prerequisites
 
-- This chapter assumes you have a basic understanding the following topics as this builds up on the knowledge taught in the following chapters:
+- This chapter assumes you have a basic understanding the following topics as this builds up on the knowledge taught in
+  the following chapters:
 - [functions](functions.md)
 - references
 - classes
 
 ## What is a lambda?
 
-Lambdas are similar to functions, however they are not identical they specifically are [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)).
+Lambdas are similar to functions, however they are not identical they specifically are
+[closures](<https://en.wikipedia.org/wiki/Closure_(computer_programming)>).
 
-if they are similar to functions one might ask why would I ever need a lambda? They have multiple usages but the simplest and most common one is for predicates in algorithms. Algorithms are nice and generic and you want their behavior to be slightly different depending on your specific use case.
+if they are similar to functions one might ask why would I ever need a lambda? They have multiple usages but the
+simplest and most common one is for predicates in algorithms. Algorithms are nice and generic and you want their
+behavior to be slightly different depending on your specific use case.
 
 ```cpp
 #include <algorithm>
@@ -31,7 +35,7 @@ int main()
 
     // As a lambda is similar to a function we can also call it like a function. This will print 5
     print(5);
-    
+
     return 0;
 }
 ```
@@ -48,17 +52,21 @@ There are many further optional parts, but `[](){}` or `[]{}` are the bare minim
 
 ### Parameters `()`
 
-The parameter part of a lambda is the exact same as the parameter list of a function. Here you specify the inputs of your lambda.
+The parameter part of a lambda is the exact same as the parameter list of a function. Here you specify the inputs of
+your lambda.
 
 For example `[](int a, int b){}` is a lambda that takes in 2 integer values.
 
 ### body `{}`
 
-The lambda body is the exact same as the body of the function. It's hold the code that the lambda will execute when it's invoked.
+The lambda body is the exact same as the body of the function. It's hold the code that the lambda will execute when it's
+invoked.
 
 ### Capture list
 
-As the name implies, the capture list allows us to capture values into the lambda as it's constructed. Unlike the parameters where we specify which values we want to pass in when we invoke the lambda. This tends to be particularly common when you want to bring external state into a generic algorithm.
+As the name implies, the capture list allows us to capture values into the lambda as it's constructed. Unlike the
+parameters where we specify which values we want to pass in when we invoke the lambda. This tends to be particularly
+common when you want to bring external state into a generic algorithm.
 
 Take for example a simple program where you want to multiply every number with a number the user provides.
 
@@ -82,12 +90,14 @@ int main()
 
     // Here we use this lambda object in the algorithm transform. This algorithm takes a ranges to iterate over, an output destination (the begin of the same vector in this case) and the predicate (our lambda)
     std::transform(v.cbegin(), v.cend(), v.begin(), func);
-    
+
     return 0;
 }
 ```
 
-You might have noticed that the lambda uses the same variable name inside the lambda as declared in main. These are actually not the same variables. The multiply_number in the lambda is a copy of the original in main. you can modify the above example like this to give the variable a different name if so desired.
+You might have noticed that the lambda uses the same variable name inside the lambda as declared in main. These are
+actually not the same variables. The multiply_number in the lambda is a copy of the original in main. you can modify the
+above example like this to give the variable a different name if so desired.
 
 ```cpp
 auto func = [num = multiply_number](const int& n) {
@@ -97,7 +107,8 @@ auto func = [num = multiply_number](const int& n) {
 
 Here we make a copy of multiply_number called num, we do not need to specify the type here.
 
-Making a copy of a value might be undesirable and if wanted we can also capture the variable as a reference. Now no copy is made of multiply_number.
+Making a copy of a value might be undesirable and if wanted we can also capture the variable as a reference. Now no copy
+is made of multiply_number.
 
 ```cpp
 auto func = [&multiply_number](const int& n) {
@@ -118,7 +129,9 @@ auto func = [a, &b, d = c](const int& n) {
 
 Here we capture `a` by value, `b` as a reference and `c` as a copy into the variable `d` in the lambda.
 
-As you noticed the list here is getting rather long. Luckily we have some special values that can help us keep the lambda small. We have `=` that captures all used variables in the lambda by value. and `&` that captures all variables as a reference.
+As you noticed the list here is getting rather long. Luckily we have some special values that can help us keep the
+lambda small. We have `=` that captures all used variables in the lambda by value. and `&` that captures all variables
+as a reference.
 
 ```cpp
 int a = 1;
@@ -136,7 +149,8 @@ auto func2 = [&](const int& n) {
 };
 ```
 
-You can also mix this with the syntax you learned above to capture specifically by reference or value. So for example by default we make a copy except the specific value we capture as a reference.
+You can also mix this with the syntax you learned above to capture specifically by reference or value. So for example by
+default we make a copy except the specific value we capture as a reference.
 
 ```cpp
 int a = 1;
@@ -151,7 +165,9 @@ auto func = [=, &c](const int& n) {
 
 ## `this` keyword
 
-The lambda has 1 additional special keyword called `this` you might be familiar with this keyword if you have worked with classes. For lambdas however the meaning is slightly different. By specifying this into the lambda capture list you give it access to the class variables as if it where part of the parent class itself. even private variables.
+The lambda has 1 additional special keyword called `this` you might be familiar with this keyword if you have worked
+with classes. For lambdas however the meaning is slightly different. By specifying this into the lambda capture list you
+give it access to the class variables as if it where part of the parent class itself. even private variables.
 
 ```cpp
 #include <iostream>
