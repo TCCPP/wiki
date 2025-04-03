@@ -9,7 +9,7 @@
 
 ## What is a lambda?
 
-Lambdas are similar to functions, however they are not identical they specifically are [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)) what might be a term you are familiar with from other languages.
+Lambdas are similar to functions, however they are not identical they specifically are [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)).
 
 if they are similar to functions one might ask why would I ever need a lambda? They have multiple usages but the simplest and most common one is for predicates in algorithms. Algorithms are nice and generic and you want their behavior to be slightly different depending on your specific use case.
 
@@ -31,6 +31,8 @@ int main()
 
     // As a lambda is similar to a function we can also call it like a function. This will print 5
     print(5);
+    
+    return 0;
 }
 ```
 
@@ -80,6 +82,8 @@ int main()
 
     // Here we use this lambda object in the algorithm transform. This algorithm takes a ranges to iterate over, an output destination (the begin of the same vector in this case) and the predicate (our lambda)
     std::transform(v.cbegin(), v.cend(), v.begin(), func);
+    
+    return 0;
 }
 ```
 
@@ -172,6 +176,7 @@ int main(){
     Foo obj;
     obj.func();
 
+    return 0;
 }
 ```
 
@@ -204,5 +209,6 @@ int main(){
     Foo obj;
     obj.func();
 
+    return 0;
 }
 ```
