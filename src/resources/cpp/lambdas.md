@@ -101,7 +101,7 @@ above example like this to give the variable a different name if so desired.
 
 ```cpp
 auto func = [num = multiply_number](const int& n) {
-    return n * multiply_number;
+    return n * num;
 };
 ```
 
