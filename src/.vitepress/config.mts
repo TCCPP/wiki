@@ -216,7 +216,10 @@ export default defineConfig({
                 ],
             },
         ],
-        socialLinks: [{ icon: "github", link: "https://github.com/TCCPP/wiki" }],
+        socialLinks: [
+            { icon: "github", link: "https://github.com/TCCPP/wiki" },
+            { icon: "discord", link: "https://discord.gg/tccpp" },
+        ],
     },
     markdown: {
         lineNumbers: true,
