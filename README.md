@@ -59,22 +59,34 @@ Content
 
 Some guidelines for contribution:
 
-- Try to explain things succinctly
-- Mind your audience: If you're contributing beginner-oriented content, try to keep things as simple as possible,
-  linking to more advanced topics if needed.
-- Columns should be no wider than 120 characters.
 - We use an auto-formatter for markdown files which automatically wraps paragraphs at the column width. We don't do
   things like "semantic line breaks," and if you try to write such the autoformatter will clobber it. Code must be
   formatted manually.
-- Try to maintain consistent style. Some very rough points to touch on:
-  - Indent with four spaces
-  - Braces on the same line, e.g. `int main() {`
-  - Pointers/references on the left, e.g. `void* ptr`
-  - Naming:
-    - `lower_snake` for most things
-    - `Capitalized` for template args
-    - `SCREAM_CASE` for macros
 - Run the site locally and test how your contributions look. Make sure everything renders correctly, update formatting
   if needed.
 
-As this site evolves these guidelines will too.
+### Editorial Style
+
+- Try to explain things succinctly.
+- Mind your audience: If you're contributing beginner-oriented content, try to keep things as simple as possible,
+  linking to more advanced topics if needed.
+- Headings use
+  [Wikipedia Title Case](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Titles_of_works#Capital_letters). Use
+  <https://titlecaseconverter.com/> when in doubt.
+
+### Code Style
+
+For the most part, how to present C++ examples is up to the author. There are a few things to keep in mind though.
+
+You can assume C++20 as a minimum without explicitly pointing it out. For example, you don't need to point out that
+`std::span` or `char8_t` are C++20 features. For &ge; C++23 features like `1z`, please mention the standard.
+
+Also, try to maintain consistent style in code. Some very rough points to touch on:
+
+- Indent with four spaces
+- Braces on the same line, e.g. `int main() {`
+- Pointers/references on the left, e.g. `void* ptr`
+- Naming:
+  - `lower_snake` for most things
+  - `Capitalized` for template args
+  - `SCREAM_CASE` for macros
