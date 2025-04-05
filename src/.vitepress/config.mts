@@ -191,6 +191,7 @@ export default defineConfig({
                                     { text: "Strings", link: "/resources/cpp/containers#strings" },
                                     { text: "Unordered Maps", link: "/resources/cpp/containers#unordered-maps" },
                                 ],
+                                collapsed: true,
                             },
                         ],
                         collapsed: true,
