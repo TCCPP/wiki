@@ -39,13 +39,17 @@ export default defineConfig({
                                     },
                                     { text: "Comments", link: "/resources/cpp/language-basics#comments" },
                                     {
-                                        text: "Definition vs Declaration",
-                                        link: "/resources/cpp/language-basics#definition-vs-declaration",
+                                        text: "Statements",
+                                        link: "/resources/cpp/language-basics#statements",
+                                    },
+                                    {
+                                        text: "Identifiers",
+                                        link: "/resources/cpp/language-basics#identifiers",
                                     },
                                     { text: "Keywords", link: "/resources/cpp/language-basics#keywords" },
                                     {
                                         text: "Initialization vs Assignment",
-                                        link: "/resources/cpp/language-basics#initialization-vs-assignment",
+                                        link: "/resources/cpp/language-basics#initialization-versus-assignment",
                                     },
                                     {
                                         text: "Fundamental Data Types and Literals",
