@@ -245,7 +245,7 @@ snippets were creating variables using numbers in the code. Those numbers are re
 Integer literals are just numbers in code with no trailing fractional part. By adding a `u`, you can tell the compiler
 that the literal represents an unsigned integer type. Floating-point literals are numbers in code with a trailing
 fractional part. Without a `f` at the end, the compiler will treat the number as a `double`. By adding a trailing `f`,
-the compiler now treats it as a `float.
+the compiler now treats it as a `float`.
 
 ```cpp
 int foo = 3; // This is an integer literal
