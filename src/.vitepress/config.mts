@@ -122,8 +122,8 @@ export default defineConfig({
                                         link: "/resources/cpp/functions#what-is-a-function",
                                     },
                                     {
-                                        text: "Structure of Function",
-                                        link: "/resources/cpp/functions#structure-of-function",
+                                        text: "Structure of Functions",
+                                        link: "/resources/cpp/functions#structure-of-functions",
                                     },
                                     {
                                         text: "Parameters, Arguments, and Return Values",
