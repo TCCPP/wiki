@@ -88,7 +88,7 @@ export default defineConfig({
                                     },
                                     {
                                         text: "Logical Operators",
-                                        link: "/resources/cpp/operators#assignment-operators",
+                                        link: "/resources/cpp/operators#logical-operators",
                                     },
                                     { text: "Bitwise Operators", link: "/resources/cpp/operators#bitwise-operators" },
                                     { text: "Other Operators", link: "/resources/cpp/operators#other-operators" },
