@@ -279,7 +279,7 @@ assignment of variables. The distinction between the two will be explored furthe
 
 In your exploration of the language so far, you may have noticed that there is a `^` operator. In math, you may think of
 this as a power/exponentiation operator. In C++, this operator has a different meaning that will be discussed in a later
-chapter on [bitwise operators](/resources/cpp/operators#bitwise-operators).
+chapter on [bitwise operators](/cpp-tutorial/operators#bitwise-operators).
 
 ## Wrapping Up
 
