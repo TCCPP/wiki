@@ -1,12 +1,5 @@
 # Lambdas
 
-## Prerequisites
-
-- This chapter assumes you have a basic understanding the following topics as this builds up on the knowledge taught in the following chapters:
-- [functions](functions.md)
-- references
-- classes
-
 ## What is a lambda?
 
 Lambdas are similar to functions, however they are not identical they specifically are [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)) what might be a term you are familiar with from other languages.
