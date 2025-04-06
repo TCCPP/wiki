@@ -5,9 +5,15 @@
 Lambdas are similar to functions, however they are not identical they specifically are
 [closures](<https://en.wikipedia.org/wiki/Closure_(computer_programming)>).
 
-if they are similar to functions one might ask why would I ever need a lambda? They have multiple usages but the
-simplest and most common one is for predicates in algorithms. Algorithms are nice and generic and you want their
-behavior to be slightly different depending on your specific use case.
+if they are similar to functions one might ask why would I ever need a lambda? For example, algorithms in the standard
+library can often have their behavior changed using something callable. Creating a whole function is often excessive,
+and we use lambdas instead:
+
+`int non_a_amount = std::ranges::count_if("abcaabbac", [](char c) { return c != 'a'; });`
+
+This counts all results where the lambda returns true, in this case if the latter is not 'a'.
+
+Another example is where we want to print each value in an array:
 
 ```cpp
 #include <algorithm>
