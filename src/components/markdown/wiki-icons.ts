@@ -8,6 +8,8 @@ import StateCore from "markdown-it/lib/rules_core/state_core.mjs";
 const ICONS = {
     cpp: "c++.svg",
     c: "c.svg",
+    vs: "vs.webp",
+    vscode: "vs-code.webp",
 };
 
 const ICON_PATH = "assets/icons";
