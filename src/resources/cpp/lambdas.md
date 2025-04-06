@@ -42,6 +42,22 @@ A lambda consists of at least three parts:
 
 There are many further optional parts, but `[](){}` or `[]{}` are the bare minimum, depending on the language version.
 
+for a lambda the return type does not need to be specified like functions do. The return type is deduced by the
+compiler. However you can specify a trailing return type to the lambda.
+
+```cpp
+// This lambda return an interger value
+[]() -> int {
+    return 5;
+};
+
+// ``equivalent to the following lambda
+[](){
+    return 5;
+};
+
+```
+
 ### Parameters `()`
 
 The parameter part of a lambda is the exact same as the parameter list of a function. Here you specify the inputs of
