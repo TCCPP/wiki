@@ -227,7 +227,10 @@ export default defineConfig({
                         { text: "Project Ideas", link: "/resources/general/project-ideas" },
                         {
                             text: "Advanced Resources",
-                            items: [{ text: "Compiler Development", link: "/resources/general/compiler-development" }],
+                            items: [
+                                { text: "Compiler Development", link: "/resources/general/compiler-development" },
+                                { text: "Performance Analysis", link: "/resources/general/performance-analysis" },
+                            ],
                             collapsed: true,
                         },
                     ],
