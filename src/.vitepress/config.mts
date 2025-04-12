@@ -224,6 +224,11 @@ export default defineConfig({
                             collapsed: true,
                         },
                         { text: "Standards", link: "/resources/general/standards" },
+                        {
+                            text: "C++ Resources",
+                            items: [{ text: "Lambdas", link: "/resources/general/cpp/lambdas" }],
+                            collapsed: true
+                        },
                         { text: "Project Ideas", link: "/resources/general/project-ideas" },
                         {
                             text: "Advanced Resources",
