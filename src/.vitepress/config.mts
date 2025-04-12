@@ -223,6 +223,17 @@ export default defineConfig({
                             ],
                             collapsed: true,
                         },
+                        {
+                            text: "C++ Resources",
+                            link: "/resources/cpp",
+                            items: [
+                                {
+                                    text: "C++ Learning Material",
+                                    link: "/resources/cpp/learning",
+                                },
+                            ],
+                            collapsed: true,
+                        },
                         { text: "Standards", link: "/resources/general/standards" },
                         { text: "Project Ideas", link: "/resources/general/project-ideas" },
                         {
