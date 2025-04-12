@@ -205,7 +205,12 @@ export default defineConfig({
                         {
                             text: "Build Systems",
                             link: "/resources/build-systems",
-                            items: [],
+                            items: [
+                                {
+                                    text: "CMake",
+                                    link: "/resources/build-systems/cmake",
+                                },
+                            ],
                             collapsed: true,
                         },
                         {
