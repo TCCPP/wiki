@@ -246,6 +246,7 @@ export default defineConfig({
                         {
                             text: "General Resources",
                             items: [
+                                { text: "Address Sanitizer", link: "/resources/general/asan" },
                                 { text: "Standards", link: "/resources/general/standards" },
                                 { text: "Project Ideas", link: "/resources/general/project-ideas" },
                             ],
