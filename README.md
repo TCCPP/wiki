@@ -5,6 +5,17 @@ resources, and wiki-like content.
 
 Code is under the MIT license, site content is CC BY-SA.
 
+## Table of Contents <!-- omit in toc -->
+
+- [tccpp.wiki](#tccppwiki)
+- [Contributing](#contributing)
+  - [Getting Started](#getting-started)
+  - [Markdown Info](#markdown-info)
+  - [Sidebars](#sidebars)
+  - [Guidelines](#guidelines)
+    - [Editorial Style](#editorial-style)
+    - [Code Style](#code-style)
+
 # Contributing
 
 Contributions are welcome!
@@ -16,6 +27,8 @@ Prerequisites: node 18 or newer and ideally make.
 To get started: Run `make dev`.
 
 If you do not have make, run `npm i` then `npm run dev`.
+
+The site source is in [src/](src/).
 
 ## Markdown Info
 
@@ -36,8 +49,6 @@ These are good overviews of what vitepress lets you do for markdown pages:
 
 An overview of custom markdown formatting for the site can be found at https://tccpp.wiki/resources/wiki-dev/markdown.
 
-The site source is in [src/](src/).
-
 A note on formatting: We use prettier for formatting files. Prettier does not understand some custom markdown syntax,
 such as custom alert blocks. This can be worked around with newlines, e.g.:
 
@@ -56,6 +67,14 @@ Content
 
 :::
 ```
+
+## Sidebars
+
+The site relies a lot on sidebars for navigation. When contributing a page, remember to add it to the sidebar. This can
+be done by adding it to the `sidebar.ts` (really just a big JSON list) file in the relevant section of the site (e.g.
+[`src/cpp-tutorial/sidebar.ts`](src/cpp-tutorial/sidebar.ts) or [`src/resources/sidebar.ts`](src/resources/sidebar.ts)).
+
+![Site Sidebars](./docs/assets/sidebar.png)
 
 ## Guidelines
 

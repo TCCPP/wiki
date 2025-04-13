@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import MarkdownIt from "markdown-it";
-import { wiki_icons_plugin } from "../../src/components/markdown/wiki-icons";
+import { wiki_icons_plugin } from "../../src/core/markdown/wiki-icons";
 import { reduce } from "./utils";
 
 describe("nobr tests", () => {

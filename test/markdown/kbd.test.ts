@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import MarkdownIt from "markdown-it";
 import { reduce } from "./utils";
-import { kbd_plugin } from "../../src/components/markdown/kbd";
+import { kbd_plugin } from "../../src/core/markdown/kbd";
 
 describe("nobr tests", () => {
     test("basic", () => {
