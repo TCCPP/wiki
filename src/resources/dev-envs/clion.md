@@ -46,6 +46,6 @@ bottom that says "Hello, World!".
 ::: info
 
 CLion uses a build system called CMake. You can edit your build configuration in a file called `CMakeLists.txt`. This
-tutorial will not go into CMake, you can read our CMake article for more information.
+tutorial will not go into CMake, you can read our [CMake article](/resources/build-systems/cmake.md) for more information.
 
 :::
