@@ -1,2 +1,4 @@
+npm i
 npx lint-staged
 npm run test
+npm run build
