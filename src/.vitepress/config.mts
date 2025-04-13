@@ -255,8 +255,8 @@ export default defineConfig({
                             text: "Advanced Resources",
                             items: [
                                 { text: "Floating Point Numbers", link: "/resources/general/floating-point" },
-                                { text: "Performance Analysis", link: "/resources/general/performance-analysis" },
-                                { text: "Compiler Development", link: "/resources/general/compiler-development" },
+                                { text: "Performance Analysis", link: "/resources/advanced/performance-analysis" },
+                                { text: "Compiler Development", link: "/resources/advanced/compiler-development" },
                             ],
                             collapsed: true,
                         },
