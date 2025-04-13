@@ -205,7 +205,12 @@ export default defineConfig({
                         {
                             text: "Build Systems",
                             link: "/resources/build-systems",
-                            items: [],
+                            items: [
+                                {
+                                    text: "CMake",
+                                    link: "/resources/build-systems/cmake",
+                                },
+                            ],
                             collapsed: true,
                         },
                         {
@@ -238,7 +243,10 @@ export default defineConfig({
                         { text: "Project Ideas", link: "/resources/general/project-ideas" },
                         {
                             text: "Advanced Resources",
-                            items: [{ text: "Compiler Development", link: "/resources/general/compiler-development" }],
+                            items: [
+                                { text: "Compiler Development", link: "/resources/general/compiler-development" },
+                                { text: "Floating Point Numbers", link: "/resources/general/floating-point" },
+                            ],
                             collapsed: true,
                         },
                     ],
