@@ -151,7 +151,7 @@ is meant to be a source of inspiration rather than a list of projects to make.
 - Create a simple interpreter or compiler
   - Check out [Crafting Interpreters](https://craftinginterpreters.com/contents.html) for a great tutorial on relevant
     concepts
-  - Also check out out list of [Compiler Development Resources](./compiler-development.md)
+  - Also check out out list of [Compiler Development Resources](../advanced/compiler-development.md)
 - Lisp interpreter
 - Lua interpreter
 - Regular expression parser / evaluator
