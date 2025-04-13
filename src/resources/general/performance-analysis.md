@@ -1,4 +1,4 @@
-# Low Level Analysis Resources
+# Performance Analysis Resources
 
 ## Profiling
 
@@ -6,6 +6,15 @@
   performance on linux and profile hardware performance counters
 - [Tracy](https://github.com/wolfpld/tracy)
 - [Magic Trace](https://github.com/janestreet/magic-trace)
+- [Visual Studio][vs-prof]'s built-in profiling tools
+- [Xcode Instruments](https://developer.apple.com/tutorials/instruments)[^1]
+
+[vs-prof]:
+  https://learn.microsoft.com/en-us/visualstudio/profiling/profiling-feature-tour?view=vs-2022&pivots=programming-language-dotnet
+
+[^1]:
+    This is an excellent tutorial for Instruments:
+    https://www.jviotti.com/2024/01/29/using-xcode-instruments-for-cpp-cpu-profiling.html
 
 ## Codegen
 
