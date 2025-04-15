@@ -171,7 +171,7 @@ Try it yourself: :ce: [Example](https://godbolt.org/z/PfbjEz75E)
 
 In addition to address sanitizer, a handful of other sanitizers exist:
 
-- ubsan (`-fsanitize=undefined`): Undefined behavior sanitizer &mdash; Checks some array subscript out of bounds, signed
-  integer overflow, misaligned and null pointers, etc.
-- msan (`-fsanitize=memory`): Memory sanitizer &mdash; Checks for use of uninitialized memory
-- tsan (`-fsanitize=thread`): Thread sanitizer &mdash; Checks for data races
+- Undefined behavior sanitizer (`-fsanitize=undefined`): Checks some array subscript out of bounds, signed integer
+  overflow, misaligned and null pointers, etc.
+- Memory sanitizer (`-fsanitize=memory`): Checks for use of uninitialized memory
+- Thread sanitizer (`-fsanitize=thread`): Checks for data races
