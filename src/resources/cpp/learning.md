@@ -4,6 +4,11 @@
 
 - [The Definitive C++ Book Guide and List](https://stackoverflow.com/a/388282/5740428)
 
+## FAQs 
+
+- [ISO C++ FAQ](https://isocpp.org/faq)
+- [Bjarne Stroustrup's FAQ](https://www.stroustrup.com/bs_faq.html)
+
 ## Blogs
 
 - [ModernCpp](https://www.modernescpp.com/index.php/blog/)
