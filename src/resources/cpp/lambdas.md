@@ -5,13 +5,44 @@
 Lambdas are similar to functions; however, they are not identical. Specifically, they are
 [closures](<https://en.wikipedia.org/wiki/Closure_(computer_programming)>).
 
-if they are similar to functions one might ask why would I ever need a lambda? For example, algorithms in the standard
-library can often have their behavior changed using something callable. Creating a whole function is often excessive,
-and we use lambdas instead:
+In the following example a lambda is shown with a matching function.
 
-`int non_a_amount = std::ranges::count_if("abcaabbac", [](char c) { return c != 'a'; });`
+```cpp
+#include <iostream>
 
-This counts all results where the lambda returns true, in this case if the latter is not 'a'.
+void say_a()
+{
+    std::cout << "a" << "\n";
+}
+
+int main()
+{
+    auto say_b = [](){
+        std::cout << "b" << "\n";
+    };
+
+    say_a(); // prints a
+    say_b(); // prints b
+}
+
+```
+
+As is visible from the above code snippet a lot of the syntax of functions is shared with lambdas. Where lambdas shine
+is when used in algorithms. In the standard library there are algorithms that can have their behavior changed using
+something callable. Creating a whole function is often excessive, and we use lambdas instead:
+
+```cpp
+// A lambda that checks if the passed in letter is not equal to a.
+auto a_checker = [](char c) {
+    return c != 'a';
+    };
+
+
+// the function count_if is used together with the lambda a_checker to get the count of all letters that are not a.
+int non_a_amount = std::ranges::count_if("abcaabbac", a_checker);`
+```
+
+This code sample counts all cases where the lambda returns true, in this case if the latter is not 'a'.
 
 Another example is where we want to print each value in an array:
 
