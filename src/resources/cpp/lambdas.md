@@ -2,7 +2,7 @@
 
 ## What is a lambda?
 
-Lambdas are similar to functions, however they are not identical they specifically are
+Lambdas are similar to functions; however, they are not identical. Specifically, they are
 [closures](<https://en.wikipedia.org/wiki/Closure_(computer_programming)>).
 
 if they are similar to functions one might ask why would I ever need a lambda? For example, algorithms in the standard
@@ -48,8 +48,8 @@ A lambda consists of at least three parts:
 
 There are many further optional parts, but `[](){}` or `[]{}` are the bare minimum, depending on the language version.
 
-for a lambda the return type does not need to be specified like functions do. The return type is deduced by the
-compiler. However you can specify a trailing return type to the lambda.
+For a lambda, the return type does not need to be explicitly specified, unlike functions. The return type is deduced by
+the compiler. However, you may specify a trailing return type to the lambda explicitly.
 
 ```cpp
 // This lambda return an interger value
@@ -57,7 +57,7 @@ compiler. However you can specify a trailing return type to the lambda.
     return 5;
 };
 
-// ``equivalent to the following lambda
+// equivalent to the following lambda
 [](){
     return 5;
 };
@@ -73,14 +73,14 @@ For example `[](int a, int b){}` is a lambda that takes in 2 integer values.
 
 ### body `{}`
 
-The lambda body is the exact same as the body of the function. It's hold the code that the lambda will execute when it's
-invoked.
+The lambda body is the exact same as the body of the function. The body contains all the code that will be executed when
+the lambda is invoked.
 
 ### Capture list
 
-As the name implies, the capture list allows us to capture values into the lambda as it's constructed. Unlike the
-parameters where we specify which values we want to pass in when we invoke the lambda. This tends to be particularly
-common when you want to bring external state into a generic algorithm.
+As the name implies, the capture list allows us to capture values as the lambda is constructed. Unlike the parameters
+where we specify which values we want to pass in when we invoke the lambda. This tends to be particularly common when
+you want to bring external state into a generic algorithm.
 
 Take for example a simple program where you want to multiply every number with a number the user provides.
 
@@ -97,7 +97,7 @@ int main()
     int multiply_number = 0;
     std::cin >> multiply_number;
 
-    // Here we declare a local lambda object. We capture the variable multiply_number so it can be used in the lambda. We return the value of the passed in value with multiply_number.
+    // Here we declare a lambda object. The lambda capture the variable multiply_number so it can be used in the lambda. The lambda return the value of the passed in value with multiply_number.
     auto func = [multiply_number](const int& n) {
         return n * multiply_number;
     };
