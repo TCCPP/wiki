@@ -55,14 +55,14 @@ int main()
 {
     std::vector<int> v{3, -4, 2, -8, 15, 267};
 
-    // Here we declare a local lambda object, called print
+    // Here is a lambda object, called print
     auto print = [](const int& n) { std::cout << n << '\n'; };
 
-    // Here we use this lambda object in the algorithm for each, where the lambda will be called for each
+    // Here this lambda object in used the algorithm for each, where the lambda will be called for each
     // iteration and print the value in the vector.
     std::for_each(v.cbegin(), v.cend(), print);
 
-    // As a lambda is similar to a function we can also call it like a function. This will print 5
+    // As a lambda is similar to a function, it can also be called it like a function. This will print 5
     print(5);
 
     return 0;
@@ -80,7 +80,7 @@ A lambda consists of at least three parts:
 There are many further optional parts, but `[](){}` or `[]{}` are the bare minimum, depending on the language version.
 
 For a lambda, the return type does not need to be explicitly specified, unlike functions. The return type is deduced by
-the compiler. However, you may specify a trailing return type to the lambda explicitly.
+the compiler. However trailing return type may be added to the lambda explicitly.
 
 ```cpp
 // This lambda return an interger value
@@ -97,8 +97,8 @@ the compiler. However, you may specify a trailing return type to the lambda expl
 
 ### Parameters `()`
 
-The parameter part of a lambda is the exact same as the parameter list of a function. Here you specify the inputs of
-your lambda.
+The parameter part of a lambda is the exact same as the parameter list of a function. Here inputs of the lambda are
+specified.
 
 For example `[](int a, int b){}` is a lambda that takes in 2 integer values.
 
@@ -109,11 +109,11 @@ the lambda is invoked.
 
 ### Capture list
 
-As the name implies, the capture list allows us to capture values as the lambda is constructed. Unlike the parameters
-where we specify which values we want to pass in when we invoke the lambda. This tends to be particularly common when
-you want to bring external state into a generic algorithm.
+As the name implies, the capture list allows values to be captured as the lambda is constructed. Unlike the parameters
+where we specify which values that are passed in when the lambda is invoked. This tends to be particularly common when
+external state is needed in a generic algorithm.
 
-Take for example a simple program where you want to multiply every number with a number the user provides.
+Take for example a simple program where every number is multiplied with a number the user provides.
 
 ```cpp
 #include <algorithm>
@@ -128,21 +128,21 @@ int main()
     int multiply_number = 0;
     std::cin >> multiply_number;
 
-    // Here we declare a lambda object. The lambda capture the variable multiply_number so it can be used in the lambda. The lambda return the value of the passed in value with multiply_number.
+    // Here a lambda object is declared. The lambda capture the variable multiply_number so it can be used in the lambda. The lambda return the value of the passed in value with multiply_number.
     auto func = [multiply_number](const int& n) {
         return n * multiply_number;
     };
 
-    // Here we use this lambda object in the algorithm transform. This algorithm takes a ranges to iterate over, an output destination (the begin of the same vector in this case) and the predicate (our lambda)
+    // Here the lambda object in used in the algorithm transform. This algorithm takes a ranges to iterate over, an output destination (the begin of the same vector in this case) and the predicate (our lambda)
     std::transform(v.cbegin(), v.cend(), v.begin(), func);
 
     return 0;
 }
 ```
 
-You might have noticed that the lambda uses the same variable name inside the lambda as declared in main. These are
-actually not the same variables. The multiply_number in the lambda is a copy of the original in main. you can modify the
-above example like this to give the variable a different name if so desired.
+As is visible above have noticed that the lambda uses the same variable name inside the lambda as declared in main.
+These are actually not the same variables. The multiply_number in the lambda is a copy of the original in main. The
+example can be modified like this to give the variable a different name if so desired.
 
 ```cpp
 auto func = [num = multiply_number](const int& n) {
@@ -150,10 +150,10 @@ auto func = [num = multiply_number](const int& n) {
 };
 ```
 
-Here we make a copy of multiply_number called num, we do not need to specify the type here.
+Here a copy is made of multiply_number called num. The type does not need to be specified here.
 
-Making a copy of a value might be undesirable and if wanted we can also capture the variable as a reference. Now no copy
-is made of multiply_number.
+Making a copy of a value might be undesirable and thus it's also possible to capture the variable as a reference. Now no
+copy is made of multiply_number.
 
 ```cpp
 auto func = [&multiply_number](const int& n) {
@@ -161,7 +161,7 @@ auto func = [&multiply_number](const int& n) {
 };
 ```
 
-You can mix this syntax to capture multiple variables.
+This syntax can be mixed to capture multiple variables.
 
 ```cpp
 int a = 1;
@@ -172,11 +172,11 @@ auto func = [a, &b, d = c](const int& n) {
 };
 ```
 
-Here we capture `a` by value, `b` as a reference and `c` as a copy into the variable `d` in the lambda.
+Here `a` is captured by value, `b` as a reference and `c` as a copy into the variable `d` in the lambda.
 
-As you noticed the list here is getting rather long. Luckily we have some special values that can help us keep the
-lambda small. We have `=` that captures all used variables in the lambda by value. and `&` that captures all variables
-as a reference.
+As is visible the capture list here is getting rather long. Luckily there are some special values that can help keep the
+lambda small. `=` Can be used captures all used variables in the lambda by value, and `&` captures all variables as a
+reference.
 
 ```cpp
 int a = 1;
@@ -194,8 +194,8 @@ auto func2 = [&](const int& n) {
 };
 ```
 
-You can also mix this with the syntax you learned above to capture specifically by reference or value. So for example by
-default we make a copy except the specific value we capture as a reference.
+This can also be mixed with the syntax learned above to capture specifically by reference or value. So for example by
+default a copies can be made except the specific value that is captured as a reference.
 
 ```cpp
 int a = 1;
@@ -210,9 +210,10 @@ auto func = [=, &c](const int& n) {
 
 ## `this` keyword
 
-The lambda has 1 additional special keyword called `this` you might be familiar with this keyword if you have worked
-with classes. For lambdas however the meaning is slightly different. By specifying this into the lambda capture list you
-give it access to the class variables as if it where part of the parent class itself. even private variables.
+The lambda has 1 additional special keyword called `this`. This keyword might sound familiar with this keyword if you
+have worked with classes before. For lambdas however the meaning is slightly different. By specifying this into the
+lambda capture list the lambda is given access to the class variables as if it where part of the parent class itself.
+That also means even private variables can be accessed.
 
 ```cpp
 #include <iostream>
@@ -225,7 +226,7 @@ class Foo
     public:
     void func(){
         auto lambda = [this](){
-            // notice how we can access the private member a here!
+            // notice how the lambda can access the private member a here!
             std::cout << a << "\n";
         };
 
@@ -241,7 +242,7 @@ int main(){
 }
 ```
 
-You can capture additional variables as well with the same rules as described in the previous chapter.
+Additional variables can be captured as well with the same rules as described in the previous chapter.
 
 ```cpp
 #include <iostream>
@@ -258,7 +259,7 @@ class Foo
 
         // b is captured as a copy, and c is captured by reference.
         auto lambda = [this, b, &c](){
-            // notice how we can access the private member a here! as well as the local variable b and c
+            // notice how the lambda can access the private member a here! as well as the local variable b and c
             std::cout << a << " " << b << " " << c << "\n";
         };
 
