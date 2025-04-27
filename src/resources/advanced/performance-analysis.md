@@ -35,3 +35,8 @@
   - Tip: Select `llvm-mca` as well as `uiCA` and also select "Trace Table"
 - [uiCA's instruction table](https://uops.info/table.html)
 - [llvm-mca tool on Compiler Explorer](https://godbolt.org/z/q5n5KdEe9)
+
+## General
+
+- [Algorithms for Modern Hardware](https://en.algorithmica.org/hpc/): An extensive resource covering various algorithmic
+  topics and optimizations of various algorithms.

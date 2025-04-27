@@ -14,6 +14,10 @@
 - [ModernCpp](https://www.modernescpp.com/index.php/blog/)
 - [C++ Stories](https://www.cppstories.com/)
 
+## Cheat Sheets
+
+- [hackingcpp](https://hackingcpp.com/index.html)
+
 ## Talks
 
 - [CppCon](https://www.youtube.com/@CppCon/videos)
