@@ -38,14 +38,14 @@ test for different scenarios. Main features of a debugger are:
 ### Debugging with Visual Studio Code
 
 Debugging in Visual Studio Code can be done with the use of a microsoft extension. This extension uses GDB as it's
-backend. [See tutorial for more information.](https://code.visualstudio.com/docs/cpp/config-linux#_debug-helloworldcpp)
+backend. [See tutorial for more information.](https://code.visualstudio.com/docs/cpp/config-linux)
 
 ### Debugging with Visual Studio
 
 Visual studio provides a debugger out of the box.
-[See tutorial for more information.](https://learn.microsoft.com/en-us/visualstudio/debugger/quickstart-debug-with-cplusplus?view=vs-2022#edit-code-and-continue-debugging)
+[See tutorial for more information.](https://learn.microsoft.com/en-us/visualstudio/debugger/quickstart-debug-with-cplusplus?view=vs-2022)
 
 ### Debugging with Clion
 
 Clion debugger uses GDB or LLDB as it's backend.
-[See tutorial for more information.](https://www.jetbrains.com/help/clion/debugging-code.html#useful-debugger-shortcuts)
+[See tutorial for more information.](https://www.jetbrains.com/help/clion/debugging-code.html)
