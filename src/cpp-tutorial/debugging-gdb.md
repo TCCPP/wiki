@@ -1,11 +1,10 @@
 # GNU Debugger
 
-GNU debugger (GDB) is one of the most used debuggers today with many frontends and adapters. GDB falls under the
-category of free and open source software. It is licensed under the GPL license which means that you use GDB for any
-purpose (including commercial use).
+The GNU Debugger (GDB) is one of the most widely used debuggers today, with numerous frontends and adapters available.
+GDB is freely available under the GPLv3 license.
 
 - [See the official documentation](https://www.sourceware.org/gdb/documentation/)
-- [See a video tutorial](https://www.youtube.com/watch?v=bSEW0BvMiGc)
+- [See a TCCPP video tutorial](https://www.youtube.com/watch?v=bSEW0BvMiGc)
 
 ## GDB Quickstart
 
@@ -75,38 +74,68 @@ gdb executable.file
 - `display` - prints value of expression each time the program stops
 - `backtrace, where, bt` - prints backtrace of all stack frames
 
+### Info
+
+- `info locals` - print all local variables (within the current stack frame)
+- `info registers` - print registers and their values
+- `info breakpoints` - print status of all set breakpoints
+- `info watchpoints` - print status of all set breakpoints
+
 ## Example
 
-### Example source code
+### Source code
 
 ```cpp:line-numbers
 int main() {
     int var = 123;
     int *pvar = &var;
-    void *hello = "Hello, World!";
+    const void *hello = "Hello, GDB!";
     int sum[10] = {};
     for(int i = 1; i < 10; ++i) {
         sum[i] = sum[i-1] + i;
     }
+    return 0;
 }
 ```
 
 ### Terminal commands
 
 ```bash
-g++ main.cpp -o main.out -O0 -g # Compile
-gdb main.out -q --tui           # Start a debugger
-(gdb) break 6                   # Set a breakpoint on line 6
-(gdb) run                       # Start execution of the program
-(gdb) print var                 # Print the value of var
-(gdb) print *pvar               # Dereference pvar and print
-(gdb) print (char*) hello       # Cast the void* to char* and print its value
-(gdb) watch sum                 # Sets a watchpoint
-(gdb) continue                  # Next iteration
-(gdb) info breakpoints          # Prints all breakpoints
-(gdb) delete breakpoints 2      # Deletes the watchpoint
-(gdb) break 8                   # Set a breakpoint on line 8 (after the for loop)
-(gdb) info locales              # Prints local variables
-(gdb) continue                  # Continue until the end
-(gdb) quit                      # Quit GDB
+g++ main.cpp -o main.out -O0 -g
+gdb main.out -q
+Reading symbols from main.out...
+(gdb) list
+1       int main() {
+2           int var = 123;
+3           int *pvar = &var;
+4           const void *hello = "Hello, GDB!";
+5           int sum[10] = {};
+6           for(int i = 1; i < 10; ++i) {
+7               sum[i] = sum[i-1] + i;
+8           }
+9           return 0;
+10      }
+(gdb) break 9
+Breakpoint 1 at 0x123456: file main.cpp, line 9.
+(gdb) run
+Starting program: /path/to/executable.out
+
+Breakpoint 1, main () at main.cpp:9
+9           return 0;
+(gdb) print var
+$1 = 123
+(gdb) print pvar
+$2 = (int *) 0x123456789ABC
+(gdb) print *pvar
+$3 = 123
+(gdb) print hello
+$4 = (const void *) 0x123456
+(gdb) print (char*) hello
+$5 = 0x123456 "Hello, World!"
+(gdb) print sum
+$6 = {0, 1, 3, 6, 10, 15, 21, 28, 36, 45}
+(gdb) continue
+Continuing.
+[Inferior 1 (process process_id) exited normally]
+(gdb) quit
 ```
