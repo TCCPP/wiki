@@ -100,7 +100,7 @@ int main() {
 
 ### Terminal commands
 
-```bash
+```
 g++ main.cpp -o main.out -O0 -g
 gdb main.out -q
 Reading symbols from main.out...
