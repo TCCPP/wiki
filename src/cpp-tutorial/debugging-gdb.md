@@ -125,7 +125,7 @@ Breakpoint 1, main () at main.cpp:9
 (gdb) print var
 $1 = 123
 (gdb) print pvar
-$2 = (int *) 0x123456789ABC
+$2 = (int *) 0x123456789abc
 (gdb) print *pvar
 $3 = 123
 (gdb) print hello
