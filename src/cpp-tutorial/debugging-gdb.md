@@ -81,9 +81,17 @@ gdb executable.file
 - `info breakpoints` - print status of all set breakpoints
 - `info watchpoints` - print status of all set breakpoints
 
-## Example
 
-### Source code
+## Printing
+
+Inspecting the program's state at specific points in one of the core features of a debugger. The `print` command
+(abbreviated `p`, alias `inspect`) is used for displaying the value of an expression in GDB.
+
+```
+(gdb) print expr
+```
+
+Example of printing some of the basic variables.
 
 ```cpp:line-numbers
 int main() {
@@ -98,44 +106,47 @@ int main() {
 }
 ```
 
-### Terminal commands
+Let's set a breakpoint `break` (abbreviated `b`) after all of the variables have been set and run the program.
 
 ```
-g++ main.cpp -o main.out -O0 -g
-gdb main.out -q
-Reading symbols from main.out...
-(gdb) list
-1       int main() {
-2           int var = 123;
-3           int *pvar = &var;
-4           const void *hello = "Hello, GDB!";
-5           int sum[10] = {};
-6           for(int i = 1; i < 10; ++i) {
-7               sum[i] = sum[i-1] + i;
-8           }
-9           return 0;
-10      }
-(gdb) break 9
+(gdb) b 9
 Breakpoint 1 at 0x123456: file main.cpp, line 9.
 (gdb) run
 Starting program: /path/to/executable.out
 
 Breakpoint 1, main () at main.cpp:9
 9           return 0;
+```
+
+Basic use case of the print command:
+
+```
 (gdb) print var
 $1 = 123
+```
+
+Printing pointers and pointer dereferencing:
+
+```
 (gdb) print pvar
 $2 = (int *) 0x123456789abc
 (gdb) print *pvar
 $3 = 123
+```
+
+Casting of a void pointer to a char pointer:
+
+```
 (gdb) print hello
 $4 = (const void *) 0x123456
 (gdb) print (char*) hello
 $5 = 0x123456 "Hello, World!"
+```
+
+GDB supports printing out arrays:
+
+```
 (gdb) print sum
 $6 = {0, 1, 3, 6, 10, 15, 21, 28, 36, 45}
-(gdb) continue
-Continuing.
-[Inferior 1 (process process_id) exited normally]
-(gdb) quit
+```
 ```
