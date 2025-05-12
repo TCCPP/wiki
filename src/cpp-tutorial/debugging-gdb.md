@@ -203,4 +203,3 @@ GDB supports printing out arrays:
 (gdb) print sum
 $6 = {0, 1, 3, 6, 10, 15, 21, 28, 36, 45}
 ```
-```
