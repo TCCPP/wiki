@@ -81,6 +81,60 @@ gdb executable.file
 - `info breakpoints` - print status of all set breakpoints
 - `info watchpoints` - print status of all set breakpoints
 
+## Hello GDB
+
+Lets start with the obligatory hello world example:
+
+```cpp:line-numbers
+#include <iostream>
+int main() {
+    std::cout << "Hello, GDB!";
+    return 0;
+}
+```
+
+Compile the source code using GCC with debug symbols enabled. Launch GDB (`-q` - quiet mode. GDB does not display the
+initial message).
+
+```
+g++ main.cpp -o main.out -O0 -g
+gdb main.out -q
+Reading symbols from main.out...
+```
+
+Now you should be inside of GDB. Each line should should start with `(gdb) `. First lets start the execution of the
+program `start`:
+
+```
+(gdb) start
+Temporary breakpoint 1 at 0x123456: file main.cpp, line 3.
+Starting program: /file/path/to/main.out
+
+Temporary breakpoint 1, main () at main1.cpp:3
+3           std::cout << "Hello, GDB!" << std::endl;
+```
+
+Step a line `next` (abbreviated `n`):
+
+```
+(gdb) n
+Hello, GDB!
+4           return 0;
+```
+
+Continue the program `continue [N]` (abbreviated `c`, optionally number of breakpoints to skip `N` can be specified):
+
+```
+(gdb) c
+Continuing.
+[Inferior 1 (process process_id) exited normally]
+```
+
+Quit GDB `quit` (abbreviated `q`).
+
+```
+(gdb) q
+```
 
 ## Printing
 
