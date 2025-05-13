@@ -29,6 +29,11 @@ test for different scenarios. Main features of a debugger are:
 - Examine core dump files
 - Modifying the state of the program
 
+## What is a Debug Adapter Protocol
+
+Debug Adapter Protocol (DAP) is a communication protocol between debuggers and other development tools (e.g., IDEs,
+editors). [Official Documentation](https://microsoft.github.io/debug-adapter-protocol/)
+
 ## Debuggers
 
 - GNU Debugger (GDB) - often used with GCC compiler

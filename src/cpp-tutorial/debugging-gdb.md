@@ -143,6 +143,7 @@ Inspecting the program's state at specific points in one of the core features of
 
 ```
 (gdb) print expr
+(gdb) p expr
 ```
 
 Example of printing some of the basic variables.
@@ -175,31 +176,31 @@ Breakpoint 1, main () at main.cpp:9
 Basic use case of the print command:
 
 ```
-(gdb) print var
+(gdb) p var
 $1 = 123
 ```
 
 Printing pointers and pointer dereferencing:
 
 ```
-(gdb) print pvar
+(gdb) p pvar
 $2 = (int *) 0x123456789abc
-(gdb) print *pvar
+(gdb) p *pvar
 $3 = 123
 ```
 
 Casting of a void pointer to a char pointer:
 
 ```
-(gdb) print hello
+(gdb) p hello
 $4 = (const void *) 0x123456
-(gdb) print (char*) hello
+(gdb) p (char*) hello
 $5 = 0x123456 "Hello, World!"
 ```
 
 GDB supports printing out arrays:
 
 ```
-(gdb) print sum
+(gdb) p sum
 $6 = {0, 1, 3, 6, 10, 15, 21, 28, 36, 45}
 ```
