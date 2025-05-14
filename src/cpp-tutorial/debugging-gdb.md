@@ -89,7 +89,7 @@ Lets start with the obligatory hello world example:
 #include <iostream>
 int main() {
     std::cout << "Hello, GDB!";
-    return 0;
+    return 0; /* break here */
 }
 ```
 
@@ -157,7 +157,7 @@ int main() {
     for(int i = 1; i < 10; ++i) {
         sum[i] = sum[i-1] + i;
     }
-    return 0;
+    return 0; /* break here */
 }
 ```
 
