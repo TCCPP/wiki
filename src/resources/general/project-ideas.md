@@ -105,6 +105,7 @@ is meant to be a source of inspiration rather than a list of projects to make.
 ## Scientific Computing and Simulation
 
 - [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+- [Rule 110](https://en.wikipedia.org/wiki/Rule_110) 
 - Electrical circuit simulator
 - Simulate collisions of a bunch of balls
 - N-body simulation
