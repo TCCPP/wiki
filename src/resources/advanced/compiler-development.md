@@ -11,6 +11,11 @@ This is a collection of resources on compiler construction, programming language
 - [LLVM's Kaleidoscope Tutorial](https://llvm.org/docs/tutorial/) An intro to building a language using LLVM.
 - [_Compilers: Principles, Techniques, and Tools_](https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd/dp/0321486811)
   (The Dragon Book) Classic, parser-heavy, and theoretical.
+- [_Advanced Compiler Design and Implementation_](https://www.amazon.com/Advanced-Compiler-Design-Implementation-Muchnick/dp/1558603204) More implementation-focused than Dragon Book, excellent for advanced optimizations techniques and compiler constructions.
+- [_SSA-based Compiler Design_](https://link.springer.com/book/10.1007/978-3-030-80515-9) Introduces Static Single Assignment form and modern intermediate representations.
+- [_Linkers and Loaders_](https://www.amazon.com/Linkers-Loaders-Kaufmann-Software-Engineering/dp/1558604960) An essential for understanding the complete toolchain beyond compilation.
+- [_Modern Compiler Implementation in Java/ML/C_](https://www.cs.princeton.edu/~appel/modern/) Good progression from compiler frontend to backend.
+- [_Parsing Techniques_](https://link.springer.com/book/10.1007/978-0-387-68954-8) Huge survey of parsing algorithms and techniques beyond what is covered in Dragon Book.
 
 ## Programming Language Design
 
