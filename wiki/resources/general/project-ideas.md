@@ -160,8 +160,8 @@ is meant to be a source of inspiration rather than a list of projects to make.
 
 - CSV parser
 - Create a simple interpreter or compiler
-  - Also check out out list of [Compiler Development Resources](../advanced/compiler-development.md)
   - Check out [Crafting Interpreters](https://craftinginterpreters.com/contents.html) for a great tutorial on relevant 
+  - Also check out out list of [Compiler Development Resources](../advanced/compiler-development.md)
 	concepts
 - JSON parser
 - Lisp interpreter
