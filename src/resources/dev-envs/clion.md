@@ -2,6 +2,12 @@
 
 CLion is a commercial IDE from JetBrains. You can download CLion [here](https://www.jetbrains.com/clion/download).
 
+::: info
+
+CLion is now free for non-commercial use!
+
+:::
+
 During installation, tick the "Add bin folder to PATH" and "Add Open Folder as Project" options. After completing the
 installation, you should be prompted to log into your JetBrains account.
 

@@ -42,8 +42,8 @@ const sidebar = [
                         link: "/cpp-tutorial/debugging#what-is-a-debugger",
                     },
                     {
-                        text: "Debugger Fundamentals",
-                        link: "/cpp-tutorial/debugging#debugger-fundamentals",
+                        text: "GNU Debugger",
+                        link: "/cpp-tutorial/debugging-gdb",
                     },
                 ],
                 collapsed: true,
