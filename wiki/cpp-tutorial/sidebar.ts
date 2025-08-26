@@ -47,7 +47,7 @@ const sidebar = [
                     },
                     {
                         text: "CLion Debugger",
-                        link: "/cpp-tutorial/debugging-clion"
+                        link: "/cpp-tutorial/debugging-clion",
                     },
                 ],
                 collapsed: true,
