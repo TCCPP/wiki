@@ -101,8 +101,8 @@ not on the second function call.
 
 ## The call stack
 
-Sometimes you want to know where a function was called from. The call stack shows you all the functions that were called to
-reach the current line.
+Sometimes you want to know where a function was called from. The call stack shows you all the functions that were called
+to reach the current line.
 
 Let's use this example code:
 
