@@ -76,7 +76,7 @@ value only occurs once every thousand calls or so. This is where conditional bre
 
 ```cpp
 int foo(int x) {
-    return 5 / x;
+    return 5 / (x - 3);
 }
 
 
