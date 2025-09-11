@@ -107,7 +107,7 @@ to reach the current line.
 Let's use this example code:
 
 ```cpp
-#include <print>
+#include <print> //C++23 feature
 
 void myFunction() {
     std::println("print");
@@ -159,7 +159,7 @@ In CLion's debugger, you can evaluate expressions at runtime with the values at 
 Let's see an example. Put a breakpoint on the single line in `myFunction`!
 
 ```cpp
-#include <print>
+#include <print> //C++23 feature
 
 struct Foo{
     int x;
