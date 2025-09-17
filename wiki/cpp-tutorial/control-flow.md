@@ -4,32 +4,35 @@ wip: true
 
 # Control Flow
 
-## What is Control Flow?
-
 Control flow is the order in which instructions are executed in a program. You can specify the control flow of a program
 by using control flow statements. Without these statements program will execute every instruction one after another
 (sequentially).
 
-| Type of control flow    | Type of statement     |
-| ----------------------- | --------------------- |
-| Sequential              | (By default)          |
-| Jump                    | goto, break, continue |
-| Branching (Conditional) | if-else, switch       |
-| Looping (Iterative)     | for-loop, while-loop  |
+| Type of control flow statements | Statements            |
+| ------------------------------- | --------------------- |
+| Conditional                     | if-else, switch       |
+| Loop (Iteration)                | for-loop, while-loop  |
+| Jump                            | goto, break, continue |
 
-## Branches
+:::info Block / Statement
 
-Branching in programming means executing different sets instructions (branches) based on some condition. This condition
-is any expression that evaluates to a boolean.
+Block `{...}` groups a sequence of statements into a single statement, creating a block scope.
+
+:::
+
+## Conditional Statements
+
+Conditional statements (also known as branching statements or selection statements) allow you to execute different sets
+instructions (branches of code) based on some condition. This condition is any expression that evaluates to a boolean
+(`true` or `false`).
 
 ### If Statement
 
-If statement runs a block of code if the condition is `true` (execution jumps to the end of the if-statement if
-condition is `false`).
+If statement executes a substatement if the condition is `true`.
 
 ```cpp
 if(condition) {
-    // block of code executed if condition is true
+    /* block executed if condition is true */
 }
 ```
 
@@ -38,19 +41,19 @@ pay the regular price):
 
 ```cpp
 if(eligibleForDiscount) {
-    price *= 0.75; // apply discount of 15%
+    price *= 0.75; /* apply discount of 15% */
 }
 ```
 
 ### If Statement With an Else Branch
 
-Else statement runs a block of code if condition is `false`. Else statement always goes after the if statement.
+Else statement executes a substatement if condition is `false`. Else statement always goes after the if statement.
 
 ```cpp
 if(condition) {
-    // block of code executed if condition is true (if block)
+    /* block executed if condition is true */
 } else {
-    // block of code executed if condition is false (else block)
+    /* block executed if condition is false */
 }
 ```
 
@@ -64,19 +67,20 @@ int main() {
     std::cout << "Enter a number: ";
     std::cin >> number;
 
-    if(number % 2 == 0) { // if the remainder of division by 2 is equal to 0
+    /* if the remainder of division by 2 is equal to 0 */
+    if(number % 2 == 0) {
         std::cout << "Number is even";
-    } else { // number % 2 == 1
+    } else { /* number % 2 == 1 */
         std::cout << "Number is odd";
     }
 }
 ```
 
-Braces are optional. You don't have to use `{...}` when writing if-else statements but it is highly recommended.
+Braces are optional. You don't have to use `{...}` (block) when writing if-else statements but it is highly recommended.
 
 ```cpp
-if(condition) /* if block */;
-else /* else block */;
+if(condition) /* if statement */;
+else /* else statement */;
 ```
 
 Example of confusing indentation:
@@ -93,16 +97,16 @@ You can nest if statements. Most often you will see them nested using the `else 
 
 ```cpp
 if(condition_1) {
-    // 1st block
-    // condition_1 is true
+    /* 1st block */
+    /* condition_1 is true */
 } else if(condition_2) {
-    // 2nd block
-    // condition_1 is false
-    // condition_2 is true
+    /* 2nd block */
+    /* condition_1 is false */
+    /* condition_2 is true */
 } else {
-    // 3rd block
-    // condition_1 is false
-    // condition_2 is false
+    /* 3rd block */
+    /* condition_1 is false */
+    /* condition_2 is false */
 }
 ```
 
@@ -110,12 +114,12 @@ this is equivalent to:
 
 ```cpp
 if(condition_1) {
-    // 1st block
+    /* 1st block */
 } else {
     if(condition_2) {
-        // 2nd block
+        /* 2nd block */
     } else {
-        // 3rd block
+        /* 3rd block */
     }
 }
 ```
@@ -140,7 +144,101 @@ int main() {
 }
 ```
 
-## Looping
+## Loop Statements
+
+The loop statements allow you to execute the same instructions multiple times.
+
+### While Loop
+
+While loop keeps executing a statement while condition is `true`.
+
+```cpp
+while(condition) {
+    /* block */
+}
+```
+
+Example of printing numbers from 0 to 100 using a while loop:
+
+```cpp
+#include <iostream>
+
+int main() {
+    int n = 0;
+    while(n <= 100) {
+        std::cout << n << '\n';
+        ++n;
+    }
+}
+```
+
+Calculating factorial of a number:
+
+```cpp
+#include <iostream>
+
+int main() {
+    int fac = 1, num;
+    std::cout << "Enter a number: ";
+    std::cin >> num;
+
+    while(num) {
+        fac *= num;
+        --num;
+    }
+
+    std::cout << "The factorial of the number is: " << b;
+}
+```
+
+Calculating nth Fibonacci number:
+
+```cpp
+#include <iostream>
+
+int main() {
+    int a = 0, b = 1, n;
+    std::cout << "Enter a number: ";
+    std::cin >> n;
+
+    /* F(n + 2) = F(n + 1) + F(n) */
+    while(--n) {
+        int swap = b;
+        b += a;
+        a = swap;
+    }
+
+    std::cout << "The nth Fibonacci number is: " << b;
+}
+```
+
+### Do While Loop
+
+Do-while loop keeps executing a substatement while condition is `true`. Do-while loop is similar to while loop but it
+guarantees that the substatement gets executed at least once.
+
+```cpp
+do {
+    // block (executed at least once)
+} while(condition);
+```
+
+Example of code that prints out digits of of a number:
+
+```cpp
+#include <iostream>
+
+int main() {
+    int num;
+    std::cout << "Enter a number: ";
+    std::cin >> num;
+
+    do {
+        std::cout << num % 10 << '\n';
+        num /= 10;
+    } while(num != 0);
+}
+```
 
 Example of code that sums up user inputted numbers until user inputs `0`:
 
@@ -157,118 +255,34 @@ int main() {
 }
 ```
 
-### While Loop
-
-While loop keeps executing a block of code while condition is `true`. Condition gets checked at the start of the while
-statement and jumps to the end if condition is `false`.
-
-```cpp
-while(condition) {
-    // loop body
-}
-```
-
-:::info While loop is equivalent to
-
-```cpp
-LOOP_START:
-{
-    if (condition) {
-        // loop body
-        goto LOOP_START;
-    }
-}
-```
-
-:::
-
-Example of printing numbers from 0 to 100 using a while loop:
-
-```cpp
-#include <iostream>
-
-int main() {
-    int n = 0;
-    while(n <= 100) {
-        std::cout << n << '\n';
-        ++n;
-    }
-}
-```
-
-Calculating a factorial of a number:
-
-```cpp
-#include <iostream>
-
-int main() {
-    int number;
-    std::cin >> number;
-
-    int factorial = number;
-    while(--number) {
-        factorial *= number;
-    }
-
-    std::cout << "The factorial of " << number << "is " << factorial;
-}
-```
-
-### Do While Loop
-
-Do-while loop keeps executing a block of code while condition is `true`. Condition gets checked at the end of the
-do-while statement and the execution jumps to the start if condition is `true`.
-
-```cpp
-do {
-    // loop body (executed at least once)
-} while(condition);
-```
-
-:::info Do-While loop is equivalent to:
-
-```cpp
-LOOP_START:
-{
-    // loop body
-    if (condition) {
-        goto LOOP_START;
-    }
-}
-```
-
-:::
-
 ### For Loop
 
 For loop also keeps executing a block of code while condition is `true`. Init statement evaluates exactly once at the
-start. Expression gets always evaluated after the loop body.
+start. Expression gets always evaluated after the statement.
 
 ```cpp
 for(/* init-statement */; /* condition */; /* expression */) {
-    // loop body
+    /* block */
 }
 ```
 
-:::info For loop is equivalent to:
+For loop is equivalent to:
 
 ```cpp
 {
     /* init-statement */
     while (condition) {
-        /* loop body */
+        /* statement */
         /* expression */ ;
     }
 }
 ```
 
-:::
-
 This is a valid for loop that loops infinitely:
 
 ```cpp
 for(;;) {
-    // loop body
+    /* block */
 }
 ```
 
@@ -278,15 +292,14 @@ Example of printing numbers from 0 to 100 using a for loop:
 #include <iostream>
 
 int main() {
-    // declaration ; condition ; increment
     for(int i = 0; i <= 100; ++i) {
         std::cout << i << '\n';
     }
 }
 ```
 
-Example combining if-else statement and a for loop to play [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) game for
-the first 100 numbers.
+Example combining if-else statement and a for loop to play a word game called
+[FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) for the first 100 numbers.
 
 ```cpp
 #include <iostream>
@@ -307,6 +320,14 @@ int main() {
 }
 ```
 
-## Switches
+## Jump statements
+
+### Break Statement
+
+### Continue Statement
+
+### Goto Statement
+
+## Switch Statements
 
 ## Conditional Operator
