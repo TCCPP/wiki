@@ -144,8 +144,8 @@ have two functions. Click on the `bar` function on the call stack UI.
 
 ![stepping back on the call stack](/assets/debugging-clion/callstack-stepback.png)
 
-As you can see, you are now observing the state of the locals in the function `bar` right before it called `my_function`.
-This is useful to see what context a function was called from.
+As you can see, you are now observing the state of the locals in the function `bar` right before it called
+`my_function`. This is useful to see what context a function was called from.
 
 Let's resume the program to let it run and quit.
 
