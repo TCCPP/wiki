@@ -13,9 +13,7 @@ throughout the program.
 ```cpp
 int main(){
     int x = 5;
-
     x *= 3;
-
     return 0;
 }
 ```
@@ -79,7 +77,6 @@ int foo(int x) {
     return 5 / (x - 3);
 }
 
-
 int main(){
     [[maybe_unused]] int a = foo(3);
     [[maybe_unused]] int b = foo(5);
@@ -107,19 +104,19 @@ to reach the current line.
 Let's use this example code:
 
 ```cpp
-#include <print> //C++23 feature
+#include <print> // C++23 feature
 
-void myFunction() {
+void my_function() {
     std::println("print");
 }
 
 void foo() {
-    myFunction();
+    my_function();
 }
 
 void bar() {
     int x = 4;
-    myFunction();
+    my_function();
 }
 
 int main(){
@@ -159,22 +156,22 @@ In CLion's debugger, you can evaluate expressions at runtime with the values at 
 Let's see an example. Put a breakpoint on the single line in `myFunction`!
 
 ```cpp
-#include <print> //C++23 feature
+#include <print> // C++23 feature
 
-struct Foo{
+struct foo {
     int x;
     int someOp() {
         return x * 5;
     }
 };
 
-int myFunction(Foo f) {
+int myFunction(foo f) {
     return f.someOp() * 2;
 }
 
 int main(){
-    Foo f{3};
-    int value = myFunction(f);
+    foo f{3};
+    int value = my_function(f);
     std::print("{}", value);
     return 0;
 }
