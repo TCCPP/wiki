@@ -127,24 +127,24 @@ int main(){
 }
 ```
 
-Now place a breakpoint into the single line of `myFunction`.
+Now place a breakpoint into the single line of `my_function`.
 
 Now debug your program. The first time we hit a breakpoint, lets observe the call stack on the UI.
 
-![myFunction called from the function foo](/assets/debugging-clion/callstack-1.png)
+![my_function called from the function foo](/assets/debugging-clion/callstack-1.png)
 
-As you can see, the call stack shows that we first called `foo` from `main`, then called `myFunction` from foo.
+As you can see, the call stack shows that we first called `foo` from `main`, then called `my_function` from foo.
 
 Let's resume the program. You should see the second breakpoint being hit.
 
-![myFunction called from the function bar](/assets/debugging-clion/callstack-2.png)
+![my_function called from the function bar](/assets/debugging-clion/callstack-2.png)
 
-We can observe a similar situation as last time, but now `myFunction` is being called from `bar`, but this isn't why we
+We can observe a similar situation as last time, but now `my_function` is being called from `bar`, but this isn't why we
 have two functions. Click on the `bar` function on the call stack UI.
 
 ![stepping back on the call stack](/assets/debugging-clion/callstack-stepback.png)
 
-As you can see, you are now observing the state of the locals in the function `bar` right before it called `myFunction`.
+As you can see, you are now observing the state of the locals in the function `bar` right before it called `my_function`.
 This is useful to see what context a function was called from.
 
 Let's resume the program to let it run and quit.
@@ -153,7 +153,7 @@ Let's resume the program to let it run and quit.
 
 In CLion's debugger, you can evaluate expressions at runtime with the values at the current line.
 
-Let's see an example. Put a breakpoint on the single line in `myFunction`!
+Let's see an example. Put a breakpoint on the single line in `my_function`!
 
 ```cpp
 #include <print> // C++23 feature
@@ -165,7 +165,7 @@ struct foo {
     }
 };
 
-int myFunction(foo f) {
+int my_function(foo f) {
     return f.someOp() * 2;
 }
 
