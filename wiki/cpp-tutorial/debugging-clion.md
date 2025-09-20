@@ -185,7 +185,7 @@ column.
 
 As you can see, the expression evaluates to 15, as it should.
 
-::: note
+::: warning
 
 The code you evaluate actually runs and side effects can act weirdly when using this feature. Only use this to test
 calculations with no side effects or state changes!
