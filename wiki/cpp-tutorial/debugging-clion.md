@@ -160,13 +160,13 @@ Let's see an example. Put a breakpoint on the single line in `my_function`!
 
 struct foo {
     int x;
-    int someOp() {
+    int some_op() {
         return x * 5;
     }
 };
 
 int my_function(foo f) {
-    return f.someOp() * 2;
+    return f.some_op() * 2;
 }
 
 int main(){
@@ -177,11 +177,17 @@ int main(){
 }
 ```
 
-Here, we can't observe the return value of `f.someOp()`, because it isn't a local variable, it is a member function that
+Here, we can't observe the return value of `f.some_op()`, because it isn't a local variable, it is a member function that
 has to be ran to be evaluated. Here, we can use the "Evaluate expression" box at the top of the local variable column.
 
 ![Evaluated expression in CLion's debugger](/assets/debugging-clion/evaluate-expression.png)
 
-As you can see, the expression evaluates to 15, as it should. Note that the code you evaluate actually runs and side
+As you can see, the expression evaluates to 15, as it should. 
+
+::: note
+
+Note that the code you evaluate actually runs and side
 effects can act weirdly when using this feature. Only use this to test calculations with no side effects or state
 changes!
+
+:::
