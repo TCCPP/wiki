@@ -177,17 +177,17 @@ int main(){
 }
 ```
 
-Here, we can't observe the return value of `f.some_op()`, because it isn't a local variable, it is a member function that
-has to be ran to be evaluated. Here, we can use the "Evaluate expression" box at the top of the local variable column.
+Here, we can't observe the return value of `f.some_op()`, because it isn't a local variable, it is a member function
+that has to be ran to be evaluated. Here, we can use the "Evaluate expression" box at the top of the local variable
+column.
 
 ![Evaluated expression in CLion's debugger](/assets/debugging-clion/evaluate-expression.png)
 
-As you can see, the expression evaluates to 15, as it should. 
+As you can see, the expression evaluates to 15, as it should.
 
 ::: note
 
-Note that the code you evaluate actually runs and side
-effects can act weirdly when using this feature. Only use this to test calculations with no side effects or state
-changes!
+The code you evaluate actually runs and side effects can act weirdly when using this feature. Only use this to test
+calculations with no side effects or state changes!
 
 :::
