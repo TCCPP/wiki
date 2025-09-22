@@ -14,7 +14,7 @@ by using control flow statements. Without these statements program will execute 
 | Loop (Iteration)                | for-loop, while-loop  |
 | Jump                            | goto, break, continue |
 
-:::info Block / Statement
+:::info Block (Compound Statement)
 
 Block `{...}` groups a sequence of statements into a single statement, creating a block scope.
 
@@ -151,10 +151,11 @@ The loop statements allow you to execute the same instructions multiple times.
 ### While Loop
 
 While loop keeps executing a statement while condition is `true`.
+Condition gets re-evaluated every iteration (this is true for every type of the loop statement).
 
 ```cpp
 while(condition) {
-    /* block */
+    /* block (loop body) */
 }
 ```
 
@@ -219,7 +220,7 @@ guarantees that the substatement gets executed at least once.
 
 ```cpp
 do {
-    // block (executed at least once)
+    // block (loop body) executed at least once
 } while(condition);
 ```
 
@@ -262,7 +263,7 @@ start. Expression gets always evaluated after the statement.
 
 ```cpp
 for(/* init-statement */; /* condition */; /* expression */) {
-    /* block */
+    /* block (loop body) */
 }
 ```
 
@@ -282,7 +283,7 @@ This is a valid for loop that loops infinitely:
 
 ```cpp
 for(;;) {
-    /* block */
+    /* block (loop body) */
 }
 ```
 
@@ -324,10 +325,164 @@ int main() {
 
 ### Break Statement
 
+The break statement allows you to stop a loop early.
+Here is an example of a simple guessing game:
+
+```cpp
+#include <iostream>
+
+int main() {
+    int number = 1234;
+    int guess;
+    for(;;) { // infinite loop
+        std::cout << "Guess a number: ";
+        std::cin >> guess;
+        if(guess < number) {
+            std::cout << "Too low!\n";
+        } else if (guess > number) {
+            std::cout << "Too high!\n";
+        } else {
+            std::cout << "You guessed correctly!!!";
+            break;
+        }
+    }
+}
+```
+
 ### Continue Statement
+
+The continue statement allows you to skip the rest of the body.
+
+```cpp
+#include <iostream>
+
+int main() {
+    for(int i = 0; i < 100; ++i) {
+        if(i % 2 == 0) continue;
+        std::cout << i << '\n';
+    }
+}
+```
 
 ### Goto Statement
 
+Goto statement allows you to jump to a defined label.
+You can only jump to a label within the same function.
+Goto statements make code less readable and you should avoid using them.
+Here is a code equivalent of a while loop:
+
+```cpp
+LOOP_LABEL:
+if(condition) {
+    /* statement */
+    goto LOOP_LABEL;
+}
+```
+
+Jumping into an if statement:
+```cpp
+goto LABEL;
+if(false) {
+    LABEL:
+    std::cout << "This code gets executed!";
+} else {
+    std::cout << "This one doesn't!";
+}
+```
+
+Jump also cannot bypass variable initialization.
+This code is invalid and compiler should give you a compilation error:
+
+```cpp
+int main() {
+    goto LABEL;
+    int x = 0;
+    LABEL:
+    ++x;
+}
+```
+
 ## Switch Statements
 
+Switch statements are very similar to if else statements.
+Condition gets evaluated once and execution jumps to the appropriate label.
+Break statement allows you to jump to the end of the switch statement.
+There are two labels `case` and `default`.
+Case label needs to be followed by a constant expression.
+There can only be one default label.
+If none of the cases apply execution jumps to the end of the switch statement or the default label if specified.
+
+```cpp
+switch (condition)
+{
+case 1:
+    std::cout << "One";
+    break;
+case 2:
+    std::cout << "Two";
+    [[fallthrough]]; /* Attribute (optional - disables warnings) */
+case 3:
+    std::cout << "Three";
+    break;
+}
+default:
+    std::cout << "Too big!"
+```
+
+Example of a minimal calculator that takes in two numbers separated by one of `+-*/` operators.
+
+```cpp
+#include <iostream>
+#include <print> // C++23 feature
+
+int main() {
+    int x, y;
+    char op;
+    std::cout << "Enter number operator number";
+    std::cin >> x >> op >> y;
+
+    switch(op) {
+      case '+':
+          std::println("Sum: {} + {} = {}", x, y, x + y);
+          break;
+      case '-':
+          std::println("Difference: {} - {} = {}", x, y, x - y);
+          break;
+      case '*':
+          std::println("Product: {} * {} = {}", x, y, x * y);
+          break;
+      case '/':
+          std::println("Quotient (rounded down): {} / {} = {}", x, y, x / y);
+          break;
+      default:
+          std::println("Invalid operator!!!");
+    }
+}
+```
+
 ## Conditional Operator
+
+Conditional operators are ternary operators (operators taking in 3 operands).
+If second and third operands are of the same type, the result is of that type.  
+
+```cpp
+(condition) ? /* condition true */ : /* condition false */;
+```
+
+Here is an example of conditional operator usages:
+
+```cpp
+int main() {
+    int x, y;
+    std::cin >> x >> y;
+    int max = (x > y) ? x : y;
+    std::cout << "The maximum is: " << max << '\n';
+    std::cout << "The ordering is: " << ((x == y) ? "Equal to" : (x < y) ? "Less than" : "Greater than");
+}
+```
+
+::: info
+
+Stream insertion operator has precedence `<<` over the ternary operator `?:`
+
+:::
