@@ -40,6 +40,10 @@ const sidebar = [
                         text: "C++ Libraries",
                         link: "/resources/cpp/libraries",
                     },
+                    {
+                        text: "Copy Elision",
+                        link: "resources/cpp/Copy_elisions.md",
+                    },
                 ],
                 collapsed: true,
             },

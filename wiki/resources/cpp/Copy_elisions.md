@@ -8,9 +8,11 @@ This optimization allows you to write clean, readable code that returns objects 
 performance costs. What makes copy elision special is that starting with C++17, some forms of copy elision are
 **guaranteed** by the language standard.
 
-::: info What This Means for You Copy elision is formally defined in the C++ standard under
+::: info 
+What This Means for You Copy elision is formally defined in the C++ standard under
 [**copy elision**](https://en.cppreference.com/w/cpp/language/copy_elision). When it works, objects are constructed
-directly where they're needed, skipping any intermediate copying steps entirely. :::
+directly where they're needed, skipping any intermediate copying steps entirely. 
+:::
 
 ## A Brief History
 
@@ -551,8 +553,10 @@ clang++ -Rpass=copy-elision source.cpp
 cl /std:c++17 source.cpp
 ```
 
-::: tip Compiler Flag Note The `-fno-elide-constructors` flag only disables **optional** copy elision. In C++17 and
-later, **guaranteed** copy elision scenarios will still be optimized even with this flag. :::
+::: tip 
+Compiler Flag Note The `-fno-elide-constructors` flag only disables **optional** copy elision. In C++17 and
+later, **guaranteed** copy elision scenarios will still be optimized even with this flag. 
+:::
 
 ### Testing Copy Elision
 
@@ -711,7 +715,8 @@ allowing you to focus on expressing your intent clearly while trusting the compi
 - Return objects by value with confidence in modern C++
 - Avoid manual "optimizations" that prevent copy elision
 - Use diagnostic tools to verify that elision is working as expected
-- Leverage C++17's guaranteed elision for robust API design :::
+- Leverage C++17's guaranteed elision for robust API design 
+:::
 
 ## References
 
