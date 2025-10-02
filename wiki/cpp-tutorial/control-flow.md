@@ -1,7 +1,3 @@
----
-wip: true
----
-
 # Control Flow
 
 Control flow is the order in which instructions are executed in a program. You can specify the control flow of a program
@@ -23,12 +19,12 @@ Block `{...}` groups a sequence of statements into a single statement, creating 
 ## Conditional Statements
 
 Conditional statements (also known as branching statements or selection statements) allow you to execute different sets
-instructions (branches of code) based on some condition. This condition is any expression that evaluates to a boolean
+of instructions (branches of code) based on some condition. This condition is any expression that evaluates to a boolean
 (`true` or `false`).
 
-### If Statement
+### If-Statement
 
-If statement executes a substatement if the condition is `true`.
+If-statement executes a substatement if the condition is `true`.
 
 ```cpp
 if(condition) {
@@ -45,9 +41,9 @@ if(eligibleForDiscount) {
 }
 ```
 
-### If Statement With an Else Branch
+### If-Statement With an Else Branch
 
-Else statement executes a substatement if condition is `false`. Else statement always goes after the if statement.
+Else statement executes a substatement if condition is `false`. Else statement always goes after the if-statement.
 
 ```cpp
 if(condition) {
@@ -79,7 +75,7 @@ int main() {
 Braces are optional. You don't have to use `{...}` (block) when writing if-else statements but it is highly recommended.
 
 ```cpp
-if(condition) /* if statement */;
+if(condition) /* if-statement */;
 else /* else statement */;
 ```
 
@@ -87,13 +83,13 @@ Example of confusing indentation:
 
 ```cpp
 if(condition)
-    std::cout << "This expression executed only if condition is true.";
+    std::cout << "This expression is executed only if the condition is true.";
     std::cout << "This expression is always executed.";
 ```
 
-### Nested If Statements
+### Nested If-Statements
 
-You can nest if statements. Most often you will see them nested using the `else if` expression.
+You can nest if-statements. Most often you will see them nested using the `else if` expression.
 
 ```cpp
 if(condition_1) {
@@ -110,7 +106,7 @@ if(condition_1) {
 }
 ```
 
-this is equivalent to:
+this code is equivalent to:
 
 ```cpp
 if(condition_1) {
@@ -148,9 +144,9 @@ int main() {
 
 The loop statements allow you to execute the same instructions multiple times.
 
-### While Loop
+### while-loop
 
-While loop keeps executing a statement while condition is `true`. Condition gets re-evaluated every iteration (this is
+while-loop keeps executing a statement while condition is `true`. Condition gets re-evaluated every iteration (this is
 true for every type of the loop statement).
 
 ```cpp
@@ -159,7 +155,7 @@ while(condition) {
 }
 ```
 
-Example of printing numbers from 0 to 100 using a while loop:
+Example of printing numbers from 0 to 100 using a while-loop:
 
 ```cpp
 #include <iostream>
@@ -213,9 +209,9 @@ int main() {
 }
 ```
 
-### Do While Loop
+### Do while-loop
 
-Do-while loop keeps executing a substatement while condition is `true`. Do-while loop is similar to while loop but it
+Do-while-loop keeps executing a substatement while condition is `true`. Do-while-loop is similar to while-loop but it
 guarantees that the substatement gets executed at least once.
 
 ```cpp
@@ -256,9 +252,9 @@ int main() {
 }
 ```
 
-### For Loop
+### For-Loop
 
-For loop also keeps executing a block of code while condition is `true`. Init statement evaluates exactly once at the
+For-loop also keeps executing a block of code while condition is `true`. Init statement evaluates exactly once at the
 start. Expression gets always evaluated after the statement.
 
 ```cpp
@@ -267,7 +263,7 @@ for(/* init-statement */; /* condition */; /* expression */) {
 }
 ```
 
-For loop is equivalent to:
+For-loop is equivalent to:
 
 ```cpp
 {
@@ -279,7 +275,7 @@ For loop is equivalent to:
 }
 ```
 
-This is a valid for loop that loops infinitely:
+This is a valid for-loop that loops infinitely:
 
 ```cpp
 for(;;) {
@@ -287,7 +283,7 @@ for(;;) {
 }
 ```
 
-Example of printing numbers from 0 to 100 using a for loop:
+Example of printing numbers from 0 to 100 using a for-loop:
 
 ```cpp
 #include <iostream>
@@ -299,7 +295,7 @@ int main() {
 }
 ```
 
-Example combining if-else statement and a for loop to play a word game called
+Example combining if-else statement and a for-loop to play a word game called
 [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) for the first 100 numbers.
 
 ```cpp
@@ -307,7 +303,7 @@ Example combining if-else statement and a for loop to play a word game called
 
 int main() {
     for(int num = 1; num <= 100; ++num) {
-        if(num % 15 == 0) {
+        if(num % 3 == 0 && num % 5 == 0) {
             std::cout << "FizzBuzz";
         } else if(num % 3 == 0) {
             std::cout << "Fizz";
@@ -365,8 +361,8 @@ int main() {
 
 ### Goto Statement
 
-Goto statement allows you to jump to a defined label. You can only jump to a label within the same function. Goto
-statements make code less readable and you should avoid using them. Here is a code equivalent of a while loop:
+Goto statement allows you to jump to a defined label. You can only jump to a label within the same function. Here is a
+code equivalent of a while-loop:
 
 ```cpp
 LOOP_LABEL:
@@ -376,7 +372,7 @@ if(condition) {
 }
 ```
 
-Jumping into an if statement:
+Jumping into an if-statement:
 
 ```cpp
 goto LABEL;
@@ -399,16 +395,18 @@ int main() {
 }
 ```
 
+:::info Goto statements are useful. However they make the code less readable and it requires additional knowledge to use
+them properly so it might be a good idea to avoid them for now. :::
+
 ## Switch Statements
 
-Switch statements are very similar to if else statements. Condition gets evaluated once and execution jumps to the
+Switch statements are very similar to if-else statements. Condition gets evaluated once and execution jumps to the
 appropriate label. Break statement allows you to jump to the end of the switch statement. There are two labels `case`
 and `default`. Case label needs to be followed by a constant expression. There can only be one default label. If none of
 the cases apply execution jumps to the end of the switch statement or the default label if specified.
 
 ```cpp
-switch (condition)
-{
+switch (condition) {
 case 1:
     std::cout << "One";
     break;
@@ -418,9 +416,9 @@ case 2:
 case 3:
     std::cout << "Three";
     break;
-}
 default:
-    std::cout << "Too big!"
+    std::cout << "Default"
+}
 ```
 
 Example of a minimal calculator that takes in two numbers separated by one of `+-*/` operators.
@@ -477,6 +475,8 @@ int main() {
 
 ::: info
 
-Stream insertion operator has precedence `<<` over the ternary operator `?:`
+Stream insertion operator has precedence `<<` over the ternary operator `?:`. See
+[article](https://en.cppreference.com/w/cpp/language/operator_precedence.html) for more information about operator
+precedence.
 
 :::
