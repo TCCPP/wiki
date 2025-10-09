@@ -10,7 +10,7 @@ by using control flow statements. Without these statements program will execute 
 | Loop (Iteration)                | for-loop, while-loop  |
 | Jump                            | goto, break, continue |
 
-:::info Block (Compound Statement)
+:::info Block Statement (Compound Statement)
 
 Block `{...}` groups a sequence of statements into a single statement, creating a block scope.
 
@@ -53,7 +53,7 @@ if(condition) {
 }
 ```
 
-Example of a code that takes user input and prints if the number is odd or even:
+Example: Implementation of a program that takes user input and prints if the number is odd or even:
 
 ```cpp
 #include <iostream>
@@ -72,11 +72,12 @@ int main() {
 }
 ```
 
-Braces are optional. You don't have to use `{...}` (block) when writing if-else statements but it is highly recommended.
+Braces are optional. You don't have to use `{...}` (block) when writing if-else statements but it is highly recommended
+(for better code readability).
 
 ```cpp
 if(condition) /* if-statement */;
-else /* else statement */;
+else /* else-statement */;
 ```
 
 Example of confusing indentation:
@@ -120,7 +121,8 @@ if(condition_1) {
 }
 ```
 
-Example of code that prints if a number is positive, negative or a zero:
+Example: Implementation of a program that prompts user to enter a number, takes user input (number), prints if a number
+is positive, negative or a zero:
 
 ```cpp
 #include <iostream>
@@ -142,7 +144,10 @@ int main() {
 
 ## Loop Statements
 
-The loop statements allow you to execute the same instructions multiple times.
+The loop statements allow you to execute the same instructions multiple times (while condition is true).
+
+::info Loop Body The body of a loop is a common way of referring to a block statement `{...}` that executed by the loop.
+::
 
 ### while-loop
 
@@ -151,11 +156,11 @@ true for every type of the loop statement).
 
 ```cpp
 while(condition) {
-    /* block (loop body) */
+    /* loop body */
 }
 ```
 
-Example of printing numbers from 0 to 100 using a while-loop:
+Implementation of a program printing numbers from 0 to 100 using a while-loop:
 
 ```cpp
 #include <iostream>
@@ -169,7 +174,7 @@ int main() {
 }
 ```
 
-Calculating factorial of a number:
+Implementation of a program calculating factorial of a number:
 
 ```cpp
 #include <iostream>
@@ -188,7 +193,7 @@ int main() {
 }
 ```
 
-Calculating nth Fibonacci number:
+Implementation of a program calculating nth [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_sequence):
 
 ```cpp
 #include <iostream>
@@ -211,16 +216,16 @@ int main() {
 
 ### Do while-loop
 
-Do-while-loop keeps executing a substatement while condition is `true`. Do-while-loop is similar to while-loop but it
-guarantees that the substatement gets executed at least once.
+Do-while-loop keeps executing a loop body while condition is `true`. Do-while-loop is similar to while-loop but it
+guarantees that the loop body gets executed at least once.
 
 ```cpp
 do {
-    // block (loop body) executed at least once
+    // loop body executed at least once
 } while(condition);
 ```
 
-Example of code that prints out digits of of a number:
+Implementation of a program that prints out digits of of a number:
 
 ```cpp
 #include <iostream>
@@ -237,7 +242,7 @@ int main() {
 }
 ```
 
-Example of code that sums up user inputted numbers until user inputs `0`:
+Implementation of a program that sums up user inputted numbers until user inputs `0`:
 
 ```cpp
 #include <iostream>
@@ -254,16 +259,16 @@ int main() {
 
 ### For-Loop
 
-For-loop also keeps executing a block of code while condition is `true`. Init statement evaluates exactly once at the
-start. Expression gets always evaluated after the statement.
+For-loop also keeps executing the loop body while condition is `true`. Init statement evaluates exactly once at the
+start. Expression gets always evaluated after loop body.
 
 ```cpp
 for(/* init-statement */; /* condition */; /* expression */) {
-    /* block (loop body) */
+    /* loop body */
 }
 ```
 
-For-loop is equivalent to:
+For-loop is a nicer way of writing a while-loop and is equivalent to this code:
 
 ```cpp
 {
@@ -275,15 +280,15 @@ For-loop is equivalent to:
 }
 ```
 
-This is a valid for-loop that loops infinitely:
+This is a valid for-loop that loops indefinitely:
 
 ```cpp
 for(;;) {
-    /* block (loop body) */
+    /* loop body */
 }
 ```
 
-Example of printing numbers from 0 to 100 using a for-loop:
+Implementation of a program printing numbers from 0 to 100 using a for-loop:
 
 ```cpp
 #include <iostream>
@@ -295,8 +300,8 @@ int main() {
 }
 ```
 
-Example combining if-else statement and a for-loop to play a word game called
-[FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) for the first 100 numbers.
+Implementation of a program combining if-else statement and a for-loop to play a word game called
+[FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) for the first 100 numbers (1 to 100).
 
 ```cpp
 #include <iostream>
@@ -321,7 +326,8 @@ int main() {
 
 ### Break Statement
 
-The break statement allows you to stop a loop early. Here is an example of a simple guessing game:
+The break statement allows you to stop enclosing loop early. Here is an example of an implementation of a simple
+guessing game:
 
 ```cpp
 #include <iostream>
@@ -346,7 +352,7 @@ int main() {
 
 ### Continue Statement
 
-The continue statement allows you to skip the rest of the body.
+The continue statement allows you to skip the rest of the loop body.
 
 ```cpp
 #include <iostream>
@@ -372,19 +378,7 @@ if(condition) {
 }
 ```
 
-Jumping into an if-statement:
-
-```cpp
-goto LABEL;
-if(false) {
-    LABEL:
-    std::cout << "This code gets executed!";
-} else {
-    std::cout << "This one doesn't!";
-}
-```
-
-Jump also cannot bypass variable initialization. This code is invalid and compiler should give you a compilation error:
+Jump cannot bypass variable initialization. This code is invalid and compiler should give you compilation error:
 
 ```cpp
 int main() {
@@ -395,15 +389,20 @@ int main() {
 }
 ```
 
-:::info Goto statements are useful. However they make the code less readable and it requires additional knowledge to use
-them properly so it might be a good idea to avoid them for now. :::
+:::info
+
+Goto statements are useful. However they make the code less readable and it requires additional knowledge to use
+them properly so it might be a good idea to avoid them for now.
+
+:::
 
 ## Switch Statements
 
 Switch statements are very similar to if-else statements. Condition gets evaluated once and execution jumps to the
-appropriate label. Break statement allows you to jump to the end of the switch statement. There are two labels `case`
-and `default`. Case label needs to be followed by a constant expression. There can only be one default label. If none of
-the cases apply execution jumps to the end of the switch statement or the default label if specified.
+appropriate label. Break statement allows you to jump to the end of the switch statement. There are two labels you can
+define `case` and `default`. Case label needs to be followed by a constant expression (this restriction allows switch
+statements to be optimized by the compiler). There can only be one default label. If none of the cases apply execution
+jumps to the end of the switch statement or the default label if specified.
 
 ```cpp
 switch (condition) {
@@ -412,7 +411,7 @@ case 1:
     break;
 case 2:
     std::cout << "Two";
-    [[fallthrough]]; /* Attribute (optional - disables warnings) */
+    [[fallthrough]]; /* Attribute (optional - disables warnings on fallthrough) */
 case 3:
     std::cout << "Three";
     break;
@@ -421,7 +420,7 @@ default:
 }
 ```
 
-Example of a minimal calculator that takes in two numbers separated by one of `+-*/` operators.
+Implementation of a minimal calculator that takes in two numbers separated by one of `+-*/` operators.
 
 ```cpp
 #include <iostream>
