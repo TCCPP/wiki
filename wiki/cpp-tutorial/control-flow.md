@@ -1,8 +1,12 @@
+---
+wip: true
+---
+
 # Control Flow
 
 Control flow is the order in which instructions are executed in a program. You can specify the control flow of a program
-by using control flow statements. Without these statements program will execute every instruction one after another
-(sequentially).
+by using control flow statements (without these statements the program will execute every instruction one after
+another).
 
 | Type of control flow statements | Statements            |
 | ------------------------------- | --------------------- |
@@ -53,7 +57,7 @@ if(condition) {
 }
 ```
 
-Example: Implementation of a program that takes user input and prints if the number is odd or even:
+Implementation of a program that takes user input and prints if the number is odd or even:
 
 ```cpp
 #include <iostream>
@@ -72,8 +76,10 @@ int main() {
 }
 ```
 
-Braces are optional. You don't have to use `{...}` (block) when writing if-else statements but it is highly recommended
-(for better code readability).
+:::info Braces are optional
+
+You don't have to use `{...}` (block) when writing if-else statements but it is highly recommended (for better code
+readability).
 
 ```cpp
 if(condition) /* if-statement */;
@@ -87,6 +93,8 @@ if(condition)
     std::cout << "This expression is executed only if the condition is true.";
     std::cout << "This expression is always executed.";
 ```
+
+:::
 
 ### Nested If-Statements
 
@@ -121,8 +129,8 @@ if(condition_1) {
 }
 ```
 
-Example: Implementation of a program that prompts user to enter a number, takes user input (number), prints if a number
-is positive, negative or a zero:
+Implementation of a program that prompts user to enter a number, takes user input (number), prints if a number is
+positive, negative or a zero:
 
 ```cpp
 #include <iostream>
@@ -144,15 +152,17 @@ int main() {
 
 ## Loop Statements
 
-The loop statements allow you to execute the same instructions multiple times (while condition is true).
+The loop statements allow you to execute the same instructions multiple times.
 
-::info Loop Body The body of a loop is a common way of referring to a block statement `{...}` that executed by the loop.
-::
+::: info Loop Body
 
-### while-loop
+The body of a loop is a common way of referring to a block statement `{...}` that gets executed by the loop.
 
-while-loop keeps executing a statement while condition is `true`. Condition gets re-evaluated every iteration (this is
-true for every type of the loop statement).
+:::
+
+### While-Loop
+
+While-loop keeps executing a statement while condition is `true`. Condition gets re-evaluated every iteration.
 
 ```cpp
 while(condition) {
@@ -174,26 +184,8 @@ int main() {
 }
 ```
 
-Implementation of a program calculating factorial of a number:
-
-```cpp
-#include <iostream>
-
-int main() {
-    int fac = 1, num;
-    std::cout << "Enter a number: ";
-    std::cin >> num;
-
-    while(num) {
-        fac *= num;
-        --num;
-    }
-
-    std::cout << "The factorial of the number is: " << b;
-}
-```
-
 Implementation of a program calculating nth [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_sequence):
+(remember that integers can store only a range of values)
 
 ```cpp
 #include <iostream>
@@ -214,10 +206,10 @@ int main() {
 }
 ```
 
-### Do while-loop
+### Do-While-Loop
 
-Do-while-loop keeps executing a loop body while condition is `true`. Do-while-loop is similar to while-loop but it
-guarantees that the loop body gets executed at least once.
+Do-while-loop keeps executing a loop body while condition is `true`. Unlike while-loop it guarantees that the loop body
+gets executed at least once.
 
 ```cpp
 do {
@@ -225,7 +217,7 @@ do {
 } while(condition);
 ```
 
-Implementation of a program that prints out digits of of a number:
+Implementation of a program that prints out digits of a number:
 
 ```cpp
 #include <iostream>
@@ -260,7 +252,7 @@ int main() {
 ### For-Loop
 
 For-loop also keeps executing the loop body while condition is `true`. Init statement evaluates exactly once at the
-start. Expression gets always evaluated after loop body.
+start. Condition also gets re-evaluated every iteration. Expression gets always evaluated after loop body.
 
 ```cpp
 for(/* init-statement */; /* condition */; /* expression */) {
@@ -326,8 +318,8 @@ int main() {
 
 ### Break Statement
 
-The break statement allows you to stop enclosing loop early. Here is an example of an implementation of a simple
-guessing game:
+The break statement allows you to stop (terminate) the enclosing loop early without checking the condition.
+Implementation of a simple guessing game:
 
 ```cpp
 #include <iostream>
@@ -352,7 +344,8 @@ int main() {
 
 ### Continue Statement
 
-The continue statement allows you to skip the rest of the loop body.
+The continue statement allows you to skip the rest of the loop body. The continue statement is often used to reduce
+nesting of the statements. Implementation of a program that prints odd numbers:
 
 ```cpp
 #include <iostream>
@@ -391,8 +384,8 @@ int main() {
 
 :::info
 
-Goto statements are useful. However they make the code less readable and it requires additional knowledge to use
-them properly so it might be a good idea to avoid them for now.
+Goto statements are useful. However they make the code less readable and it requires additional knowledge to use them
+properly so it might be a good idea to avoid them for now.
 
 :::
 
@@ -401,8 +394,8 @@ them properly so it might be a good idea to avoid them for now.
 Switch statements are very similar to if-else statements. Condition gets evaluated once and execution jumps to the
 appropriate label. Break statement allows you to jump to the end of the switch statement. There are two labels you can
 define `case` and `default`. Case label needs to be followed by a constant expression (this restriction allows switch
-statements to be optimized by the compiler). There can only be one default label. If none of the cases apply execution
-jumps to the end of the switch statement or the default label if specified.
+statements to be optimized by the compiler). If none of the cases match the condition execution jumps to the end of the
+switch statement or the default label if one is specified (there can only be one default label).
 
 ```cpp
 switch (condition) {
@@ -460,7 +453,7 @@ same type, the result is of that type.
 (condition) ? /* condition true */ : /* condition false */;
 ```
 
-Here is an example of conditional operator usages:
+Here is an example of conditional operator usage:
 
 ```cpp
 int main() {
