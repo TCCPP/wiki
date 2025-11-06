@@ -2,7 +2,7 @@
 
 Welcome to the server :\)
 
-## **__Rules:__**
+## **__Rules__**
 ​0. Treat your peers with respect. Be kind. There are no stupid questions.
 1. Use common sense. We do not tolerate slurs, bigotry of any kind (racism/sexism/homophobia/transphobia etc.), or glorification of violence or death.
 2. Don't randomly ping / DM users. Just post your question in one of the help channels.
@@ -12,7 +12,10 @@ Welcome to the server :\)
 6. Do not ask for help with unethical cheating/hacking/malware.
 7. Don't post AI-generated answers, and don't ask for help with AI-generated code.
 
-## **__Remember:__**
+## **__Rules (continued)__**
+8. We are an English discord. Please use English when communicating here (both so others can join the conversation and so we can moderate).
+
+## **__Remember__**
 ​0. Format your code. You can either format it yourself or reply to a message with !format to automatically put code in code blocks and, for C or C++ code, automatically indent it.
 1. Don't ask to ask - Just ask. Odds are someone knows the answer and will be happy to help.
 2. Feel free to post your message even when other users are talking. If you don't get an immediate response, that doesn't mean your question was ignored. If it is too overwhelming, you can create a thread or bring your conversation to an appropriate alternate channel.
@@ -21,14 +24,16 @@ Welcome to the server :\)
   - Specify what your problem is. Provide error messages when possible. Don't just ask "can someone tell me what's wrong".
 4. Do not send pictures or screenshots of code. It makes it difficult to read and test.
 ​
-## ​__**Moderation:**__
+## ​__**Moderation**__
 There are three ways to contact the moderators:
 
 1. **Right Click Message -> Apps -> Report**. This will silently send us a link to a message you believe deserves moderator attention, but is not urgent. Use this to report cheat/hack code, academic dishonesty, or other similar content.
 2. **Click the Modmail button below**. This will start a thread through which you can have a discussion with the moderation team. Use this to bring up ongoing concerns or providing evidence for reports (such as DM spam)
 3. **Ping <@&847915341954154536>**. This will notify online moderators that an issue needs to be urgently dealt with. Use this for spammers, NSFW content, overly aggressive/rude behavior, etc. __Do not use this for question help.__
 
-## __**Roles:**__
+Additionally, please ping <@&1371706420730531870> for assistance with moderation issues in voice channels.
+
+## __**Roles**__
 We have skill roles in this server. Roles are assigned at staff discretion. General organization is as follows:
 
 <@&784733371275673600> — New to C, C++, or programming in general. Still learning syntax and fundamental concepts.<br>
@@ -39,6 +44,6 @@ We have skill roles in this server. Roles are assigned at staff discretion. Gene
 
 <@&331876085820030978>, <@&849399021838925834>, <@&331719590990184450> and <@&331719591405551616> roles will be assigned at the staff's discretion for demonstrated knowledge. Do not beg for these: it will simply annoy us.
 
-## __**Boosts:**__
+## __**Boosts**__
 
 Server boosters get access to a private channel.
