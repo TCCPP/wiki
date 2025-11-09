@@ -47,3 +47,7 @@ We have skill roles in this server. Roles are assigned at staff discretion. Gene
 ## __**Boosts**__
 
 Server boosters get access to a private channel.
+
+## __**Privacy**__
+
+Read about server and bot privacy [here](https://tccpp.wiki/tccpp/privacy).
