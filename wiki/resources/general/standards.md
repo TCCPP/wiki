@@ -4,7 +4,7 @@
 
 | Edition         | HTML                                                                     | PDF                                                                           |
 | --------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
-| :cpp: **C++26** | [Working Draft](https://eel.is/c++draft/)                                | [[N5014]](https://wg21.link/N5014)[^1]                                        |
+| :cpp: **C++26** | [Working Draft](https://eel.is/c++draft/)                                | [[N5032]](https://wg21.link/N5032)[^1]                                        |
 | :cpp: **C++23** | [[N4950]](https://timsong-cpp.github.io/cppwp/n4950/)                    | [[N4950]](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/n4950.pdf) |
 | :cpp: **C++20** | [[N4868]](https://timsong-cpp.github.io/cppwp/n4868/)                    | [[N4860]](https://isocpp.org/files/papers/N4860.pdf)                          |
 | :cpp: **C++17** | [[N4659]](https://timsong-cpp.github.io/cppwp/n4659/)                    | [[N4659]](http://open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4659.pdf)      |
