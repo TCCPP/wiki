@@ -15,6 +15,9 @@ Welcome to the server :\)
 ## **__Rules (continued)__**
 8. We are an English discord. Please use English when communicating here (both so others can join the conversation and so we can moderate).
 
+## __**Voice access**__
+To protect our voice channels, new users are suppressed by default when no <@&1371706420730531870> is present. You can still join and passively participate as well as use the text chat. You will be able to speak when joining a channel with a <@&1371706420730531870> present. Stick around and you will eventually be granted permanent voice access.
+
 ## **__Remember__**
 ​0. Format your code. You can either format it yourself or reply to a message with !format to automatically put code in code blocks and, for C or C++ code, automatically indent it.
 1. Don't ask to ask - Just ask. Odds are someone knows the answer and will be happy to help.
@@ -29,9 +32,8 @@ There are three ways to contact the moderators:
 
 1. **Right Click Message -> Apps -> Report**. This will silently send us a link to a message you believe deserves moderator attention, but is not urgent. Use this to report cheat/hack code, academic dishonesty, or other similar content.
 2. **Click the Modmail button below**. This will start a thread through which you can have a discussion with the moderation team. Use this to bring up ongoing concerns or providing evidence for reports (such as DM spam)
-3. **Ping <@&847915341954154536>**. This will notify online moderators that an issue needs to be urgently dealt with. Use this for spammers, NSFW content, overly aggressive/rude behavior, etc. __Do not use this for question help.__
-
-Additionally, please ping <@&1371706420730531870> for assistance with moderation issues in voice channels.
+3. **Ping <@&847915341954154536>**. This will notify online moderators that a text/chat issue needs to be urgently dealt with. Use this for spammers, NSFW content, overly aggressive/rude behavior, etc. __Do not use this for question help.__
+4. **Ping <@&1371706420730531870>**. This will notify online voice moderators that an issue in voice channels needs to be urgently dealt with. Use this for NSFW content in VC, harassment or targeted abuse, repeated slurs/bigotry, doxxing or threats, or anything that requires immediate intervention to keep the channel safe. __Do not use this to ask for voice permissions or to be unsuppressed.__
 
 ## __**Roles**__
 We have skill roles in this server. Roles are assigned at staff discretion. General organization is as follows:
