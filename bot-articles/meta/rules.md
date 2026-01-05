@@ -28,7 +28,7 @@ To protect our voice channels, new users are suppressed by default when no <@&13
 4. Do not send pictures or screenshots of code. It makes it difficult to read and test.
 ​
 ## ​__**Moderation**__
-There are three ways to contact the moderators:
+There are four ways to contact the moderators:
 
 1. **Right Click Message -> Apps -> Report**. This will silently send us a link to a message you believe deserves moderator attention, but is not urgent. Use this to report cheat/hack code, academic dishonesty, or other similar content.
 2. **Click the Modmail button below**. This will start a thread through which you can have a discussion with the moderation team. Use this to bring up ongoing concerns or providing evidence for reports (such as DM spam)
