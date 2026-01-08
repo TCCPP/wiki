@@ -50,6 +50,12 @@ We have skill roles in this server. Roles are assigned at staff discretion. Gene
 
 Server boosters get access to a private channel.
 
+<!-- inline -->
 ## __**Privacy**__
 
 Read about server and bot privacy [here](https://tccpp.wiki/tccpp/privacy).
+
+<!-- inline -->
+## __**History**__
+
+View rules history [here](https://github.com/TCCPP/wiki/commits/main/bot-articles/meta/rules.md)
