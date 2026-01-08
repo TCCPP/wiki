@@ -26,8 +26,8 @@ To protect our voice channels, new users are suppressed by default when no <@&13
   - Generally dumping hundreds of lines of code is not helpful. Try to post the relevant parts and context for the problem.
   - Specify what your problem is. Provide error messages when possible. Don't just ask "can someone tell me what's wrong".
 4. Do not send pictures or screenshots of code. It makes it difficult to read and test.
-​
-## ​__**Moderation**__
+
+## __**Moderation**__
 There are four ways to contact the moderators:
 
 1. **Right Click Message -> Apps -> Report**. This will silently send us a link to a message you believe deserves moderator attention, but is not urgent. Use this to report cheat/hack code, academic dishonesty, or other similar content.
