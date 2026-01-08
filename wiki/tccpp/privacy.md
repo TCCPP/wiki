@@ -8,9 +8,8 @@ Privacy expectations for the Together C & C++ Discord server.
 
 This is a public Discord server - messages in public channels can be seen by anyone and may be screenshotted or shared.
 
-We use Discord bots that comply with Discord's [terms of service][terms], [privacy policy][privacy],
-[developer terms of service][dev-terms], [developer policy][dev-policy], and [GDPR][gdpr]. Each bot maintains its own
-privacy policy.
+We use Discord bots that comply with Discord's [terms of service][terms], [privacy policy][privacy], [developer terms of
+service][dev-terms], [developer policy][dev-policy], and [GDPR][gdpr]. Each bot maintains its own privacy policy.
 
 [terms]: https://discord.com/terms
 [privacy]: https://discord.com/privacy
@@ -29,9 +28,11 @@ We store:
 - **Messages** - Content, timestamps, ids, author info, edits, and deletions
 - **Moderation logs** - Warnings, mutes, bans, kicks, timeouts, and notes
 - **Server activity** - Roles, joins, and leaves
-- **Short-term activity data** - Temporary activity data for spam, scam, and raid prevention (automatically deleted after minutes/hours)
+- **Short-term activity data** - Temporary activity data for spam, scam, and raid prevention (automatically deleted
+  after minutes/hours)
 - **Feature data** - Information for suggestions, starboard, mini-games, and other server features
-- **Attachments** - Briefly analyzed to determine file type, executables and archives are virus scanned (deleted after analysis)
+- **Attachments** - Briefly analyzed to determine file type, executables and archives are virus scanned (deleted after
+  analysis)
 - **Bot logs** - Commands, interactions, actions, errors, and other diagnostic telemetry
 
 Wheatley has no access to private user information, user DMs, non-Discord data, or anything outside the server.
@@ -39,8 +40,9 @@ Wheatley has no access to private user information, user DMs, non-Discord data, 
 ### The Importance of Recording Messages
 
 Messages are the primary user data wheatley collects. Maintaining a database of messages is necessary for keeping the
-server safe. Discord's API doesn't provide complete information about edited or deleted messages, so we maintain our
-own record to:
+server safe. Discord's API doesn't provide complete information about edited or deleted messages, so we maintain our own
+record to:
+
 - Track message content before edits and deletions, enabling moderation of offensive content that users attempt to hide
 - Preserve edit history to prevent abuse where users retroactively alter conversations to manipulate context or make
   others appear to violate rules
