@@ -28,7 +28,7 @@ of instructions (branches of code) based on some condition. This condition is an
 
 ### If-Statement
 
-If-statement executes a substatement if the condition is `true`.
+An if statement executes code if the condition is `true`.
 
 ```cpp
 if(condition) {
@@ -41,13 +41,13 @@ pay the regular price):
 
 ```cpp
 if(eligibleForDiscount) {
-    price *= 0.75; /* apply discount of 15% */
+    price *= 0.75; /* apply discount of 25% */
 }
 ```
 
 ### If-Statement With an Else Branch
 
-Else statement executes a substatement if condition is `false`. Else statement always goes after the if-statement.
+An else statement executes code if condition is `false`. Else statements always go after an if statement.
 
 ```cpp
 if(condition) {
@@ -79,14 +79,14 @@ int main() {
 :::info Braces are optional
 
 You don't have to use `{...}` (block) when writing if-else statements but it is highly recommended (for better code
-readability).
+readability since it can result in mistakes).
 
 ```cpp
 if(condition) /* if-statement */;
 else /* else-statement */;
 ```
 
-Example of confusing indentation:
+Example of confusing indentation (this is typically a bug because it's almost certainly not what the programmer intended):
 
 ```cpp
 if(condition)
@@ -98,7 +98,7 @@ if(condition)
 
 ### Nested If-Statements
 
-You can nest if-statements. Most often you will see them nested using the `else if` expression.
+You can nest if statements. Most often you will see them nested in the form of an `else if`:
 
 ```cpp
 if(condition_1) {
@@ -152,7 +152,7 @@ int main() {
 
 ## Loop Statements
 
-The loop statements allow you to execute the same instructions multiple times.
+Loop statements allow you to execute the same instructions multiple times.
 
 ::: info Loop Body
 
@@ -162,7 +162,7 @@ The body of a loop is a common way of referring to a block statement `{...}` tha
 
 ### While-Loop
 
-While-loop keeps executing a statement while condition is `true`. Condition gets re-evaluated every iteration.
+A while loop executes its body while its condition is `true`. The condition is checked at the start of every iteration.
 
 ```cpp
 while(condition) {
@@ -197,9 +197,9 @@ int main() {
 
     /* F(n + 2) = F(n + 1) + F(n) */
     while(--n) {
-        int swap = b;
+        int previous_b = b;
         b += a;
-        a = swap;
+        a = previous_b;
     }
 
     std::cout << "The nth Fibonacci number is: " << b;
@@ -208,8 +208,7 @@ int main() {
 
 ### Do-While-Loop
 
-Do-while-loop keeps executing a loop body while condition is `true`. Unlike while-loop it guarantees that the loop body
-gets executed at least once.
+A do-while loop executes its loop body after every iteration, ensuring the loop body runs at least once regardless of any condition.
 
 ```cpp
 do {
@@ -239,35 +238,34 @@ Implementation of a program that sums up user inputted numbers until user inputs
 ```cpp
 #include <iostream>
 int main() {
-    int num;
     int sum = 0;
+    int num; // declared outside the loop body so it may be referenced in the condition
     do {
         std::cin >> num;
         sum += num;
     } while(num != 0);
-    std::cout << "The sum is: " << num;
+    std::cout << "The sum is: " << sum;
 }
 ```
 
 ### For-Loop
 
-For-loop also keeps executing the loop body while condition is `true`. Init statement evaluates exactly once at the
-start. Condition also gets re-evaluated every iteration. Expression gets always evaluated after loop body.
+
+Similar to a while loop, a for loop also executes its loop body while its condition is `true` (checked at the start of every iteration). For loops have an "init statement" which is evaluated at the start of the loop and can be used to declare variables that are scoped to the loop. For loops also have an "update" statement which is evaluated at the end of every loop iteration, this is often used to increment counters.
 
 ```cpp
-for(/* init-statement */; /* condition */; /* expression */) {
+for(/* init statement */; /* condition */; /* update */) {
     /* loop body */
 }
-```
 
-For-loop is a nicer way of writing a while-loop and is equivalent to this code:
+A for loop is a nicer way of writing a while loop and is equivalent to this code:
 
 ```cpp
 {
     /* init-statement */
     while (condition) {
         /* statement */
-        /* expression */ ;
+        /* update */
     }
 }
 ```
@@ -280,7 +278,7 @@ for(;;) {
 }
 ```
 
-Implementation of a program printing numbers from 0 to 100 using a for-loop:
+Implementation of a program printing numbers from 0 to 100 (inclusive) using a for-loop:
 
 ```cpp
 #include <iostream>
@@ -391,11 +389,10 @@ properly so it might be a good idea to avoid them for now.
 
 ## Switch Statements
 
-Switch statements are very similar to if-else statements. Condition gets evaluated once and execution jumps to the
-appropriate label. Break statement allows you to jump to the end of the switch statement. There are two labels you can
-define `case` and `default`. Case label needs to be followed by a constant expression (this restriction allows switch
-statements to be optimized by the compiler). If none of the cases match the condition execution jumps to the end of the
-switch statement or the default label if one is specified (there can only be one default label).
+Switch statements are very similar to if-else statements. The expression gets evaluated once and execution jumps to the
+matching label. Break statements allow you to jump to exit the switch statement (without these execution continues through other cases in the switch statement). There are two labels you can
+define `case` and `default`. Case label needs to be followed by a constant expression. If none of the cases match the expression, execution jumps to the end of the
+switch statement or the default case if one is provided.
 
 ```cpp
 switch (condition) {
