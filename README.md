@@ -72,7 +72,8 @@ Content
 
 The site relies a lot on sidebars for navigation. When contributing a page, remember to add it to the sidebar. This can
 be done by adding it to the `sidebar.ts` (really just a big JSON list) file in the relevant section of the site (e.g.
-[`src/cpp-tutorial/sidebar.ts`](src/cpp-tutorial/sidebar.ts) or [`src/resources/sidebar.ts`](src/resources/sidebar.ts)).
+[`wiki/cpp-tutorial/sidebar.ts`](wiki/cpp-tutorial/sidebar.ts) or
+[`wiki/resources/sidebar.ts`](wiki/resources/sidebar.ts)).
 
 <img src="./docs/assets/sidebar.png" alt="Site Sidebars" height="500">
 

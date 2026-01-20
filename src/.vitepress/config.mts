@@ -50,7 +50,7 @@ export default defineConfig({
         ],
         editLink: {
             pattern: ({ filePath }) => {
-                return `https://github.com/TCCPP/wiki/tree/main/src/${filePath}`;
+                return `https://github.com/TCCPP/wiki/tree/main/wiki/${filePath}`;
             },
             text: "Contribute to this page on GitHub",
         },
