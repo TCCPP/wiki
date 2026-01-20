@@ -11,8 +11,8 @@ Heavier, but also much more powerful out of the box.
 - **[Visual Studio](https://visualstudio.microsoft.com)** (free, Windows)
 - **[Xcode](https://developer.apple.com/xcode/)** (free, macOS)
 - **[Qt Creator](https://www.qt.io/download-thank-you)** (free, any OS)
-- **[CLion](https://www.jetbrains.com/clion/download/)** (free for non comercial use, open-source, any OS)
-- **[Compiler Explorer](https://godbolt.org/)** (free in-browser)
+- **[CLion](https://www.jetbrains.com/clion/download/)** (free for non-comercial use, open-source, any OS)
+- **[Compiler Explorer](https://godbolt.org/)** (not a full-fledged IDE but can be used to test code for free in-browser)
 
 <!-- inline -->
 ## Code Editors
