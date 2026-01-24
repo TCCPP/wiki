@@ -242,26 +242,6 @@ console.log("Hello, VitePress!");
 
 :::
 
-Also, you may set custom titles globally by adding the following content in site config, helpful if not writing in
-English:
-
-```ts
-// config.ts
-export default defineConfig({
-  // ...
-  markdown: {
-    container: {
-      tipLabel: "提示",
-      warningLabel: "警告",
-      dangerLabel: "危险",
-      infoLabel: "信息",
-      detailsLabel: "详细信息",
-    },
-  },
-  // ...
-});
-```
-
 ### Additional Attributes
 
 You can add additional attributes to the custom containers. We use
