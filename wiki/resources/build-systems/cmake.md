@@ -75,5 +75,3 @@ set(
 
 target_compile_options(myprogram ${WARNING_FLAGS} ${FLAGS})
 ```
-
-
