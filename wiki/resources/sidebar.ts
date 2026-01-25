@@ -63,7 +63,13 @@ const sidebar = [
             },
             {
                 text: "FAQ",
-                items: [{ text: "Scanf Whitespace", link: "/resources/general/scanf-whitespace" }],
+                items: [
+                    { text: "Scanf Whitespace", link: "/resources/general/scanf-whitespace" },
+                    {
+                        text: "Overloading Stream Operators",
+                        link: "/resources/cpp/stream-operators",
+                    },
+                ],
                 collapsed: true,
             },
         ],
