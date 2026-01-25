@@ -86,7 +86,8 @@ if(condition) /* if-statement */;
 else /* else-statement */;
 ```
 
-Example of confusing indentation (this is typically a bug because it's almost certainly not what the programmer intended):
+Example of confusing indentation (this is typically a bug because it's almost certainly not what the programmer
+intended):
 
 ```cpp
 if(condition)
@@ -208,7 +209,8 @@ int main() {
 
 ### Do-While-Loop
 
-A do-while loop executes its loop body after every iteration, ensuring the loop body runs at least once regardless of any condition.
+A do-while loop executes its loop body after every iteration, ensuring the loop body runs at least once regardless of
+any condition.
 
 ```cpp
 do {
@@ -216,20 +218,22 @@ do {
 } while(condition);
 ```
 
-Implementation of a program that prints out digits of a number:
+Implementation of a program that prints the number with it's digits reversed:
 
 ```cpp
 #include <iostream>
 
 int main() {
     int num;
+    int reversed_num = 0;
     std::cout << "Enter a number: ";
     std::cin >> num;
 
     do {
-        std::cout << num % 10 << '\n';
+        reversed_num = 10 * reversed_num + num % 10;
         num /= 10;
     } while(num != 0);
+    std::cout << "Number reversed: " << reversed_num;
 }
 ```
 
@@ -250,13 +254,16 @@ int main() {
 
 ### For-Loop
 
-
-Similar to a while loop, a for loop also executes its loop body while its condition is `true` (checked at the start of every iteration). For loops have an "init statement" which is evaluated at the start of the loop and can be used to declare variables that are scoped to the loop. For loops also have an "update" statement which is evaluated at the end of every loop iteration, this is often used to increment counters.
+Similar to a while loop, a for loop also executes its loop body while its condition is `true` (checked at the start of
+every iteration). For loops have an "init statement" which is evaluated at the start of the loop and can be used to
+declare variables that are scoped to the loop. For loops also have an "update" statement which is evaluated at the end
+of every loop iteration, this is often used to increment counters.
 
 ```cpp
 for(/* init statement */; /* condition */; /* update */) {
     /* loop body */
 }
+```
 
 A for loop is a nicer way of writing a while loop and is equivalent to this code:
 
@@ -267,14 +274,6 @@ A for loop is a nicer way of writing a while loop and is equivalent to this code
         /* statement */
         /* update */
     }
-}
-```
-
-This is a valid for-loop that loops indefinitely:
-
-```cpp
-for(;;) {
-    /* loop body */
 }
 ```
 
@@ -312,6 +311,15 @@ int main() {
 }
 ```
 
+Any and all of the expressions (init statement, condition, update) can be omitted. This is by design. This is a valid
+for-loop that loops indefinitely:
+
+```cpp
+for(;;) {
+    /* loop body */
+}
+```
+
 ## Jump statements
 
 ### Break Statement
@@ -325,7 +333,7 @@ Implementation of a simple guessing game:
 int main() {
     int number = 1234;
     int guess;
-    for(;;) { // infinite loop
+    while(true) { // infinite loop
         std::cout << "Guess a number: ";
         std::cin >> guess;
         if(guess < number) {
@@ -350,48 +358,20 @@ nesting of the statements. Implementation of a program that prints odd numbers:
 
 int main() {
     for(int i = 0; i < 100; ++i) {
-        if(i % 2 == 0) continue;
+        if(i % 2 == 0) {
+            continue;
+        }
         std::cout << i << '\n';
     }
 }
 ```
 
-### Goto Statement
-
-Goto statement allows you to jump to a defined label. You can only jump to a label within the same function. Here is a
-code equivalent of a while-loop:
-
-```cpp
-LOOP_LABEL:
-if(condition) {
-    /* statement */
-    goto LOOP_LABEL;
-}
-```
-
-Jump cannot bypass variable initialization. This code is invalid and compiler should give you compilation error:
-
-```cpp
-int main() {
-    goto LABEL;
-    int x = 0;
-    LABEL:
-    ++x;
-}
-```
-
-:::info
-
-Goto statements are useful. However they make the code less readable and it requires additional knowledge to use them
-properly so it might be a good idea to avoid them for now.
-
-:::
-
 ## Switch Statements
 
 Switch statements are very similar to if-else statements. The expression gets evaluated once and execution jumps to the
-matching label. Break statements allow you to jump to exit the switch statement (without these execution continues through other cases in the switch statement). There are two labels you can
-define `case` and `default`. Case label needs to be followed by a constant expression. If none of the cases match the expression, execution jumps to the end of the
+matching label. Break statements allow you to jump to exit the switch statement (without these execution continues
+through other cases in the switch statement). There are two labels you can define `case` and `default`. Case label needs
+to be followed by a constant expression. If none of the cases match the expression, execution jumps to the end of the
 switch statement or the default case if one is provided.
 
 ```cpp
@@ -424,27 +404,28 @@ int main() {
 
     switch(op) {
       case '+':
-          std::println("Sum: {} + {} = {}", x, y, x + y);
-          break;
+            std::println("Sum: {} + {} = {}", x, y, x + y);
+            break;
       case '-':
-          std::println("Difference: {} - {} = {}", x, y, x - y);
-          break;
+            std::println("Difference: {} - {} = {}", x, y, x - y);
+            break;
       case '*':
-          std::println("Product: {} * {} = {}", x, y, x * y);
-          break;
+            std::println("Product: {} * {} = {}", x, y, x * y);
+            break;
       case '/':
-          std::println("Quotient (rounded down): {} / {} = {}", x, y, x / y);
-          break;
+            std::println("Quotient (rounded down): {} / {} = {}", x, y, x / y);
+            break;
       default:
-          std::println("Invalid operator!!!");
+            std::println("Invalid operator!!!");
     }
 }
 ```
 
 ## Conditional Operator
 
-Conditional operators are ternary operators (operators taking in 3 operands). If second and third operands are of the
-same type, the result is of that type.
+The conditional operator (? :) is a ternary operator, meaning it takes three operands. It serves as a shorthand for an
+if-else statement and returns a value based on a boolean condition. If second and third operands are of the same type,
+the result is of that type.
 
 ```cpp
 (condition) ? /* condition true */ : /* condition false */;
