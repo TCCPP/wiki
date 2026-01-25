@@ -1,5 +1,5 @@
 ---
-preview: |
+bot_article: |
   # Setting Up Vscode for C++ on Windows
 ---
 

@@ -1,6 +1,6 @@
 ---
 alias: cmake
-preview: |
+bot_article: |
   # CMake
 
   CMake is the most widely used build system for C++. It has good portability, compiler support, and IDE integration.

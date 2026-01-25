@@ -1,5 +1,5 @@
 ---
-preview: |
+bot_article: |
   # C++ Libraries
 
   Check out our community-curated collection of useful C++ libraries

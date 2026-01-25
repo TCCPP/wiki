@@ -1,5 +1,5 @@
 ---
-preview: |
+bot_article: |
   # Compiler Development Resources
 
   Check out our community-curated wiki with resources for learning about compilers and programming language design

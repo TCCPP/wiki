@@ -1,5 +1,5 @@
 ---
-preview: |
+bot_article: |
   # GNU Debugger (GDB)
 
   Compile with debug symbols: `g++ main.cpp -o prog -Og -g`

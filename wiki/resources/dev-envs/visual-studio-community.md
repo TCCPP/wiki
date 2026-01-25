@@ -1,5 +1,5 @@
 ---
-preview: |
+bot_article: |
   # Setting Up Visual Studio Community
 
   Visual Studio Community is the simplest way to start with C++ on Windows. It includes an editor, compiler, and debugger all preconfigured.

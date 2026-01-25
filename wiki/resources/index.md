@@ -1,6 +1,6 @@
 ---
 alias: resources
-preview: |
+bot_article: |
   # Resources
 
   Check out our community-made wiki with various C and C++ resources

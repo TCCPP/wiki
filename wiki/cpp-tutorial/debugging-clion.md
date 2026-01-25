@@ -1,5 +1,5 @@
 ---
-preview: |
+bot_article: |
   # Using the Debugger in CLion
 
   CLion comes with bundled GDB and LLDB. Place breakpoints by clicking left of line numbers. Start debugging with the green bug icon.

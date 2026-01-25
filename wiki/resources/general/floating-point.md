@@ -1,6 +1,6 @@
 ---
 alias: fp
-preview: |
+bot_article: |
   # Floating Point Number Resources
 ---
 

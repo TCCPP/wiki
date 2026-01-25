@@ -1,5 +1,5 @@
 ---
-preview: |
+bot_article: |
   # Debugging Your Program
 
   Debugging is the process of identifying and resolving errors in software. Key techniques include:

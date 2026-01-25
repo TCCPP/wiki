@@ -1,5 +1,5 @@
 ---
-preview: |
+bot_article: |
   # Performance Analysis Resources
 
   Check out our community-curated wiki with tools and resources for profiling and optimizing C and C++ code

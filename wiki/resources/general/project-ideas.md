@@ -1,6 +1,6 @@
 ---
 alias: ideas
-preview: |
+bot_article: |
   # Project Ideas
 
   Looking for inspiration for what to build? Check out our community-curated list of project ideas.

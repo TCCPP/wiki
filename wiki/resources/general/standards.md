@@ -1,6 +1,6 @@
 ---
 alias: standards
-preview: |
+bot_article: |
   # C and C++ Standards
 ---
 

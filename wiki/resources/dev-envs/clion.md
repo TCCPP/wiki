@@ -1,5 +1,5 @@
 ---
-preview: |
+bot_article: |
   # Setting Up CLion
 
   CLion is a commercial IDE from JetBrains, now **free for non-commercial use**.
