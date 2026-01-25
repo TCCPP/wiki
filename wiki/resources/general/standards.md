@@ -1,3 +1,9 @@
+---
+alias: standards
+preview: |
+  # C and C++ Standards
+---
+
 # C and C++ standards
 
 ## Standard Links

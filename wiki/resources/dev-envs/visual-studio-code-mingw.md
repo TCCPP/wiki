@@ -1,3 +1,8 @@
+---
+preview: |
+  # Setting Up Vscode for C++ on Windows
+---
+
 # Setting up Visual Studio Code for Windows
 
 Visual Studio Code (abbreviated VS Code) is an open-source text editor developed by Microsoft. It is highly configurable

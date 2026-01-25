@@ -1,3 +1,20 @@
+---
+preview: |
+  # GNU Debugger (GDB)
+
+  Compile with debug symbols: `g++ main.cpp -o prog -Og -g`
+
+  **Quick reference:**
+  - `gdb prog` - Launch debugger
+  - `break 10` / `b main` - Set breakpoint
+  - `run` / `start` - Start execution
+  - `next` / `step` - Step over / into
+  - `print var` - Inspect variable
+  - `backtrace` - Show call stack
+  - `continue` - Resume to next breakpoint
+  - `quit` - Exit GDB
+---
+
 # GNU Debugger
 
 The GNU Debugger (GDB) is one of the most widely used debuggers today, with numerous frontends and adapters available.

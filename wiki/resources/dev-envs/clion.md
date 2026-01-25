@@ -1,3 +1,10 @@
+---
+preview: |
+  # Setting Up CLion
+
+  CLion is a commercial IDE from JetBrains, now **free for non-commercial use**.
+---
+
 # Setting Up CLion
 
 CLion is a commercial IDE from JetBrains. You can download CLion [here](https://www.jetbrains.com/clion/download).

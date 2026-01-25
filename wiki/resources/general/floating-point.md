@@ -1,3 +1,9 @@
+---
+alias: fp
+preview: |
+  # Floating Point Number Resources
+---
+
 # Floating Point Numbers
 
 ## Articles

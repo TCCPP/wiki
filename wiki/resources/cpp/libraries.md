@@ -1,3 +1,10 @@
+---
+preview: |
+  # C++ Libraries
+
+  Check out our community-curated collection of useful C++ libraries
+---
+
 # C++ Libraries
 
 This page is a collection of useful C++ libraries.

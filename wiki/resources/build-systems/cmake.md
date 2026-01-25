@@ -1,3 +1,15 @@
+---
+alias: cmake
+preview: |
+  # CMake
+
+  CMake is the most widely used build system for C++. It has good portability, compiler support, and IDE integration.
+
+  The main downside is learning CMake's configuration language, but the investment is worthwhile.
+
+  **Recommended resource:** [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/README.html)
+---
+
 # CMake
 
 While the C++ development ecosystem is highly fractured and there are dozens upon dozens of build systems, CMake is the

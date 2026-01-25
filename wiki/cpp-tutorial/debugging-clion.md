@@ -1,3 +1,16 @@
+---
+preview: |
+  # Using the Debugger in CLion
+
+  CLion comes with bundled GDB and LLDB. Place breakpoints by clicking left of line numbers. Start debugging with the green bug icon.
+
+  **Key controls:**
+  - **Resume Program** - Continue until next breakpoint
+  - **Step Over** - Execute next line, skip function calls
+  - **Step Into** - Step into function calls
+  - **Step Out** - Run until current function returns
+---
+
 # Using the debugger in CLion
 
 CLion comes with bundled GDB and LLDB, so you don't have to install these yourself. If you are using a toolchain

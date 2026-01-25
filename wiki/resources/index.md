@@ -1,3 +1,11 @@
+---
+alias: resources
+preview: |
+  # Resources
+
+  Check out our community-made wiki with various C and C++ resources
+---
+
 <script lang="ts" setup>
 import sidebar from "./sidebar";
 </script>
