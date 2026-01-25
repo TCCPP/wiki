@@ -18,7 +18,8 @@ Code is under the MIT license, site content is CC BY-SA.
 
 # Contributing
 
-Contributions are welcome!
+Contributions are welcome! Please read our [writing guide](./docs/WRITING_GUIDE.md) for information about writing style,
+supported markdown, and code style.
 
 ## Getting Started
 
@@ -29,6 +30,8 @@ To get started: Run `make dev`.
 If you do not have make, run `npm i` then `npm run dev`.
 
 The site source is in [src/](src/).
+
+Run the formatter with `make format` or `npm run format`
 
 ## Markdown Info
 
