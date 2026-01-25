@@ -9,7 +9,7 @@ bot_article: |
 
   ```cpp
   std::ostream& operator<<(
-    std::ostream& out, const point& p
+      std::ostream& out, const point& p
   ) {
       return out << p.x << ' ' << p.y;
   }
@@ -101,7 +101,7 @@ std::istream& operator>>(std::istream& in, point& p) {
 }
 ```
 
-You can also define friend functions inline within the class. This is common for short operators:
+You can also define friend functions inline within the class. This is common for convenience:
 
 ```cpp
 class point {
@@ -158,16 +158,6 @@ std::ostringstream oss;
 oss << p;
 std::string s = oss.str();             // String stream: "3 4"
 ```
-
-## Best Practices
-
-- **Keep output simple.** Produce a representation suitable for common use cases.
-
-- **Match input and output.** Design extraction to parse what insertion produces, enabling round-tripping.
-
-- **Follow whitespace conventions.** The default `>>` skips leading whitespace; yours should too.
-
-- **Don't print trailing newlines.** Let the caller decide.
 
 ## See Also
 
