@@ -1,7 +1,3 @@
----
-wip: true
----
-
 # Control Flow
 
 Control flow is the order in which instructions are executed in a program. You can specify the control flow of a program
@@ -36,7 +32,7 @@ if(condition) {
 }
 ```
 
-This code updates a `price` of a product where only loyal customers are eligible for a 15% discount (normal customers
+This code updates a `price` of a product where only loyal customers are eligible for a 25% discount (normal customers
 pay the regular price):
 
 ```cpp
@@ -209,8 +205,8 @@ int main() {
 
 ### Do-While-Loop
 
-A do-while loop checks its condition after every iteration, ensuring the loop body runs at least once regardless of
-any condition.
+A do-while loop checks its condition after every iteration, ensuring the loop body runs at least once regardless of any
+condition.
 
 ```cpp
 do {
@@ -243,7 +239,8 @@ Implementation of a program that sums up user inputted numbers until user inputs
 #include <iostream>
 int main() {
     int sum = 0;
-    int num; // declared outside the loop body so it may be referenced in the condition
+    int num; // declared outside the loop body
+             // so it may be referenced in the condition
     do {
         std::cin >> num;
         sum += num;
@@ -381,7 +378,8 @@ case 1:
     break;
 case 2:
     std::cout << "Two";
-    [[fallthrough]]; /* Attribute (optional - disables warnings on fallthrough) */
+    [[fallthrough]]; /* Attribute
+                       (optional - disables warnings on fallthrough) */
 case 3:
     std::cout << "Three";
     break;
@@ -403,27 +401,27 @@ int main() {
     std::cin >> x >> op >> y;
 
     switch(op) {
-      case '+':
-            std::println("Sum: {} + {} = {}", x, y, x + y);
-            break;
-      case '-':
-            std::println("Difference: {} - {} = {}", x, y, x - y);
-            break;
-      case '*':
-            std::println("Product: {} * {} = {}", x, y, x * y);
-            break;
-      case '/':
-            std::println("Quotient (rounded down): {} / {} = {}", x, y, x / y);
-            break;
-      default:
-            std::println("Invalid operator!!!");
+    case '+':
+        std::println("Sum: {} + {} = {}", x, y, x + y);
+        break;
+    case '-':
+        std::println("Difference: {} - {} = {}", x, y, x - y);
+        break;
+    case '*':
+        std::println("Product: {} * {} = {}", x, y, x * y);
+        break;
+    case '/':
+        std::println("Quotient (rounded down): {} / {} = {}", x, y, x / y);
+        break;
+    default:
+        std::println("Invalid operator!!!");
     }
 }
 ```
 
 ## Conditional Operator
 
-The conditional operator (? :) is a ternary operator, meaning it takes three operands. It serves as a shorthand for an
+The conditional operator `(? :)` is a ternary operator, meaning it takes three operands. It serves as a shorthand for an
 if-else statement and returns a value based on a boolean condition. If second and third operands are of the same type,
 the result is of that type.
 
@@ -439,14 +437,17 @@ int main() {
     std::cin >> x >> y;
     int max = (x > y) ? x : y;
     std::cout << "The maximum is: " << max << '\n';
-    std::cout << "The ordering is: " << ((x == y) ? "Equal to" : (x < y) ? "Less than" : "Greater than");
+    std::cout << "The ordering is: "
+              << ((x == y) ? "Equal to"
+                           : (x < y) ? "Less than"
+                                     : "Greater than");
 }
 ```
 
 ::: info
 
-The stream insertion operator (`<<`) has higher precedence than the ternary operator `?:`, requiring parentheses in the above example. See
-[article](https://en.cppreference.com/w/cpp/language/operator_precedence.html) for more information about operator
-precedence.
+The stream insertion operator (`<<`) has higher precedence than the ternary operator `?:`, requiring parentheses in the
+above example. See [article](https://en.cppreference.com/w/cpp/language/operator_precedence.html) for more information
+about operator precedence.
 
 :::
