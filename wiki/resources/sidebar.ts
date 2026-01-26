@@ -69,6 +69,10 @@ const sidebar = [
                         text: "Overloading Stream Operators",
                         link: "/resources/cpp/stream-operators",
                     },
+                    {
+                        text: "Specializing std::formatter",
+                        link: "/resources/cpp/formatter-specialization",
+                    },
                 ],
                 collapsed: true,
             },
