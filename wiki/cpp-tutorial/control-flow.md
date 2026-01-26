@@ -57,7 +57,7 @@ if(condition) {
 }
 ```
 
-Implementation of a program that takes user input and prints if the number is odd or even:
+Implementation of a program that takes user input and prints whether the number is odd or even:
 
 ```cpp
 #include <iostream>
@@ -209,7 +209,7 @@ int main() {
 
 ### Do-While-Loop
 
-A do-while loop executes its loop body after every iteration, ensuring the loop body runs at least once regardless of
+A do-while loop checks its condition after every iteration, ensuring the loop body runs at least once regardless of
 any condition.
 
 ```cpp
@@ -218,7 +218,7 @@ do {
 } while(condition);
 ```
 
-Implementation of a program that prints the number with it's digits reversed:
+Implementation of a program that prints the number with its digits reversed:
 
 ```cpp
 #include <iostream>
@@ -386,7 +386,7 @@ case 3:
     std::cout << "Three";
     break;
 default:
-    std::cout << "Default"
+    std::cout << "Default";
 }
 ```
 
@@ -445,7 +445,7 @@ int main() {
 
 ::: info
 
-Stream insertion operator has precedence `<<` over the ternary operator `?:`. See
+The stream insertion operator (`<<`) has higher precedence than the ternary operator `?:`, requiring parentheses in the above example. See
 [article](https://en.cppreference.com/w/cpp/language/operator_precedence.html) for more information about operator
 precedence.
 
