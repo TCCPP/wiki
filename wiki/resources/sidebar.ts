@@ -69,6 +69,10 @@ const sidebar = [
                         text: "Overloading Stream Operators",
                         link: "/resources/cpp/stream-operators",
                     },
+                    {
+                        text: "std::endl, Buffers, and Flushing",
+                        link: "/resources/cpp/endl",
+                    },
                 ],
                 collapsed: true,
             },
