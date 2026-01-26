@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from "vitepress";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useData } from "../composables/data";
 import { useSidebar } from "../composables/sidebar";
 import VPDocAside from "./VPDocAside.vue";
@@ -12,6 +12,17 @@ const route = useRoute();
 const { hasSidebar, hasAside, leftAside } = useSidebar();
 
 const pageName = computed(() => route.path.replace(/[./]+/g, "_").replace(/_html$/, ""));
+
+const is_dev = import.meta.env.DEV;
+const bot_article_copied = ref(false);
+
+function copy_bot_article() {
+    navigator.clipboard.writeText(frontmatter.value.bot_article ?? "");
+    bot_article_copied.value = true;
+    setTimeout(() => {
+        bot_article_copied.value = false;
+    }, 2000);
+}
 </script>
 
 <template>
@@ -42,6 +53,15 @@ const pageName = computed(() => route.path.replace(/[./]+/g, "_").replace(/_html
                             <h1>Under Construction</h1>
                             <p>This site is a work in progress, contributions are welcome!</p>
                         </div>
+                        <div v-if="is_dev && frontmatter.bot_article" class="bot-article-preview">
+                            <span class="bot-article-label">Bot Article (dev only)</span>
+                            <button
+                                class="copy-button"
+                                :class="{ copied: bot_article_copied }"
+                                @click="copy_bot_article"
+                            />
+                            <pre>{{ frontmatter.bot_article }}</pre>
+                        </div>
                         <Content
                             class="vp-doc"
                             :class="[pageName, theme.externalLinkIcon && 'external-link-icon-enabled']"
@@ -69,6 +89,37 @@ const pageName = computed(() => route.path.replace(/[./]+/g, "_").replace(/_html
         margin: 0 0 5px;
     }
     p {
+    }
+}
+
+.bot-article-preview {
+    position: relative;
+    margin-bottom: 24px;
+    pre {
+        background-color: var(--vp-code-block-bg);
+        border: 2px dashed var(--vp-c-brand-1);
+        border-radius: 8px;
+        padding: 16px;
+        padding-top: 24px;
+        margin: 0;
+        font-family: var(--vp-font-family-mono);
+        font-size: 14px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        overflow-x: auto;
+    }
+    .bot-article-label {
+        position: absolute;
+        top: -10px;
+        left: 12px;
+        background-color: var(--vp-c-bg);
+        padding: 0 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--vp-c-brand-1);
+    }
+    &:hover :deep(.copy-button) {
+        opacity: 1;
     }
 }
 
