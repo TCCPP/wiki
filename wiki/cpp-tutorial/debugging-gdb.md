@@ -15,11 +15,6 @@ bot_article: |
   - `backtrace` - Show call stack
   - `continue` - Resume to next breakpoint
   - `quit` - Exit GDB
-
-  ## Learn More:
-  - [See the official documentation](https://www.sourceware.org/gdb/documentation/)
-  - [TCCPPCon#1: Debugging with GDB](https://www.youtube.com/watch?v=bSEW0BvMiGc)
-  - [How to Debug Using GDB](https://cs.baylor.edu/~donahoo/tools/gdb/tutorial.html)
 ---
 
 # GNU Debugger
