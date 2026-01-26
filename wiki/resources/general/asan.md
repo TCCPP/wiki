@@ -1,6 +1,6 @@
 ---
 alias: asan
-preview: |
+bot_article: |
   # Address Sanitizer
 
   Memory errors are common in C and C++ and can be hard to debug because they often manifest far from their source.

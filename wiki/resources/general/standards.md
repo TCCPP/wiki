@@ -1,3 +1,9 @@
+---
+alias: standards
+bot_article: |
+  # C and C++ Standards
+---
+
 # C and C++ standards
 
 ## Standard Links
