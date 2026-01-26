@@ -128,3 +128,16 @@
 .DocSearch {
     --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
+
+/**
+ * Component: Inline Code
+ * -------------------------------------------------------------------------- */
+
+:not(pre) > code:not(.long) {
+    white-space: nowrap;
+}
+
+:not(pre) > code.long {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
