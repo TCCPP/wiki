@@ -10,7 +10,7 @@ bot_article: |
   - `info b` - List all active breakpoints
   - `run` / `start` - Start execution
   - `next` - Step over (next stays in the function)
-  -  `step` - Step into (step goes inside calls)
+  - `step` - Step into (step goes inside calls)
   - `print var` - Inspect variable
   - `backtrace` - Show call stack
   - `continue` - Resume to next breakpoint
