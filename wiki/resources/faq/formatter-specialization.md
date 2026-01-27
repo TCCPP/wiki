@@ -127,4 +127,4 @@ std::format("{:>20}", p);  // "              (3, 4)"
 - [std::formatter](https://en.cppreference.com/w/cpp/utility/format/formatter)
 - [std::format](https://en.cppreference.com/w/cpp/utility/format/format)
 - [std::format_to](https://en.cppreference.com/w/cpp/utility/format/format_to)
-- [Overloading Stream Operators](/resources/cpp/stream-operators)
+- [Overloading Stream Operators](/resources/faq/stream-operators)
