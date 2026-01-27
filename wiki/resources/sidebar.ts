@@ -67,15 +67,15 @@ const sidebar = [
                     { text: "Scanf Whitespace", link: "/resources/general/scanf-whitespace" },
                     {
                         text: "std::endl, Buffers, and Flushing",
-                        link: "/resources/cpp/endl",
+                        link: "/resources/faq/endl",
                     },
                     {
                         text: "Overloading Stream Operators",
-                        link: "/resources/cpp/stream-operators",
+                        link: "/resources/faq/stream-operators",
                     },
                     {
                         text: "Specializing std::formatter",
-                        link: "/resources/cpp/formatter-specialization",
+                        link: "/resources/faq/formatter-specialization",
                     },
                 ],
                 collapsed: true,
