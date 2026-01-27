@@ -66,6 +66,10 @@ const sidebar = [
                 items: [
                     { text: "Scanf Whitespace", link: "/resources/general/scanf-whitespace" },
                     {
+                        text: "std::endl, Buffers, and Flushing",
+                        link: "/resources/cpp/endl",
+                    },
+                    {
                         text: "Overloading Stream Operators",
                         link: "/resources/cpp/stream-operators",
                     },
