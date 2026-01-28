@@ -50,6 +50,10 @@ We have skill roles in this server. Roles are assigned at staff discretion. Gene
 
 Server boosters get access to a private channel.
 
+## __**Server Invite**__
+
+Here's an invite link for the server: https://discord.gg/tccpp.
+
 <!-- inline -->
 ## __**Privacy**__
 
