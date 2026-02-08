@@ -42,7 +42,7 @@ const sidebar = [
                     },
                     {
                         text: "Copy Elision",
-                        link: "resources/cpp/Copy_elisions.md",
+                        link: "resources/cpp/copy-elision.md",
                     },
                 ],
                 collapsed: true,

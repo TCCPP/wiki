@@ -8,42 +8,24 @@ This optimization allows you to write clean, readable code that returns objects 
 performance costs. Starting with C++17 some forms of copy elision are
 **guaranteed** by the language standard.
 
-::: info 
-What This Means for You Copy elision is formally defined in the C++ standard under
+::: info What This Means for You 
+Copy elision is formally defined in the C++ standard under
 [**copy elision**](https://en.cppreference.com/w/cpp/language/copy_elision). When it works, objects are constructed
 directly where they're needed, skipping any intermediate copying steps entirely. 
 :::
 
-## A Brief History
-
-Let's start with some context.
-
-Back in 1988, compiler developers realized that programs were doing a lot of unnecessary copying when returning objects
-from functions. The Zortech compiler introduced something called "Return Value Optimization" to address this
-inefficiency.
-
-By 1997, the C++ standards committee recognized that this optimization was so beneficial that they officially included
-it in the language specification. However, they made it **optional** and compilers were allowed to do it, but not
-required to.
-
-The introduction of move semantics in C++11 helped reduce copying costs, but copy elision remained even better because
-it could eliminate operations entirely rather than just making them cheaper.
-
-The real breakthrough came with **C++17**, when the standards committee decided that certain copy elision scenarios were
-so obviously beneficial that they made them **mandatory**. This means modern C++ guarantees that some optimizations will
-happen, giving you confidence in writing efficient code.
+::: details Historical Context
+Compiler developers recognized unnecessary copying in return operations as early as 1988, with the Zortech compiler introducing Return Value Optimization. The C++ standards committee officially recognized this optimization in 1997, though it remained optional. C++11's move semantics reduced copying costs, but copy elision remained superior by eliminating operations entirely rather than just making them cheaper. The breakthrough came with C++17, when certain copy elision scenarios became mandatory, giving developers guaranteed optimization in specific cases.
+:::
 
 ## Understanding the Different Types
 
 Copy elision isn't just one thing, it's actually several related optimizations that apply to different situations. Let's
 explore each type to understand when and how they work.
 
-### Return Value Optimization (RVO)
+**Return Value** Optimization applies when returning objects from functions. The term "RVO" encompasses both named and unnamed return scenarios, though "URVO" (Unnamed Return Value Optimization) is sometimes used specifically for the unnamed case.
 
-This is probably the most common and important type of copy elision you'll encounter. It deals with what happens when
-you return objects from functions.
-
-#### Named Return Value Optimization (NRVO)
+### Named Return Value Optimization (NRVO)
 
 This applies when you create a local variable in a function and then return it. Here's a simple example:
 
@@ -96,7 +78,7 @@ Foo constructed
 Foo moved
 ```
 
-#### Unnamed Return Value Optimization (URVO)
+### Unnamed Return Value Optimization (URVO)
 
 This applies when you return a temporary object that doesn't have a name. Starting with C++17, this optimization is
 **guaranteed** to happen:
@@ -120,7 +102,7 @@ efficient, regardless of which compiler you use or what optimization flags you s
 Foo constructed
 ```
 
-### Parameter Passing Elision
+### Copy Elision for Function Arguments
 
 Copy elision doesn't just work for return values, it can also optimize how arguments are passed to functions:
 
@@ -139,7 +121,7 @@ void demonstrate_parameter_elision() {
 When you pass a temporary object or the result of a function call directly to a parameter, the compiler might construct
 that object directly in the parameter's memory location rather than creating it elsewhere and then copying it.
 
-### Exception Object Elision
+### Copy Elision for Exception Handling
 
 Even when dealing with exceptions, copy elision can help make error handling more efficient:
 
@@ -180,7 +162,7 @@ MyError constructed
 Error: something went wrong
 ```
 
-## Guaranteed vs Optional: Understanding the Difference
+## Guaranteed vs Optional Copy Elision
 
 This is a crucial distinction that affects how confidently you can write your code.
 
@@ -643,8 +625,7 @@ This isn't true. Move semantics and copy elision solve related but different pro
 - **Move semantics**: Makes copying cheaper when it must happen
 - **Copy elision**: Eliminates copying entirely when possible
 
-Copy elision is still better when it can be applied because it eliminates operations completely rather than just making
-them cheaper.
+It's worth noting that in many cases, copy elision and a move constructor invocation can be optimized to the same assembly code. However, copy elision bypasses the move constructor entirely, which is beneficial when the move constructor doesn't optimize away completely or has side effects.
 
 ### "Copy elision only helps with expensive objects"
 
