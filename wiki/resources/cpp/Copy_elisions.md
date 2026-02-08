@@ -5,7 +5,7 @@ transferring objects. Think of it as the compiler being smart enough to recogniz
 place just to immediately move it somewhere else and deciding to create it directly where it needs to go instead.
 
 This optimization allows you to write clean, readable code that returns objects by value without worrying about
-performance costs. What makes copy elision special is that starting with C++17, some forms of copy elision are
+performance costs. Starting with C++17 some forms of copy elision are
 **guaranteed** by the language standard.
 
 ::: info 
