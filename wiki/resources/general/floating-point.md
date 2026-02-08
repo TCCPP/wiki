@@ -1,3 +1,9 @@
+---
+alias: fp
+bot_article: |
+  # Floating Point Number Resources
+---
+
 # Floating Point Numbers
 
 ## Articles

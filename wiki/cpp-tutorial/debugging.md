@@ -1,3 +1,23 @@
+---
+alias: debugging
+bot_article: |
+  # Debugging Your Program
+
+  Debugging is the process of identifying and resolving errors in software. Key techniques include:
+
+  - **Compiler warnings** (`-Wall -Wextra -Wpedantic`)
+  - **Sanitizers** (`-fsanitize=address`)
+  - **Print debugging** and systematic elimination
+  - **Static analysis** and unit testing
+  - **Interactive debugging** with GDB, LLDB, or Visual Studio
+
+  ## Have you tried stepping through your code line by line in a debugger?
+
+  If you don't know how to use a debugger or don't have one set up, we *highly* recommend taking the time to do so.
+  Debuggers are immensely helpful tools for figuring out where problems emerge in code and especially when you're first
+  learning it can help you build intuition and understanding for reasoning through code. Debuggers let you pause execution, inspect variables, examine the call stack, and step through code line by line.
+---
+
 # Debugging Your Program
 
 ## Debugging

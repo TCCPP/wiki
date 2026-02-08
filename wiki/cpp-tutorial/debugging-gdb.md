@@ -1,17 +1,37 @@
+---
+bot_article: |
+  # GNU Debugger (GDB)
+
+  Compile with debug symbols: `g++ main.cpp -o program -Og -g`
+
+  **Quick reference:**
+  - `gdb program` - Launch debugger (`--tui` for terminal user interface mode)
+  - `break 10` / `b main` - Set a breakpoint at a certain line / function
+  - `info b` - List all active breakpoints
+  - `run` / `start` - Start execution
+  - `next` - Step over (next stays in the function)
+  - `step` - Step into (step goes inside calls)
+  - `print var` - Inspect variable
+  - `backtrace` - Show call stack
+  - `continue` - Resume to next breakpoint
+  - `quit` - Exit GDB
+---
+
 # GNU Debugger
 
 The GNU Debugger (GDB) is one of the most widely used debuggers today, with numerous frontends and adapters available.
 GDB is freely available under the GPLv3 license.
 
 - [See the official documentation](https://www.sourceware.org/gdb/documentation/)
-- [See a TCCPP video tutorial](https://www.youtube.com/watch?v=bSEW0BvMiGc)
+- [See a TCCPPCon#1: Debugging with GDB](https://www.youtube.com/watch?v=bSEW0BvMiGc)
+- [How to Debug Using GDB](https://cs.baylor.edu/~donahoo/tools/gdb/tutorial.html)
 
 ## GDB Quickstart
 
 ### Create an executable with debug symbols
 
 ```bash
-g++ main.cpp -o executable.file -Og -g
+g++ main.cpp -o program -Og -g
 ```
 
 - `-O0` - enables no optimizations (maybe preferred)
@@ -33,15 +53,15 @@ GDB is self documented.
 ### Launch a debugger with a file attached
 
 ```bash
-gdb executable.file
+gdb program
 ```
 
 - GNU debugger `gdb`
-- Executable `executable.file` you want to inspect
+- Executable `program` you want to inspect
 
 ### Layouts `layout, lay`
 
-- Launch TUI directly `gdb executable.file --tui` (equivalent to `layout src`)
+- Launch TUI directly `gdb program --tui` (equivalent to `layout src`)
 - Layout source `layout src` - displays source code (if not available recompile with `-g` flag enabled)
 - Layout assembly `layout asm` - displays assembly
 - Layout split `layout split` - displays both assembly and source layout

@@ -45,6 +45,10 @@ const sidebar = [
                         text: "GNU Debugger",
                         link: "/cpp-tutorial/debugging-gdb",
                     },
+                    {
+                        text: "CLion Debugger",
+                        link: "/cpp-tutorial/debugging-clion",
+                    },
                 ],
                 collapsed: true,
             },

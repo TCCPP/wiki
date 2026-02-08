@@ -1,3 +1,11 @@
+---
+alias: ideas
+bot_article: |
+  # Project Ideas
+
+  Looking for inspiration for what to build? Check out our community-curated list of project ideas.
+---
+
 # Project Ideas
 
 This page has a list of ideas for projects of varying difficulties. It is by no means exhaustive and is mainly meant to

@@ -47,6 +47,7 @@ const sidebar = [
                 text: "General Resources",
                 items: [
                     { text: "Address Sanitizer", link: "/resources/general/asan" },
+                    { text: "Ownership", link: "/resources/general/ownership" },
                     { text: "Standards", link: "/resources/general/standards" },
                     { text: "Project Ideas", link: "/resources/general/project-ideas" },
                     { text: "Floating Point Numbers", link: "/resources/general/floating-point" },
@@ -58,6 +59,25 @@ const sidebar = [
                 items: [
                     { text: "Performance Analysis", link: "/resources/advanced/performance-analysis" },
                     { text: "Compiler Development", link: "/resources/advanced/compiler-development" },
+                ],
+                collapsed: true,
+            },
+            {
+                text: "FAQ",
+                items: [
+                    { text: "Scanf Whitespace", link: "/resources/general/scanf-whitespace" },
+                    {
+                        text: "std::endl, Buffers, and Flushing",
+                        link: "/resources/faq/endl",
+                    },
+                    {
+                        text: "Overloading Stream Operators",
+                        link: "/resources/faq/stream-operators",
+                    },
+                    {
+                        text: "Specializing std::formatter",
+                        link: "/resources/faq/formatter-specialization",
+                    },
                 ],
                 collapsed: true,
             },

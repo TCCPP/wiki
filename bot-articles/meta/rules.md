@@ -14,6 +14,7 @@ Welcome to the server :\)
 
 ## **__Rules (continued)__**
 8. We are an English discord. Please use English when communicating here (both so others can join the conversation and so we can moderate).
+9. We do not allow job advertisements nor solicitations of work for hire. We allow sharing of job listings on legitimate platforms (e.g. linkedin, indeed, fiverr, or similar). Discussion should happen on those platforms, not Discord.
 
 ## **__Remember__**
 ​0. Format your code. You can either format it yourself or reply to a message with !format to automatically put code in code blocks and, for C or C++ code, automatically indent it.
@@ -29,8 +30,7 @@ To protect our voice channels, new users are suppressed by default when no <@&13
 
 ## __**Moderation**__
 There are four ways to contact the moderators:
-
-1. **Right Click Message -> Apps -> Report**. This will silently send us a link to a message you believe deserves moderator attention. Use this for most issues.
+1. **Right Click Message -> Apps -> "🚩 Report to Moderators 🚩"**. This will silently send us a link to a message you believe deserves moderator attention. Use this for most issues.
 2. **Click the Modmail button below**. This will start a thread through which you can have a discussion with the moderation team. Use this to bring up ongoing concerns or providing evidence for reports (such as DM spam)
 3. **Ping <@&847915341954154536>**. This will notify online moderators that an issue needs to be urgently dealt with. __Do not use this for question help.__
 4. **Ping <@&1371706420730531870>**. This will notify online voice moderators that an issue in voice channels needs to be urgently dealt with. __Do not use this to ask for voice permissions or to be unsuppressed.__
@@ -49,6 +49,10 @@ We have skill roles in this server. Roles are assigned at staff discretion. Gene
 ## __**Boosts**__
 
 Server boosters get access to a private channel.
+
+## __**Server Invite**__
+
+Here's an invite link for the server: https://discord.gg/tccpp.
 
 <!-- inline -->
 ## __**Privacy**__

@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 import footnote from "markdown-it-footnote";
 import { wiki_icons_plugin } from "../core/markdown/wiki-icons";
 import { kbd_plugin } from "../core/markdown/kbd";
+import { inline_code_plugin } from "../core/markdown/inline-code";
 
 import c_tutorial_sidebar from "../../wiki/c-tutorial/sidebar";
 import cpp_tutorial_sidebar from "../../wiki/cpp-tutorial/sidebar";
@@ -61,6 +62,7 @@ export default defineConfig({
             md.use(footnote);
             md.use(wiki_icons_plugin);
             md.use(kbd_plugin);
+            md.use(inline_code_plugin);
             // modify page frontmatter
             const original_render = md.render;
             md.render = function (src, env) {
