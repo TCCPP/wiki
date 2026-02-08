@@ -22,12 +22,12 @@ int result = 10 + a; // result = 15
 
 Operators in C++ can be classified into 6 groups:
 
-1. [Arithmetic Operators](#Arithmetic Operators)
-2. [Assignment Operators](#Assignment Operators)
-3. [Relational Operators](#Relational Operators)
-4. [Logical Operators](#Logical Operators)
-5. [Bitwise Operators](#Bitwise Operators)
-6. [Other Operators](#Other Operators)
+1. Arithmetic Operators
+2. Assignment Operators
+3. Relational Operators
+4. Logical Operators
+5. Bitwise Operators
+6. Other Operators
 
 ## Arithmetic Operators
 
@@ -328,7 +328,7 @@ unsigned int result = a >> 2; // 00101 in binary = 5
 > 
 > For signed integers, right shift behavior is implementation-defined. Some systems perform arithmetic shift (sign extension), while others perform logical shift (zero fill).
 
-> [!NOTE] **For Advanced Programmers**
+> [!NOTE] For Advanced Programmers
 > 
 > Be aware of type promotion when using bitwise operators. Small integer types like `char` and `short` are promoted to `int` before bitwise operations, which can lead to unexpected results with the NOT operator. Also, shifting by an amount greater than or equal to the bit width of the type results in undefined behavior.
 
@@ -457,7 +457,7 @@ int truncated = (int)pi;           // C-style cast
 int truncated2 = static_cast<int>(pi); // C++ style cast (preferred)
 ```
 
-> [!NOTE] **For Advanced Programmers**
+> [!NOTE] For Advanced Programmers
 > 
 > C++ provides four named cast operators: `static_cast`, `dynamic_cast`, `const_cast`, and `reinterpret_cast`. These provide more type safety and clarity than C-style casts and should be preferred in modern C++. Additionally, operator precedence and associativity become important when combining multiple operators in complex expressions.
 
@@ -474,7 +474,7 @@ The best way to master operators is through practice. Try:
 
 Remember that readable code is often more important than clever tricks. Use operators in ways that make your intent clear to other programmers (or yourself in the future).
 
-> [!NOTE] **For Advanced Programmers**
+> [!NOTE] For Advanced Programmers
 > 
 > Consider exploring topics like expression templates, SFINAE with operators, the spaceship operator (`<=>`) introduced in C++20, and how compilers optimize operator usage. The `constexpr` keyword can also be applied to operator overloads for compile-time evaluation. Understanding move semantics and perfect forwarding becomes crucial when overloading assignment operators and implementing efficient operator overloads.
 
