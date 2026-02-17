@@ -19,18 +19,16 @@ bot_article: |
 | :cpp: **C++03** | N/A                                                                      | [[N1804]](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1804.pdf) |
 | :cpp: **C++98** | [[X3J16]](https://www.open-std.org/jtc1/sc22/wg21/docs/wp/html/nov97-2/) | [[X3J16]](https://open-std.org/JTC1/SC22/WG21/docs/wp/pdf/nov97-2/body.pdf)   |
 
-| Edition     | HTML                                                  | PDF                                                                       |
-| ----------- | ----------------------------------------------------- | ------------------------------------------------------------------------- |
-| :c: **C2y** | N/A                                                   | [[N3685]](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3685.pdf)[^2] |
-| :c: **C23** | [[N3220]](https://cigix.me/c23)                       | [[N3220]](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3220.pdf)     |
-| :c: **C17** | [[N2176]](https://cigix.me/c17)                       | [[N2176]](https://files.lhmouse.com/standards/ISO%20C%20N2176.pdf)        |
-| :c: **C11** | [[N1570]](http://port70.net/~nsz/c/c11/n1570.html)    | [[N1570]](http://port70.net/~nsz/c/c11/n1570.pdf)                         |
-| :c: **C99** | [[N1256]](http://port70.net/~nsz/c/c99/n1256.html)    | [[N1256]](http://port70.net/~nsz/c/c99/n1256.pdf)                         |
-| :c: **C89** | [[HTML]](http://port70.net/~nsz/c/c89/c89-draft.html) | N/A                                                                       |
+| Edition     | HTML                                                  | PDF                                                                   |
+| ----------- | ----------------------------------------------------- | --------------------------------------------------------------------- |
+| :c: **C2y** | N/A                                                   | [[N3854]](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3854.pdf) |
+| :c: **C23** | [[N3220]](https://cigix.me/c23)                       | [[N3220]](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3220.pdf) |
+| :c: **C17** | [[N2176]](https://cigix.me/c17)                       | [[N2176]](https://files.lhmouse.com/standards/ISO%20C%20N2176.pdf)    |
+| :c: **C11** | [[N1570]](http://port70.net/~nsz/c/c11/n1570.html)    | [[N1570]](http://port70.net/~nsz/c/c11/n1570.pdf)                     |
+| :c: **C99** | [[N1256]](http://port70.net/~nsz/c/c99/n1256.html)    | [[N1256]](http://port70.net/~nsz/c/c99/n1256.pdf)                     |
+| :c: **C89** | [[HTML]](http://port70.net/~nsz/c/c89/c89-draft.html) | N/A                                                                   |
 
 [^1]: This is the most recent working draft with editorial changes from a recent committee meeting
-
-[^2]: WG14 doesn't have public working drafts so we only have out-of-date links for C23
 
 ## Additional Material
 
