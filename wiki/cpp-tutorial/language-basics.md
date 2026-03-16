@@ -48,8 +48,8 @@ you've written code a certain way. C++ has two types of comments:
 
 _Line comments_ or _single-line comments_ start with `//` and go until the end of the line.
 
-_Block comments_ start with `/*` and end with `*/`. They don't actually have to be multiple lines long, but that's why
-they're typically used instead of line comments.
+_Block comments_ start with `/*` and end with `*/`. Although they can be used for single-line comments, they are
+typically used for comments that span multiple lines.
 
 ## Statements
 
@@ -66,11 +66,10 @@ other types of statements.
 int foo = 0;
 ```
 
-Breaking down the statement, we will start by identifying the name of the variable `foo`. To the left of `foo`, we see
-the type of the variable, `int`. Variables in C++ are required to have a type in the declaration, and a variable cannot
-change type after it is declared. The equals symbol (`=`) is used to provide the variable `foo` with a value. The right
-side of the `=` statement is an expression used to specify the value to assign. In this case, we are assigning `foo` the
-value of `0`.
+Breaking down this statement, we will start by identifying the name of the variable `foo`. To the left of `foo`, we see
+the type of the variable, `int`. In C++, variables are required to have a type in the declaration, and a variable cannot
+change its type after its declared. The equals symbol (`=`) is used to assign a value to the variable. The expression on
+the right side of the `=` specifies the value to assign. In this case, we are assigning the value of `0` to `foo`.
 
 ### Expression Statements
 
@@ -81,8 +80,8 @@ int foo = 0;   // declaration statement
 foo = foo + 2; // expression statement
 ```
 
-The above snippet creates `foo` with an initial value of `1`, then evaluates `foo + 2` before assigning the value back
-to the variable `foo`.
+In the above snippet, the variable `foo` is initialized with a value of `0`, then evaluates the expression `foo + 2`
+before assigning the value back to the variable foo.
 
 ## Identifiers
 
@@ -91,16 +90,17 @@ contain alphabetic characters, `_`, digits, and certain Unicode characters, but 
 
 ::: info For Advanced Developers
 
-While Unicode characters can be used in C++ identifiers, the degree of support for this has changed throughout the
-years. Many C++ developers prefer to use only ASCII characters in their code, which is most portable and easiest to type
-on all keyboards. For example, most developers would call a variable `alpha` instead of `α`.
+While Unicode characters can be used in C++ identifiers, the degree of support for them has changed throughout the
+years. Many C++ developers prefer to use only ASCII characters in their code, which is more portable and easier to type
+on most keyboards. For example, most developers would name a variable `alpha` instead of `α`.
 
 :::
 
 ## Keywords
 
-C++ reserves a set of words in the language for its own use. Developers may use these keywords, but they cannot be used
-as identifiers. You can find a list of all keywords on [cppreference](https://en.cppreference.com/w/cpp/keyword).
+C++ reserves a set of words in the language for its own use, known as _keywords_. Developers may use these keywords, but
+they cannot be used as identifiers (such as variable names). You can find a list of C++ keywords on
+[cppreference](https://en.cppreference.com/w/cpp/keyword).
 
 ```cpp
 int my_integer_value = 0; // int is a keyword
@@ -118,49 +118,51 @@ meaning_, such as `override`. We will cover these in later chapters.
 
 ## Initialization Versus Assignment
 
-When we first create a variable in C++, it undergoes _initialization_. Initialization is the process of providing a
-variable with an initial value.
+When we first create a variable in C++, it undergoes through a process called _initialization_. Initialization is the
+process of providing a variable with an initial value.
 
 ```cpp
 int foo = 0;
 ```
 
 The above statement is one of the most common ways to initialize a variable. It gives the variable `foo` an initial
-value of `0`. There are many ways to initialize a variable, each having its own pros and cons. The different types of
-initialization will be discussed in more detail in another section.
+value of `0`. There are many ways to initialize a variable in C++, each having its own pros and cons. The different
+types of initialization will be discussed in more detail in a later section.
 
-Assignment is a process that takes place after a variable already exists. It is the process of assigning a new value to
-an existing variable.
+Assignment, on another hand, is a process that takes place _after_ a variable has already been created. It is the
+process of assigning a new value to an existing variable.
 
 ```cpp
 int foo = 0; // initialization (begins with the type of the variable)
 foo = 2;     // assignment (no type specified)
 ```
 
-Like initialization, assignment has several different forms that will be discussed in more detail in a later chapter.
+Like initialization, assignment also has different forms that will be discussed in more detail in a later chapter.
 
 ## Fundamental Data Types and Literals
 
-All values in C++ have a _type_, and variables can only hold values of a specified type.
+In C++, all value has a _type_, and variables can only hold values of the type they are declared with.
 
-The most simple types are _fundamental types_. You have already seen variables of (fundamental) type `int` in the
-examples above, and values such as `0` (also of type `int`). We will go over some commonly used fundamental types in the
-following section.
+The most simple types are _fundamental types_. You have already seen examples of variables of (fundamental) type `int`,
+and values such as `0`, which is also a type of `int`.
+
+We will go over some commonly used fundamental types in the following section.
 
 ### `bool`
 
-The type `bool` can either hold the values `true` and `false`. You can use it to store the result of logic, like:
+The type `bool` reprsents the Boolean value, it can either hold `true` or `false`. You can use it to store the result of
+logical expressions, like:
 
 ```cpp
-bool b = 1 > 0; // True if one is greater than zero.
+bool b = 1 > 0; // True if 1 is greater than 0.
 ```
 
 ### Integer Types
 
-_Integer types_ in C++ are similar to integers in math. They can store (possibly negative) whole numbers like `1` or
-`-1`, but no fractions, like `0.5`.
+_Integer types_ in C++ are similar to integers in math. They can store values like `1`, `0` or `-1`, but not fractions,
+like `0.5`.
 
-See below a list of _signed integer types_:
+Below is a list of commonly used _signed integer types_:
 
 | Type          | Minimum Range                                           | Minimum Width in Bits |
 | ------------- | ------------------------------------------------------- | --------------------- |
@@ -170,7 +172,7 @@ See below a list of _signed integer types_:
 | `long`        | [−2,147,483,648, 2,147,483,647]                         | 32                    |
 | `long long`   | [−9,223,372,036,854,775,808, 9,223,372,036,854,775,807] | 64                    |
 
-Additionally, there are _unsigned integer types_, which cannot store negative values.
+Additionally, there are also _unsigned integer types_, which cannot store negative values.
 
 | Type                 | Minimum Range                   | Minimum Width in Bits |
 | -------------------- | ------------------------------- | --------------------- |
@@ -192,9 +194,10 @@ The C++ standard library provides exact-width aliases like `std::int32_t`.
 
 ### Character Types
 
-In addition to `signed char` and `unsigned char`, C++ has a type `char`. All three of these types are used for character
-representation, and are one byte large. The standard does not specify if `char` is signed or unsigned, but is is a
-distinct type. On x86-64, `char` is typically signed, whereas on ARM64, it is typically unsigned.
+In addition to `signed char` and `unsigned char`, C++ has a distinct type called `char`. All three of these types are
+used for character representation, and are typically one byte in size. However, the standard does not specify whether
+`char` is signed or unsigned, but is a distinct type. On x86-64, `char` is typically signed, whereas on ARM64, it is
+typically unsigned.
 
 Throughout the years, further character types were added to C++:
 
@@ -206,7 +209,7 @@ Throughout the years, further character types were added to C++:
 
 ### Floating-Point Types
 
-A floating-point type can represent
+A floating-point type can represent:
 
 - integers (e.g. `0`),
 - numbers with fractional parts (e.g. `0.5`),
@@ -214,30 +217,32 @@ A floating-point type can represent
 - NaN (not a number).
 
 However, since floating-point numbers are fixed-size, they can only represent certain fractional numbers exactly. For
-example, `0.1` cannot be represented exactly by a floating-point number, and neither can be extremely tiny or extremely
-large numbers.
+example, `0.1` cannot be represented precisely as a floating-point number. Similarly, extremely tiny or extremely large
+numbers may be approximated due to size limitations.
 
-There are at least three fundamental floating-point types in C++: `float`, `double`, and `long double`. The range of
-representable values for a `double` is required to be at least as large as that of a `float`, and the `long double` must
-have a range at least that of a `double`. The language does not provide many strong guarantees about the properties of
-the various floating-point types.
+C++ provides at least three fundamental floating-point types: `float`, `double`, and `long double`. The range of
+representable values for a `double` is required to be at least as large as that of a `float`, and `long double` must
+have a range at least that of a `double`. Beyond this requirements, the language does not provide many strong guarantees
+about the properties of the various floating-point types.
 
 ::: info IEEE-754 Floating-Point Model
 
-Because C++ needs to support many different types of computers, it does not enforce that floating-points are represented
-in a specific way. For the sake of this tutorial, we will assume that you are working on a device that uses the IEEE-754
-floating-point specification. This is the case for almost all consumer hardware. The rest of the tutorial will make the
-assumption that a `float` is an IEEE-754 binary32 format float and that a `double` is an IEEE-754 binary64 format float.
+Because C++ supports a wide variety of hardware, it does not require floating-point numbers to follow a specific
+representation. For the sake of this tutorial, we will assume that you are working on a device that uses the IEEE-754
+floating-point specification. This is the case for almost all consumer hardware.
+
+The rest of the tutorial will make the assumption that a `float` is an IEEE-754 binary32 format float and that a
+`double` is an IEEE-754 binary64 format float.
 
 | Type     | Range                  | Width |
 | -------- | ---------------------- | ----- |
 | `float`  | $\pm 3.402 * 10^{38}$  | 32    |
 | `double` | $\pm 1.797 * 10^{308}$ | 64    |
 
-The type `long double` has the restriction that its range must be at least as large as a `double`. On many x86-64
-platforms, it is implemented as an IEEE-754 binary64 extended format, where the width of the type is 80 bits. However,
-MSVC is an exception to this rule, where it is only 64 bits. On other platforms, it may be implemented as a IEEE-754
-binary128 format float.
+The type `long double` must have a range at least as large as a `double`. On many x86-64 platforms, it is implemented as
+an IEEE-754 binary64 extended format, where the width of the type is 80 bits. However, MSVC is an exception to this
+rule, where it is only 64 bits, matching `double`. On other platforms, it may be implemented as a IEEE-754 binary128
+format float.
 
 :::
 
@@ -246,10 +251,10 @@ binary128 format float.
 Literals are a way that C++ allows us to provide a value directly in the code. You may recall above where the code
 snippets were creating variables using numbers in the code. Those numbers are referred to as literals.
 
-Integer literals are just numbers in code with no trailing fractional part. By adding a `u`, you can tell the compiler
-that the literal represents an unsigned integer type. Floating-point literals are numbers in code with a trailing
-fractional part. Without a `f` at the end, the compiler will treat the number as a `double`. By adding a trailing `f`,
-the compiler now treats it as a `float`.
+- **Integer literals** are just numbers in code with no trailing fractional part (e.g., `3`). By adding a `u`, you can
+  tell the compiler that the literal represents an unsigned integer type (e.g., `3u`).
+- **Floating-point literals** are numbers in code with a trailing fractional part (e.g., 3.14). By default, the compiler
+  will treat the number as a `double`. By adding a trailing `f`, the compiler now treats it as a `float`.
 
 ```cpp
 int foo = 3; // This is an integer literal
@@ -260,9 +265,9 @@ double baz = 3.14; // This is a floating-point literal for a double
 
 ## Basic Operators
 
-Operators are a type of expression that uses symbols to provide meaning. For example, `+` is an operator. As you may
-have assumed, `+` is typically used to add values together. Here, we'll introduce a handful of operators that you can
-use with the types you learned about above:
+Operators are a type of expression that uses symbols to perform operations on values. For example, `+` is an operator.
+As you may have assumed, `+` is typically used to add values together. Here, we'll introduce a handful of operators that
+you can use with the fundamental types you learned about above:
 
 | Operator | Name           | Function                                  |
 | -------- | -------------- | ----------------------------------------- |
@@ -276,21 +281,26 @@ use with the types you learned about above:
 ::: info The Assignment Operator
 
 As we saw above, the equal sign (`=`) can be used both for initializing a variable and for assigning new values to
-variables. Even though both use `=`, it is important to remember there is a difference between initialization and
-assignment of variables. The distinction between the two will be explored further in a later chapter.
+existing variables. Even though the same symbol is used, it is important to remember there is a difference between
+initialization and assignment of variables. The distinction between the two will be explored further in a later chapter.
 
 :::
 
 In your exploration of the language so far, you may have noticed that there is a `^` operator. In math, you may think of
-this as a power/exponentiation operator. In C++, this operator has a different meaning that will be discussed in a later
-chapter on [bitwise operators](/cpp-tutorial/operators#bitwise-operators).
+this as a power/exponentiation operator. However, in C++, `^` operator has a different meaning that will be discussed in
+a later chapter on [bitwise operators](/cpp-tutorial/operators#bitwise-operators).
 
 ## Wrapping Up
 
-In the above sections, we've covered the basics of a C++ program. At this point, you should know the basics of how a C++
-program is structured, how to create a variable, some of the types that C++ provides you, and some of the operations
-provided to you on those types. Additionally, you should be able to write a comment in your code. Let's bring this
-together and write a simple program that changes Fahrenheit to Celsius.
+In the sections above, we've covered the foundational basics of a C++ program. At this point, you should know:
+
+- the basics of how a C++ program is structured,
+- how to write comments,
+- how to create a variable,
+- some of the types that C++ provides you,
+- and some of the operations provided to you on those types.
+
+Let's bring this knowledge together into practice and write a simple program that converts Fahrenheit to Celsius.
 
 The equation to convert the two is very simple: $C = (F - 32) / (9 / 5)$.
 
