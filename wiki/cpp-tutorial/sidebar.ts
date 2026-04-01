@@ -112,6 +112,10 @@ const sidebar = [
                         text: "An Introduction to References and Pointers",
                         link: "/cpp-tutorial/functions#an-introduction-to-references-and-pointers",
                     },
+                    {
+                        text: "An Introduction to Value Categories",
+                        link: "/cpp-tutorial/value-categories",
+                    },
                 ],
                 collapsed: true,
             },
