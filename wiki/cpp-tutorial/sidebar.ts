@@ -151,7 +151,7 @@ const sidebar = [
                         link: "/cpp-tutorial/file-io#redirecting-stdio",
                     },
                 ],
-                collapsed: true;
+                collapsed: true,
             },
             {
                 text: "User Defined Types",
