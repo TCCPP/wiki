@@ -28,7 +28,7 @@ not just read its contents.
 For example, **[std::string_view][sv]** cannot be used here:
 ```cpp
 // or when passing an rvalue reference
-void store(std::string s) { this.s = std::move(s); }
+void store(std::string s) { this->s = std::move(s); }
 ```
 
 ## See Also
