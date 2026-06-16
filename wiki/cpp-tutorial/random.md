@@ -1,25 +1,17 @@
 ---
 bot_article: |
   # Generating Random Numbers in C++
-  ## Example: Printing Ten Random Dice Rolls
+Simple example of random number generation in C++:
 
   ```cpp
   #include <random>
   #include <iostream>
-
   int main() {
-    // initialize a random device
-    std::random_device dev;
-
-    // seed default_random_engine
-    std::default_random_engine gen{dev()};
-
-    // initialize a uniform integer distribution
-    std::uniform_int_distribution<int> dis{1, 6};
-
-    // roll the dice
+    std::random_device dev; // for seeding
+    std::default_random_engine rng{dev()};
+    std::uniform_int_distribution<int> dist{1, 6};
     for (int i = 0; i < 10; ++i) {
-        std::cout << dis(gen) << ' ';
+      std::cout << dist(rng) << ' ';
     }
   }
   ```
@@ -43,8 +35,8 @@ implement PRNG algorithms behind a
 
 Unlike the C `rand()` function, which relies on common shared seed via `srand()`, the C++ random engines are independent
 and each one has its own seed. This ensures thread safety, whereas C `rand()` does not. Another thing worth mentioning
-about `rand()` is that it is implementation defined and can vary system to system. The C++ random library should be
-always preferred.
+about `rand()` is that it is implementation defined and can vary system to system. The C++ random library should
+always be preferred.
 
 It should be noted that none of these PRNGs are cryptographically secure (should not be used for security-sensitive
 applications). This means that the state of the random engine can be figured out and predicted given enough values.
@@ -106,7 +98,7 @@ prime number $2^{19937} - 1$. It is also the number of possible states MT will r
 initial state.
 
 The main limitation of the MT engine is its large internal state size of exactly `624 * sizeof(std::uint_fast32_t)`
-bytes for `mt19937`. Because of this size MT engine makes is less suitable for multi-threaded applications than other
+bytes for `mt19937`. Because of this size MT engine makes it less suitable for multi-threaded applications than other
 PRNGs with a smaller state.
 
 ```cpp
@@ -125,15 +117,14 @@ int main() {
 
     // generate random numbers in the interval [0, 1)
     for (int i = 0; i < 100; ++i) {
-        double random_number = dis(gen);
-        std::cout <<  random_number << std::endl;
+        std::cout << dis(gen) << std::endl;
     }
 }
 ```
 
 ## Seed Sequence
 
-Seed sequence (`std::seed_seq`) is an utility in the standard library for converting a small number of inputs into a
+Seed sequence (`std::seed_seq`) is a utility in the standard library for converting a small number of inputs into a
 higher quality seed (does not contain large areas of zeros/ones) suitable for seeding PRNGs with large internal state
 (e.g. `std::mt19937`).
 

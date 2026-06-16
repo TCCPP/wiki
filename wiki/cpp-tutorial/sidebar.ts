@@ -174,7 +174,6 @@ const sidebar = [
             {
                 text: "Random",
                 link: "/cpp-tutorial/random",
-                collapsed: true,
             },
         ],
     },
