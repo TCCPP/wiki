@@ -108,7 +108,7 @@ Lets start with the obligatory hello world example:
 ```cpp:line-numbers
 #include <iostream>
 int main() {
-    std::cout << "Hello, GDB!";
+    std::cout << "Hello, GDB!" << std::endl;
     return 0; /* break here */
 }
 ```
