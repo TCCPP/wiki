@@ -81,7 +81,7 @@ int foo = 0;   // declaration statement
 foo = foo + 2; // expression statement
 ```
 
-The above snippet creates `foo` with an initial value of `1`, then evaluates `foo + 2` before assigning the value back
+The above snippet creates `foo` with an initial value of `0`, then evaluates `foo + 2` before assigning the value back
 to the variable `foo`.
 
 ## Identifiers
