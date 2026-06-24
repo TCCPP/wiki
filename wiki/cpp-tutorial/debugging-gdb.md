@@ -130,7 +130,7 @@ program `start`:
 Temporary breakpoint 1 at 0x123456: file main.cpp, line 3.
 Starting program: /file/path/to/main.out
 
-Temporary breakpoint 1, main () at main1.cpp:3
+Temporary breakpoint 1, main () at main.cpp:3
 3           std::cout << "Hello, GDB!" << std::endl;
 ```
 
