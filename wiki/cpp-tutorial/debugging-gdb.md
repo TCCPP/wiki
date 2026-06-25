@@ -80,7 +80,7 @@ gdb program
 - `run, r` - start the program execution inside of gdb
 - `start` - creates a temporary breakpoint at `main()` and start execution
 
-### Launch the executable and step thru the program
+### Launch the executable and step through the program
 
 - `next, n` - executes the next line of code
 - `nexti, ni` - executes the next instruction
