@@ -38,7 +38,7 @@ int main() {
 }
 ```
 
-Most commonly, uninitialized access results in what is known as garbage values. Those are values that are arbitrary and
+Most commonly, uninitialized access results in what is known as indeterminate values. Those are values that are arbitrary and
 unpredictable. This program outputs either `non negative` or `negative` and subsequent runs can be different.
 
 ::: warning
