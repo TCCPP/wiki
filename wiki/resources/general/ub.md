@@ -6,22 +6,21 @@ bot_article: |
   Undefined behavior (UB) is behavior for which the C/C++ standard imposes no requirements.
 
   Typical causes are: reading uninitialized memory,
-  performing out-of-bounds memory access,
+  out-of-bounds memory access,
   or using an object when it no longer exists.
 
   ## Why it Matters
 
-  Since the standard does not restrict what could happen, the program may crash,
+  Because the standard does not restrict what could happen, the program may crash,
   continue execution, have different behaviors on different platforms.
   This can lead to strange bugs and security issues.
 ---
 
 # Undefined Behavior
 
-For the convinience of optimization, the C/C++ standard left out a few undefined cases known as _Undefined Behavior_
-(UB). Undefined Behavior is behavior for which the C/C++ standard imposes no restrictions. <br/> In other words, the
-program can crash, continue or have different behaviors on different platforms. None of which are guaranteed. <br/> Here
-is an example of a UB:
+Undefined Behavior is behavior for which the C/C++ standard imposes no requirements. <br/> In other words, the program
+can crash, continue or have different behaviors on different platforms. None of which are guaranteed. <br/> Here is an
+example of a UB:
 
 ```cpp
 #include <iostream>
@@ -38,20 +37,20 @@ int main() {
 }
 ```
 
-Most commonly, uninitialized access results in what is known as indeterminate values. Those are values that are arbitrary and
-unpredictable. This program outputs either `non negative` or `negative` and subsequent runs can be different.
+Most commonly, uninitialized access results in what is called indeterminate values. Those are values that are arbitrary
+and unpredictable. This program outputs either `non negative` or `negative` and the result of each runs can be
+different.
 
 ::: warning
 
-Because this is an undefined behavior, the behavior above is not guaranteed. It can print either strings or crash
-entirely.
+Because this is an undefined behavior, the behavior above is not guaranteed. It can print either strings or just crash.
 
 :::
 
 ## Why it Matters?
 
-Compilers are not required to give warnings or errors for undefined behaviors and the presence of them in your code can
-lead to non-portable behaviors, strange bugs and security vulnerabilities.
+Compilers are not required to give warnings or errors for undefined behaviors and having them in your code can lead to
+non-portable behaviors, strange bugs and security vulnerabilities.
 
 ## Common UBs
 
