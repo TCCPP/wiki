@@ -11,15 +11,14 @@ bot_article: |
 
   ## Why it Matters
 
-  Because the standard does not restrict what could happen, the program may crash,
-  continue execution, have different behaviors on different platforms.
-  This can lead to strange bugs and security issues.
+  Compilers are not required to give warnings or errors for undefined behaviors and having them in your code can lead to
+  non-portable code, strange bugs and security vulnerabilities.
 ---
 
 # Undefined Behavior
 
 Undefined Behavior is behavior for which the C/C++ standard imposes no requirements. <br/> In other words, the program
-can crash, continue or have different behaviors on different platforms. None of which are guaranteed. <br/> Here is an
+can crash, continue or have different behaviors on different platforms. <br/> Here is an
 example of a UB:
 
 ```cpp
@@ -27,7 +26,7 @@ example of a UB:
 
 int main() {
     int a;
-    // UB: uninitialized memory access
+    // UB in C and pre-C++26: uninitialized memory access
     if (a >= 0) { // [!code warning]
         std::cout << "non negative" << std::endl;
     } else {
@@ -37,15 +36,8 @@ int main() {
 }
 ```
 
-Most commonly, uninitialized access results in what is called indeterminate values. Those are values that are arbitrary
-and unpredictable. This program outputs either `non negative` or `negative` and the result of each runs can be
-different.
-
-::: warning
-
-Because this is an undefined behavior, the behavior above is not guaranteed. It can print either strings or just crash.
-
-:::
+Uninitialized memory has what is called indeterminate values, values which are unspecified.
+The actual value of `a` depends on the platform and the compiler.
 
 ## Why it Matters?
 
