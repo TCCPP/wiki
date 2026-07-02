@@ -1,7 +1,7 @@
 ---
 bot_article: |
   # Generating Random Numbers in C++
-Simple example of random number generation in C++:
+  ## Simple example of random number generation in C++:
 
   ```cpp
   #include <random>
@@ -25,21 +25,27 @@ Simple example of random number generation in C++:
 # Generating Random Numbers
 
 A [Pseudorandom Number Generator (PRNG)](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) is an algorithm
-for generating a sequence of (almost) random numbers. PRNGs maintain an internal state that is updated each time a new
-number is generated. The initial state of the PRNG is called the seed and the process of setting the initial state is
-called seeding.
+for generating a sequence of numbers that appear random. PRNGs maintain an internal state that is updated each time a
+new number is generated. The initial state of the PRNG is called the seed and the process of setting the initial state
+is called seeding. The ability to generate the same sequence is important for replicating experiments.
 
 In the [C++ standard library](https://en.cppreference.com/w/cpp/header/random), random engines are callable objects that
 implement PRNG algorithms behind a
 [shared interface](https://en.cppreference.com/w/cpp/named_req/RandomNumberEngine.html).
 
-Unlike the C `rand()` function, which relies on common shared seed via `srand()`, the C++ random engines are independent
-and each one has its own seed. This ensures thread safety, whereas C `rand()` does not. Another thing worth mentioning
-about `rand()` is that it is implementation defined and can vary system to system. The C++ random library should
-always be preferred.
+The C `rand()` function is a basic interface for generating random numbers, but the C standard does not specify what
+random number generator should be used and does not guarantee any kind of statistical quality. Consequently it is often
+implemented with a PRNG that has poor statistical properties. Unlike the C `rand()` function, which relies on a common
+shared seed (and state) via `srand()`, the C++ random engines are independent and each maintains its own seed and
+internal state. This allows each thread to be provided with its own instance of a random engine unlike in C. The C++
+random library should always be preferred.
 
 It should be noted that none of these PRNGs are cryptographically secure (should not be used for security-sensitive
 applications). This means that the state of the random engine can be figured out and predicted given enough values.
+
+It should be noted that the common practice of using modulo `rand() % n` to change the distribution of generated numbers
+creates a statistical bias (some numbers are more likely to appear than other). C++ solves this issue by introducing
+utilities for changing random number distributions.
 
 A common example of a random engine is `std::default_random_engine`, which serves as a standard, general-purpose
 generator.
@@ -122,34 +128,6 @@ int main() {
 }
 ```
 
-## Seed Sequence
-
-Seed sequence (`std::seed_seq`) is a utility in the standard library for converting a small number of inputs into a
-higher quality seed (does not contain large areas of zeros/ones) suitable for seeding PRNGs with large internal state
-(e.g. `std::mt19937`).
-
-```cpp
-#include <iostream>
-#include <random>
-
-int main() {
-    // initialize seed sequence
-    std::seed_seq seq{1, 2, 3, 4};
-
-    // initialize Mersenne Twister engine with seed sequence
-    std::mt19937 gen{seq};
-
-    // initialize a uniform real distribution
-    std::uniform_real_distribution<double> dis{0.0, 1.0};
-
-    // generate random numbers in the interval [0, 1)
-    for (int i = 0; i < 100; ++i) {
-        double random_number = dis(gen);
-        std::cout <<  random_number << std::endl;
-    }
-}
-```
-
 ## Linear Congruential Generator
 
 [Linear congruential generator (LCG)](https://en.wikipedia.org/wiki/Linear_congruential_generator) is a very simple PRNG
@@ -166,20 +144,18 @@ considered fast but `minstd_rand0` and `minstd_rand` are not necessarily faster 
 
 ## Predefined Generators
 
-| Name                  | Generator                 | Summary                                |
-| --------------------- | ------------------------- | -------------------------------------- |
-| default_random_engine | implementation defined    | Reproducibility is not important       |
-| minstd_rand0          | linear congruential       | Small internal state                   |
-| minstd_rand           | linear congruential       | Small internal state                   |
-| mt19937               | mersenne twister          | Generally should be preferred          |
-| mt19937_64            | mersenne twister          | Generally should be preferred          |
-| ranlux24              | subtract with carry       | Statistical quality                    |
-| ranlux48              | subtract with carry       | Statistical quality                    |
-| knuth_b               | minstd_rand0 with shuffle | Almost no reason to use it             |
-| philox4x32 (C++26)    | counter-based philox      | Good for multi-threaded applications\* |
-| philox4x64 (C++26)    | counter-based philox      | Good for multi-threaded applications\* |
-
-\*Not yet implemented
+| Name                  | Generator                 |
+| --------------------- | ------------------------- |
+| default_random_engine | implementation defined    |
+| minstd_rand0          | linear congruential       |
+| minstd_rand           | linear congruential       |
+| mt19937               | mersenne twister          |
+| mt19937_64            | mersenne twister          |
+| ranlux24              | subtract with carry       |
+| ranlux48              | subtract with carry       |
+| knuth_b               | minstd_rand0 with shuffle |
+| philox4x32 (C++26)    | counter-based philox      |
+| philox4x64 (C++26)    | counter-based philox      |
 
 [source](https://timsong-cpp.github.io/cppwp/n4868/rand.predef)
 
