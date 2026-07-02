@@ -18,8 +18,7 @@ bot_article: |
 # Undefined Behavior
 
 Undefined Behavior is behavior for which the C/C++ standard imposes no requirements. <br/> In other words, the program
-can crash, continue or have different behaviors on different platforms. <br/> Here is an
-example of a UB:
+can crash, continue or have different behaviors on different platforms. <br/> Here is an example of a UB:
 
 ```cpp
 #include <iostream>
@@ -36,8 +35,8 @@ int main() {
 }
 ```
 
-Uninitialized memory has what is called indeterminate values, values which are unspecified.
-The actual value of `a` depends on the platform and the compiler.
+Uninitialized memory has what is called indeterminate values, values which are unspecified. The actual value of `a`
+depends on the platform and the compiler.
 
 ## Why it Matters?
 
