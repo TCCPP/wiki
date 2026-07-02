@@ -80,7 +80,7 @@ gdb program
 - `run, r` - start the program execution inside of gdb
 - `start` - creates a temporary breakpoint at `main()` and start execution
 
-### Launch the executable and step thru the program
+### Launch the executable and step through the program
 
 - `next, n` - executes the next line of code
 - `nexti, ni` - executes the next instruction
@@ -108,7 +108,7 @@ Lets start with the obligatory hello world example:
 ```cpp:line-numbers
 #include <iostream>
 int main() {
-    std::cout << "Hello, GDB!";
+    std::cout << "Hello, GDB!" << std::endl;
     return 0; /* break here */
 }
 ```
@@ -130,7 +130,7 @@ program `start`:
 Temporary breakpoint 1 at 0x123456: file main.cpp, line 3.
 Starting program: /file/path/to/main.out
 
-Temporary breakpoint 1, main () at main1.cpp:3
+Temporary breakpoint 1, main () at main.cpp:3
 3           std::cout << "Hello, GDB!" << std::endl;
 ```
 

@@ -81,7 +81,7 @@ int foo = 0;   // declaration statement
 foo = foo + 2; // expression statement
 ```
 
-The above snippet creates `foo` with an initial value of `1`, then evaluates `foo + 2` before assigning the value back
+The above snippet creates `foo` with an initial value of `0`, then evaluates `foo + 2` before assigning the value back
 to the variable `foo`.
 
 ## Identifiers
@@ -294,7 +294,7 @@ together and write a simple program that changes Fahrenheit to Celsius.
 
 The equation to convert the two is very simple: $C = (F - 32) / (9 / 5)$.
 
-Because temperature is not a integer value, but a real number, we will use `double` to store our variables.
+Because temperature is not an integer value, but a real number, we will use `double` to store our variables.
 
 ```cpp
 int main() {
