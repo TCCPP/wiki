@@ -19,23 +19,23 @@ is meant to be a source of inspiration rather than a list of projects to make.
 
 ## Videogames and Graphics
 
-- Snake game
-- Tetris
-- Minesweeper
-- Hangman
-- Tic-Tac-Toe
-  - Hard mode: [Ultimate Tic-Tac-Toe](https://en.wikipedia.org/wiki/Ultimate_tic-tac-toe)
 - Battleships
-- Write a raytracer[^raytracing]
-- Make a platformer game
-- Tower defense game
-- DOOM clone
 - Blackjack
-- Mancala
-- Single-player survival game
-- Dungeon crawler console game[^dungeon]
 - [Breakout](<https://en.wikipedia.org/wiki/Breakout_(video_game)>) game
 - [Cookie clicker](https://orteil.dashnet.org/cookieclicker/)-like game
+- DOOM clone
+- Dungeon crawler console game[^dungeon]
+- Hangman
+- Hard mode: [Ultimate Tic-Tac-Toe](https://en.wikipedia.org/wiki/Ultimate_tic-tac-toe)
+- Make a platformer game
+- Mancala
+- Minesweeper
+- Single-player survival game
+- Snake game
+- Tetris
+- Tic-Tac-Toe
+- Tower defense game
+- Write a raytracer[^raytracing]
 
 [^raytracing]:
     For an introduction to concepts see
@@ -81,42 +81,45 @@ is meant to be a source of inspiration rather than a list of projects to make.
 
 ## Applications and Tools
 
+- Calendar
 - Text editor
 - To-do list
-- Calendar
 - Version control system (like git)
 
 ## Algorithmic and Number Crunching
 
-- Prime number checker
-- Sieve of Eratosthenes
-- Rubix Cube solver
-- Pi calculator
-- Test the Collatz Conjecture for large numbers
-  - Bonus: Make a visual representation of the iterative steps
-- [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) fractal
-- [Julia set](https://en.wikipedia.org/wiki/Julia_set) fractal
-- Maze solver
-- Maze generator
-- Traveling salesman problem
-- Data compression[^compression]
-- [Nonogram](https://en.wikipedia.org/wiki/Nonogram) generator
-- Sudoku solver
-- Chess engine
-- Given an amount of money, convert it to the fewest number of bills and coins
 - [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) encoder/decoder
   - Bonus: Make an auto-decoder which makes guesses based on
     [frequency analysis](https://en.wikipedia.org/wiki/Frequency_analysis)
+- Chess engine
+- Data compression[^compression]
+- Given an amount of money, convert it to the fewest number of bills and coins
+- [Julia set](https://en.wikipedia.org/wiki/Julia_set) fractal
+- [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) fractal
+  - Bonus: Make a visual representation of the iterative steps- [Nonogram](https://en.wikipedia.org/wiki/Nonogram) generator
+- Maze generator
+- Maze solver
+- Pi calculator
+- Prime number checker
+- Rubix Cube solver
+- Sieve of Eratosthenes
+- Sudoku solver
+- Test the Collatz Conjecture for large numbers
+- Traveling salesman problem
 
 [^compression]: Hint: Start with learning about [Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding)
 
 ## Scientific Computing and Simulation
 
-- Electrical circuit simulator
-- Simulate collisions of a bunch of balls
-- N-body simulation
+<<<<<<< HEAD:wiki/resources/general/project-ideas.md
+=======
 - Agent-based simulation[^agents]
+- [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+>>>>>>> 736e3b6 (Sort project ideas by alpha order):src/resources/general/project-ideas.md
+- Electrical circuit simulator
 - Fluid simulation[^fluids]
+- N-body simulation
+- Simulate collisions of a bunch of balls
 
 ### Cellular Automata
 
@@ -136,37 +139,37 @@ is meant to be a source of inspiration rather than a list of projects to make.
 
 ## Data Structures
 
-- Linked list
-- Dynamic array / vector
 - Binary tree
   - Explore traversing the tree (pre-order, in-order, post-order)
   - Implement a binary search tree
+- Dynamic array / vector
 - Hash table
 - LRU cache (a fixed size cache which evicts the oldest items when needed)
+- Linked list
 
 ## Concurrency and Parallelism
 
-- Spin lock
-- Thread pool
+- Explore CUDA
+- Explore x86 SIMD
 - Message passing interface
 - Parallel matrix multiplication algorithms
-- Explore x86 SIMD
-- Explore CUDA
+- Spin lock
+- Thread pool
 
 ## Parsers, Compilers, and Interpreters
 
 - CSV parser
-- JSON parser
-- Parse and evaluate simple math formulas (e.g. `1 + 2 * 3`)[^expressions]
-- [BrainF\*ck](https://en.wikipedia.org/wiki/Brainfuck) interpreter
-  - For extra challenge: Create an optimized interpreter or JIT compiler
 - Create a simple interpreter or compiler
-  - Check out [Crafting Interpreters](https://craftinginterpreters.com/contents.html) for a great tutorial on relevant
-    concepts
+  - Check out [Crafting Interpreters](https://craftinginterpreters.com/contents.html) for a great tutorial on relevant 
   - Also check out out list of [Compiler Development Resources](../advanced/compiler-development.md)
+	concepts
+- JSON parser
 - Lisp interpreter
 - Lua interpreter
+- Parse and evaluate simple math formulas (e.g. `1 + 2 * 3`)[^expressions]
 - Regular expression parser / evaluator
+- [BrainF\*ck](https://en.wikipedia.org/wiki/Brainfuck) interpreter
+  - For extra challenge: Create an optimized interpreter or JIT compiler
 
 [^expressions]:
     Hint: It may be helpful to learn about
@@ -177,20 +180,20 @@ is meant to be a source of inspiration rather than a list of projects to make.
 ## Systems Programming
 
 - 8 bit computer emulator, e.g. for [CHIP-8](https://en.wikipedia.org/wiki/CHIP-8)[^chip-8]
-- Implement a simple malloc
-- Write a Shell
-- Disassembler
 - Assembler
+- Disassembler
+- Implement a simple malloc
 - Simple operating system kernel
+- Write a Shell
 
 [^chip-8]: Here's a helpful guide to get started with CHIP-8: https://tobiasvl.github.io/blog/write-a-chip-8-emulator/
 
 ## Networking
 
-- Simple chat application over TCP
 - Implement a simple HTTP server
 - Implement the [RCON](https://developer.valvesoftware.com/wiki/Source_RCON_Protocol) protocol (used for issuing
   commands to some game servers, like Minecraft)
+- Simple chat application over TCP
 
 ## Problem Sets
 
