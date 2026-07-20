@@ -7,7 +7,7 @@ Welcome to the server :\)
 1. Use common sense. We do not tolerate slurs, bigotry of any kind (racism/sexism/homophobia/transphobia etc.), or glorification of violence or death.
 2. Don't randomly ping / DM users. Just post your question in one of the help channels.
 3. No advertising other Discord servers.
-4. Keep the content SFW (safe-for-work). Controversial or sensitive topics may only be discussed in <#921113903574958080>. This includes politics, ethics, and current affairs, but this is not the right place to discuss your mental health problems.
+4. Keep the content SFW (safe-for-work), non-controversial and non-sensitive. This means no discussion of politics, ethics, current affairs and similar topics. This is also not the place to discuss your mental health problems.
 5. We're happy to help you learn, however, we do not condone academic dishonesty. We will not take your tests for you or write programs for you. Likewise avoid giving full solutions to problems when helping other members.
 6. Do not ask for help with unethical cheating/hacking/malware.
 7. Don't post AI-generated answers, and don't ask for help with AI-generated code.
