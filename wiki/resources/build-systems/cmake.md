@@ -7,7 +7,7 @@ bot_article: |
 
   The main downside is learning CMake's configuration language, but the investment is worthwhile.
 
-  **Recommended resource:** [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/README.html)
+  **Recommended resource:** [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/)
 ---
 
 # CMake
@@ -20,7 +20,7 @@ recommend taking the time to do so.
 
 We recommend the following resources for getting started:
 
-- [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/README.html)
+- [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/)
 
 ## Basic Setup
 
