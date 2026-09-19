@@ -107,6 +107,7 @@ is meant to be a source of inspiration rather than a list of projects to make.
 - [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) encoder/decoder
   - Bonus: Make an auto-decoder which makes guesses based on
     [frequency analysis](https://en.wikipedia.org/wiki/Frequency_analysis)
+- [100 prisoners problem](https://en.wikipedia.org/wiki/100_prisoners_problem)
 
 [^compression]: Hint: Start with learning about [Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding)
 

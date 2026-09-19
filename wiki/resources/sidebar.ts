@@ -48,6 +48,7 @@ const sidebar = [
                 items: [
                     { text: "Address Sanitizer", link: "/resources/general/asan" },
                     { text: "Ownership", link: "/resources/general/ownership" },
+                    { text: "Undefined Behavior", link: "/resources/general/ub" },
                     { text: "Standards", link: "/resources/general/standards" },
                     { text: "Project Ideas", link: "/resources/general/project-ideas" },
                     { text: "Floating Point Numbers", link: "/resources/general/floating-point" },

@@ -45,7 +45,7 @@ test for different scenarios. Main features of a debugger are:
 - Examining the suspended program
 - Examining the call stack
 - Inspecting memory
-- Stepping trough the program
+- Stepping through the program
 - Examine core dump files
 - Modifying the state of the program
 
