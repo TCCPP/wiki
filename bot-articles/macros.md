@@ -12,7 +12,7 @@ Two common macro issues are shown below.
 #define mul(a, b) a * b
 mul(2 + 3, 4)
 // Expands to:
-// 2 + 3 * 5
+// 2 + 3 * 4
 ```
 Because of the lack of `()` in `mul`,
 the order of addition/multiplication is unintentionally reversed.
