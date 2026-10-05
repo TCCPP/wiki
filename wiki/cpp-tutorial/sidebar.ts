@@ -171,6 +171,10 @@ const sidebar = [
                 ],
                 collapsed: true,
             },
+            {
+                text: "Random",
+                link: "/cpp-tutorial/random",
+            },
         ],
     },
 ];
