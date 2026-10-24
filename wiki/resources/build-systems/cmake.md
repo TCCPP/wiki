@@ -37,7 +37,7 @@ add_executable(
     util.cpp
 )
 # Set your C++ standard to C++20
-target_compile_features(myprogram cxx_std_20)
+target_compile_features(myprogram PRIVATE cxx_std_20)
 ```
 
 To build:
