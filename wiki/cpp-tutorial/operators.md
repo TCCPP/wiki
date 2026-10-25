@@ -328,8 +328,12 @@ unsigned int result = a >> 2; // 00101 in binary = 5
 ```
 
 > [!NOTE]
-> 
-> For signed integers, right shift is defined by the standard to perform an arithmetic shift (the sign bit is preserved). This differs from unsigned integers, where right shift is a logical shift that fills with zeros.
+>
+> For signed integers, right shift performs an arithmetic shift, which preserves the sign bit. For unsigned integers,
+> right shift fills with zeros.
+>
+> Shifting by a negative amount, or by an amount greater than or equal to the bit width of the type, is undefined
+> behavior.
 
 ## Other Operators
 
