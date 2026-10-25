@@ -429,9 +429,11 @@ int result = *ptr;  // result = 42 (dereference ptr)
 
 *ptr = 100;         // Changes value to 100
 ```
+
 > [!NOTE]
-> 
-> `&` cannot be used with a null value, meanwhile a pointer can be null. You would learn more on pointers later in the wiki.
+>
+> Only dereference a pointer that points to a valid object. Dereferencing a null pointer (`nullptr`) is undefined
+> behavior and often crashes the program. Pointers are covered in more detail later in the tutorial.
 
 ### Scope Resolution Operator (`::`)
 
