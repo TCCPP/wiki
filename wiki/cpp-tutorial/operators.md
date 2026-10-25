@@ -4,7 +4,9 @@ wip: true
 
 # Operators
 
-Operators are symbols that perform operations on numbers, variables, pointers, and even functions with operator overloading. C++ operators mostly share the same symbols and behavior you already know from elementary mathematics. Below is a breakdown of the operator groups defined by the C++ standard.
+Operators are symbols that perform operations on numbers, variables, pointers, and even functions with operator
+overloading. C++ operators mostly share the same symbols and behavior you already know from elementary mathematics.
+Below is a breakdown of the operator groups defined by the C++ standard.
 
 ## What Are Operators?
 
@@ -35,17 +37,18 @@ Operators in C++ can be classified into 6 groups:
 
 ## Arithmetic Operators
 
-Arithmetic operators are used to perform mathematical calculations. These are the most commonly used operators and work similarly to basic mathematics.
+Arithmetic operators are used to perform mathematical calculations. These are the most commonly used operators and work
+similarly to basic mathematics.
 
-|Operator|Description|Example|Result|
-|---|---|---|---|
-|`+`|Addition|`5 + 3`|`8`|
-|`-`|Subtraction|`5 - 3`|`2`|
-|`*`|Multiplication|`5 * 3`|`15`|
-|`/`|Division|`10 / 2`|`5`|
-|`%`|Reminder|`10 % 3`|`1`|
-|`++`|Increment|`int a = 5; a++`|`6`|
-|`--`|Decrement|`int a = 5; a--`|`4`|
+| Operator | Description    | Example          | Result |
+| -------- | -------------- | ---------------- | ------ |
+| `+`      | Addition       | `5 + 3`          | `8`    |
+| `-`      | Subtraction    | `5 - 3`          | `2`    |
+| `*`      | Multiplication | `5 * 3`          | `15`   |
+| `/`      | Division       | `10 / 2`         | `5`    |
+| `%`      | Reminder       | `10 % 3`         | `1`    |
+| `++`     | Increment      | `int a = 5; a++` | `6`    |
+| `--`     | Decrement      | `int a = 5; a--` | `4`    |
 
 ### Basic Examples for Arithmetic Operators:
 
@@ -62,7 +65,8 @@ int remainder = a % b;  // 1
 
 ### Division Behavior
 
-Division in C++ behaves differently based on the types of the values or variables involved. Some examples are given below:
+Division in C++ behaves differently based on the types of the values or variables involved. Some examples are given
+below:
 
 ```c++
 int x = 7 / 2;      // 3 (integer division, decimal part truncated)
@@ -86,7 +90,9 @@ int z = x--; // Postfix: assign x first, then decrement. x = 8, z = 9
 
 ## Assignment Operators
 
-Assignment operators are used to assign values to variables. The basic assignment operator is `=`, but C++ provides compound assignment operators that combine arithmetic operations with assignment. Assignment is evaluated right to left: the value on the right-hand side is assigned to the left-hand side, in some cases after an operation.
+Assignment operators are used to assign values to variables. The basic assignment operator is `=`, but C++ provides
+compound assignment operators that combine arithmetic operations with assignment. Assignment is evaluated right to left:
+the value on the right-hand side is assigned to the left-hand side, in some cases after an operation.
 
 | Operator | Description            | Example   | Equivalent To |
 | -------- | ---------------------- | --------- | ------------- |
@@ -113,20 +119,22 @@ value /= 4;  // value = 6
 value %= 4;  // value = 2
 ```
 
-Compound assignment operators are a shorter way to update a variable based on its current value. For some types with overloaded operators they may also be faster, though compiler optimizations make most equivalent.
+Compound assignment operators are a shorter way to update a variable based on its current value. For some types with
+overloaded operators they may also be faster, though compiler optimizations make most equivalent.
 
 ## Relational Operators
 
-Relational operators (also called comparison operators) are used to compare two values. They return a boolean result: `true` or `false`.
+Relational operators (also called comparison operators) are used to compare two values. They return a boolean result:
+`true` or `false`.
 
-|Operator|Description|Example|Result|
-|---|---|---|---|
-|`==`|Equal to|`5 == 5`|`true`|
-|`!=`|Not equal to|`5 != 3`|`true`|
-|`>`|Greater than|`5 > 3`|`true`|
-|`<`|Less than|`5 < 3`|`false`|
-|`>=`|Greater than or equal to|`5 >= 5`|`true`|
-|`<=`|Less than or equal to|`5 <= 3`|`false`|
+| Operator | Description              | Example  | Result  |
+| -------- | ------------------------ | -------- | ------- |
+| `==`     | Equal to                 | `5 == 5` | `true`  |
+| `!=`     | Not equal to             | `5 != 3` | `true`  |
+| `>`      | Greater than             | `5 > 3`  | `true`  |
+| `<`      | Less than                | `5 < 3`  | `false` |
+| `>=`     | Greater than or equal to | `5 >= 5` | `true`  |
+| `<=`     | Less than or equal to    | `5 <= 3` | `false` |
 
 ### Examples
 
@@ -153,18 +161,20 @@ if (age >= 18) {
 ```
 
 > [!WARNING]
-> 
-> Be careful not to confuse `=` (assignment) with `==` (comparison). Using `=` in a conditional statement is a common mistake that can lead to unexpected behavior.
+>
+> Be careful not to confuse `=` (assignment) with `==` (comparison). Using `=` in a conditional statement is a common
+> mistake that can lead to unexpected behavior.
 
 ## Logical Operators
 
-Logical operators are used to combine multiple boolean expressions or to invert boolean values. They are essential for creating complex conditional statements.
+Logical operators are used to combine multiple boolean expressions or to invert boolean values. They are essential for
+creating complex conditional statements.
 
-|Operator|Description|Example|Result|
-|---|---|---|---|
-|`&&`|Logical AND|`true && false`|`false`|
-|`\|\|`|Logical OR|`true \|\| false`|`true`|
-|`!`|Logical NOT|`!true`|`false`|
+| Operator | Description | Example           | Result  |
+| -------- | ----------- | ----------------- | ------- |
+| `&&`     | Logical AND | `true && false`   | `false` |
+| `\|\|`   | Logical OR  | `true \|\| false` | `true`  |
+| `!`      | Logical NOT | `!true`           | `false` |
 
 ### Logical AND (`&&`)
 
@@ -232,16 +242,17 @@ if (ptr != nullptr && *ptr > 0) {
 
 ## Bitwise Operators
 
-Bitwise operators perform operations on individual bits of integer types. They are useful for low-level programming, working with binary data, flags, and performance-critical code.
+Bitwise operators perform operations on individual bits of integer types. They are useful for low-level programming,
+working with binary data, flags, and performance-critical code.
 
-|Operator|Description|Example|Result (binary)|
-|---|---|---|---|
-|`&`|Bitwise AND|`5 & 3`|`1` (`0101 & 0011 = 0001`)|
-|`\|`|Bitwise OR|`5 \| 3`|`7` (`0101 \| 0011 = 0111`)|
-|`^`|Bitwise XOR|`5 ^ 3`|`6` (`0101 ^ 0011 = 0110`)|
-|`~`|Bitwise NOT|`~5`|`-6` (inverts all bits)|
-|`<<`|Left shift|`5 << 1`|`10` (`0101 -> 1010`)|
-|`>>`|Right shift|`5 >> 1`|`2` (`0101 -> 0010`)|
+| Operator | Description | Example  | Result (binary)             |
+| -------- | ----------- | -------- | --------------------------- |
+| `&`      | Bitwise AND | `5 & 3`  | `1` (`0101 & 0011 = 0001`)  |
+| `\|`     | Bitwise OR  | `5 \| 3` | `7` (`0101 \| 0011 = 0111`) |
+| `^`      | Bitwise XOR | `5 ^ 3`  | `6` (`0101 ^ 0011 = 0110`)  |
+| `~`      | Bitwise NOT | `~5`     | `-6` (inverts all bits)     |
+| `<<`     | Left shift  | `5 << 1` | `10` (`0101 -> 1010`)       |
+| `>>`     | Right shift | `5 >> 1` | `2` (`0101 -> 0010`)        |
 
 ### Bitwise AND (`&`)
 
@@ -337,11 +348,13 @@ unsigned int result = a >> 2; // 00101 in binary = 5
 
 ## Other Operators
 
-C++ provides several other operators that don't fit into the previous groups but are essential for various programming tasks. These become more useful as you write more C++, so feel free to explore them as you go.
+C++ provides several other operators that don't fit into the previous groups but are essential for various programming
+tasks. These become more useful as you write more C++, so feel free to explore them as you go.
 
 ### Conditional Operator (`? :`)
 
-The conditional operator (informally called the "ternary operator") is a shorthand for `if-else` statements. It takes three operands.
+The conditional operator (informally called the "ternary operator") is a shorthand for `if-else` statements. It takes
+three operands.
 
 **Syntax:** `condition ? value_if_true : value_if_false`
 
@@ -420,7 +433,8 @@ ptr->y = 40;
 
 ### Address-Of and Dereference Operators
 
-The address-of operator (`&`) returns the memory address of a variable, while the dereference operator (`*`) accesses the value at a given address.
+The address-of operator (`&`) returns the memory address of a variable, while the dereference operator (`*`) accesses
+the value at a given address.
 
 ```c++
 int value = 42;
@@ -470,7 +484,8 @@ the kind of conversion explicit.
 
 ## Experimenting with Operators
 
-As you continue learning C++, you'll discover that operators can be used in creative and powerful ways. Some of these areas are operator overloading, combining operators, bitwise tricks, etc.
+As you continue learning C++, you'll discover that operators can be used in creative and powerful ways. Some of these
+areas are operator overloading, combining operators, bitwise tricks, etc.
 
 The best way to master operators is through practice. Try:
 
@@ -479,4 +494,5 @@ The best way to master operators is through practice. Try:
 - Implementing algorithms that leverage bitwise operations
 - Creating your own classes with overloaded operators
 
-We highly recommend writing code that is clear and readable to others (and your future self) and avoid clever tricks that can make code harder to read.
+We highly recommend writing code that is clear and readable to others (and your future self) and avoid clever tricks
+that can make code harder to read.
