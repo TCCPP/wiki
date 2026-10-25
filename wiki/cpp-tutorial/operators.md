@@ -113,7 +113,7 @@ value /= 4;  // value = 6
 value %= 4;  // value = 2
 ```
 
-Compound assignment operators are more concise and can sometimes be more efficient than their long-form equivalents.
+Compound assignment operators are a shorter way to update a variable based on its current value. For some types with overloaded operators they may also be faster, though compiler optimizations make most equivalent.
 
 ## Relational Operators
 
