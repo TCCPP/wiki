@@ -292,13 +292,12 @@ unsigned int b = 10; // 1010 in binary
 unsigned int result = a ^ b; // 0110 in binary = 6
 ```
 
-Common use: toggling bits or simple encryption.
+Common use: toggling specific bits.
 
 ```c++
-int value = 42;
-int key = 123;
-int encrypted = value ^ key;
-int decrypted = encrypted ^ key; // Back to 42
+unsigned int flags = 0b101;
+flags ^= 0b001; // 0b100 (bit 0 turned off)
+flags ^= 0b001; // 0b101 (bit 0 turned back on)
 ```
 
 ### Bitwise NOT (`~`)
