@@ -305,8 +305,8 @@ flags ^= 0b001; // 0b101 (bit 0 turned back on)
 Inverts all bits (1 becomes 0, 0 becomes 1).
 
 ```c++
-unsigned int a = 12; // 00001100 in binary (assuming 8 bits)
-unsigned int result = ~a; // 11110011 in binary
+uint8_t a = 12; // 00001100 in binary
+uint8_t result = ~a; // 11110011 in binary
 ```
 
 ### Left Shift (`<<`)
