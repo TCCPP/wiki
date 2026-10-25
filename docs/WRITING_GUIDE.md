@@ -131,7 +131,7 @@ Wiki articles use normal markdown syntax with some extensions (examples
   ` ```js [config.js] `
 - Math equations: `$inline math$` and `$$math block$$`
 - Custom icons: :cpp: :c: :vscode:
-- Kerboard key formatting: `[k:Ctrl + Enter:] or [k:⌘ Cmd + Enter:]`
+- Keyboard key formatting: `[k:Ctrl + Enter:] or [k:⌘ Cmd + Enter:]`
 
 A note on formatting: We use prettier for formatting files. Prettier does not understand some custom markdown syntax,
 such as custom alert blocks. This can be worked around with newlines, e.g.:

@@ -27,7 +27,7 @@ For example:
 ```cpp
 // Make unique array of 100 ints.
 // In practice, use auto = ...;
-std::unique_ptr<int[]> =
+std::unique_ptr<int[]> smart_ptr =
     std::make_unique<int[]>(100);
 ```
 

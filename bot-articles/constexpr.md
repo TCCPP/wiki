@@ -21,4 +21,4 @@ initializers.
 
 As with many keywords in C++, `constexpr` has multiple meanings. In an `if constexpr` statement it can be used to
 conditionally discard code at compile time. This is useful in templates, when depending on properties of a type one
-ranch might not be able to be compiled.
+branch might not be able to be compiled.

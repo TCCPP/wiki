@@ -5,7 +5,7 @@ However, the preferred form of initialization is situational.
 
 - **Direct-initialization** (`T{0}`, `T t(0)`, ...) may use `explicit` constructors and conversion functions, which we're sometimes trying to avoid, making **copy-initialization** (`T t = u;`) better in that case.
 - **List-initialization** (`T{0}`, ...) may call constructors taking `std::initializer_list`, which we don't always want to do.
-  Especially in templates, non-list-initialization may better.
+  Especially in templates, non-list-initialization may be better.
 - **Default-initialization** (`T t;`) may leave a variable uninitialized, whereas **value-initialization** (`T()`, `T t{};`, ...) gives it a value, and one isn't always better.
 
 **Note:** These categories can overlap.

@@ -30,7 +30,7 @@ converted to
 
 Use unsigned integers only for bit manipulation or serialization;
 prefer signed integers otherwise,
-and avoid mixing signed/unsinged above all else.
+and avoid mixing signed/unsigned above all else.
 
 Compiler warnings can be used to detect the issues above
 ([`-Wsign-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-conversion),

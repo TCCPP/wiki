@@ -1,4 +1,4 @@
-# What Is a "Member Initalizer List" And Why Should I Use It?
+# What Is a "Member Initializer List" And Why Should I Use It?
 
 A [member initializer list][cppref] in a constructor initializes the data members
 of a class:

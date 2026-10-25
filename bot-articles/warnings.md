@@ -20,7 +20,7 @@ They can spot more complex mistakes, such as dereferencing null pointers.
 ## Warnings for MSVC
 - recommended: **[/W4](https://learn.microsoft.com/en-us/cpp/build/reference/compiler-option-warning-level?view=msvc-170#remarks)**
 - warnings as errors: `/WX`
-- disble warnings: `/wd`
+- disable warnings: `/wd`
 - analysis: **[/analyze](https://learn.microsoft.com/en-us/cpp/build/reference/analyze-code-analysis?view=msvc-170)**
 
 ## Passing Warning Flags to the Compiler on the Command Line

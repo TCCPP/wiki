@@ -8,7 +8,7 @@ Concepts don't constrain anything on their own, but are often used in constraint
 They often use a [requires expression](https://en.cppreference.com/w/cpp/language/constraints#Requires_expressions).
 ```cpp
 template <typename T>
-concept numeric = std::is_numeric_v<T>;
+concept numeric = std::is_arithmetic_v<T>;
 ```
 
 **[Type Constraints](https://en.cppreference.com/w/cpp/language/constraints#Constraints)** (since C++20)
@@ -32,11 +32,11 @@ T square(T x);
 
 **[std::enable_if](https://en.cppreference.com/w/cpp/types/enable_if)** (since C++11),
 **[std::enable_if_t](https://en.cppreference.com/w/cpp/types/enable_if#Helper_types)** (since C++14)<br>
-Substitution failure if `std::is_numeric_v<T>` is false.
+Substitution failure if `std::is_arithmetic_v<T>` is false.
 ```cpp
 template <typename T>
 auto square(T x) ->
-  std::enable_if_t<std::is_numeric_v<T>, T>;
+  std::enable_if_t<std::is_arithmetic_v<T>, T>;
 ```
 
 **[SFINAE in general](https://en.cppreference.com/w/cpp/language/sfinae)** (since C++98),
