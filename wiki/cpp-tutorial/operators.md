@@ -163,7 +163,7 @@ Logical operators are used to combine multiple boolean expressions or to invert 
 |Operator|Description|Example|Result|
 |---|---|---|---|
 |`&&`|Logical AND|`true && false`|`false`|
-|`\|\|`|Logical OR|`true \| false`|`true`|
+|`\|\|`|Logical OR|`true \|\| false`|`true`|
 |`!`|Logical NOT|`!true`|`false`|
 
 ### Logical AND (`&&`)
