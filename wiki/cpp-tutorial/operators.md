@@ -349,8 +349,11 @@ The conditional operator (informally called the "ternary operator") is a shortha
 int a = 10;
 int b = 20;
 int max = (a > b) ? a : b; // max = 20
+```
 
-// This is equivalent to:
+This is equivalent to:
+
+```c++
 int max;
 if (a > b) {
     max = a;
