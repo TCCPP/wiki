@@ -384,6 +384,10 @@ for (; i < j; ++i, --j) {
 }
 ```
 
+> [!WARNING]
+>
+> The comma operator is a clever trick that is rarely the clearest choice and separate statements should be preferred.
+
 ### Sizeof Operator
 
 The `sizeof` operator returns the size (in bytes) of a type or variable.
