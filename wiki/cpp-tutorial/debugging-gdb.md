@@ -122,8 +122,8 @@ gdb main.out -q
 Reading symbols from main.out...
 ```
 
-Now you should be inside of GDB. Each line should start with `(gdb) `. First lets start the execution of the
-program `start`:
+Now you should be inside of GDB. Each line should start with `(gdb) `. First lets start the execution of the program
+`start`:
 
 ```
 (gdb) start

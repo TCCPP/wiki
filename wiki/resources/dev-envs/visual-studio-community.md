@@ -16,8 +16,8 @@ Upon opening the installer, you should see a window that looks like this:
 ![Visual Studio Installer - Home](/assets/vs-installer-1.png)
 
 Click the "Install" button for Visual Studio Community 2022. Ensure that you have selected the Community edition, as the
-other versions are paid tools. A window should appear with various options to select. Select "Desktop development
-with C++" under the "Desktop & Mobile" section and then click "Install".
+other versions are paid tools. A window should appear with various options to select. Select "Desktop development with
+C++" under the "Desktop & Mobile" section and then click "Install".
 
 ![Visual Studio Installer - Select Workload](/assets/vs-installer-2.png)
 
