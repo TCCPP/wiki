@@ -442,21 +442,16 @@ The scope resolution operator is used to access global variables, static members
 ```c++
 int value = 10; // Global variable
 
+struct Limits {
+    static constexpr int max_size = 100;
+};
+
 int main() {
     int value = 20; // Local variable
-    std::cout << value << '\n';   // 20 (local)
-    std::cout << ::value << '\n'; // 10 (global)
+    std::cout << value << '\n';            // 20 (local)
+    std::cout << ::value << '\n';          // 10 (global)
+    std::cout << Limits::max_size << '\n'; // 100 (static member)
 }
-
-// Accessing namespace members
-std::cout << "Hello\n";
-
-// Accessing static class members
-class MyClass {
-public:
-    static int count;
-};
-int x = MyClass::count;
 ```
 
 ### Cast Operators
