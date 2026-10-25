@@ -43,7 +43,7 @@ Arithmetic operators are used to perform mathematical calculations. These are th
 |`-`|Subtraction|`5 - 3`|`2`|
 |`*`|Multiplication|`5 * 3`|`15`|
 |`/`|Division|`10 / 2`|`5`|
-|`%`|Modulus/Reminder|`10 % 3`|`1`|
+|`%`|Reminder|`10 % 3`|`1`|
 |`++`|Increment|`int a = 5; a++`|`6`|
 |`--`|Decrement|`int a = 5; a--`|`4`|
 
