@@ -25,7 +25,7 @@ bot_article: |
 C and C++ do not have garbage collectors so resources must be carefully managed by the programmer. The question of
 _ownership_ is: Which part of your code is responsible for that object's lifetime and cleanup?
 
-When there isn't a clear sense of ownership software is prone to bugs. Consider this code:
+When there isn't a clear sense of ownership, software is prone to bugs. Consider this code:
 
 ```c
 void process(int* ptr) {

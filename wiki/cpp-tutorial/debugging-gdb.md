@@ -122,7 +122,7 @@ gdb main.out -q
 Reading symbols from main.out...
 ```
 
-Now you should be inside of GDB. Each line should should start with `(gdb) `. First lets start the execution of the
+Now you should be inside of GDB. Each line should start with `(gdb) `. First lets start the execution of the
 program `start`:
 
 ```
@@ -215,7 +215,7 @@ Casting of a void pointer to a char pointer:
 (gdb) p hello
 $4 = (const void *) 0x123456
 (gdb) p (char*) hello
-$5 = 0x123456 "Hello, World!"
+$5 = 0x123456 "Hello, GDB!"
 ```
 
 GDB supports printing out arrays:

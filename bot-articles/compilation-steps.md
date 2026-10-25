@@ -8,7 +8,7 @@ _translation unit_ (TU).
 > :bulb: _The preprocessor merely does text replacement, it does not care about any aspect of C or C++._
 
 <:ce:1211139919884582943> The **compiler** turns instructions into machine code
-and enforces C or C++ syntax rules. In particular, anything that is used must be
+and enforces C or C++ syntax rules. In particular, anything that is used must
 have been declared beforehand. The compiler only needs to know that something
 **exists**, not how it is _defined_.
 

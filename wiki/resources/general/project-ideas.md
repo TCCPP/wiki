@@ -90,7 +90,7 @@ is meant to be a source of inspiration rather than a list of projects to make.
 
 - Prime number checker
 - Sieve of Eratosthenes
-- Rubix Cube solver
+- Rubik's Cube solver
 - Pi calculator
 - Test the Collatz Conjecture for large numbers
   - Bonus: Make a visual representation of the iterative steps

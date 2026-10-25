@@ -34,7 +34,7 @@ bot_article: |
 > It's a common pitfall to try to estimate x86 performance by eye. This is impossible to do on modern CPUs in general
 > due to architecture details such as pipelining, superscalar pipelining, branch prediction, micro-architecture details,
 > register renaming, etc. This is especially true for complicated architectures like x86. As such, it's necessary to
-> alway profile and benchmark in addition to looking at the generated code.
+> always profile and benchmark in addition to looking at the generated code.
 
 ## x86
 
