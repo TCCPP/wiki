@@ -134,7 +134,25 @@ const sidebar = [
                 ],
                 collapsed: true,
             },
-            { text: "File Input and Output", link: "/cpp-tutorial/file-io" },
+            { 
+                text: "File Input and Output", 
+                link: "/cpp-tutorial/file-io",
+                items: [
+                    {
+                        text: "Read a File",
+                        link: "/cpp-tutorial/file-io#read-a-file",
+                    },
+                    {
+                        text: "Write a File",
+                        link: "/cpp-tutorial/file-io#write-a-file",
+                    },
+                    {
+                        text: "Redirecting standard input/output",
+                        link: "/cpp-tutorial/file-io#redirecting-stdio",
+                    },
+                ],
+                collapsed: true,
+            },
             {
                 text: "User Defined Types",
                 link: "/cpp-tutorial/user-defined-types",
