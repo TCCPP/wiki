@@ -70,6 +70,10 @@ const sidebar = [
                     },
                     { text: "Bitwise Operators", link: "/cpp-tutorial/operators#bitwise-operators" },
                     { text: "Other Operators", link: "/cpp-tutorial/operators#other-operators" },
+                    {
+                        text: "Precedence and Associativity",
+                        link: "/cpp-tutorial/operators#operator-precedence-and-associativity",
+                    },
                 ],
                 collapsed: true,
             },
