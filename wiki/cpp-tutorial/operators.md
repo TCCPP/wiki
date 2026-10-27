@@ -1,7 +1,3 @@
----
-wip: true
----
-
 # Operators
 
 Operators are symbols that perform operations on numbers, variables, pointers, and even functions with operator
@@ -482,6 +478,91 @@ C++ has four named casts: `static_cast`, `dynamic_cast`, `const_cast`, and `rein
 you'll use most. You may also see C-style casts like `(int)pi` in older code. Prefer the named casts because they make
 the kind of conversion explicit.
 
+## Operator Precedence and Associativity
+
+When an expression has more than one operator, operator precedence dictates how expressions are grouped. For example,
+`1 + 2 * 3` evaluates to `7` instead of `9` because `*` has higher precedence than `+` so the expression is evaluated as
+`1 + (2 * 3)` instead of `(1 + 2) * 3`, just like in math. Same as math, parentheses let you choose a different
+grouping:
+
+```c++
+int a = 2 + 3 * 4;   // 2 + (3 * 4) = 14
+int b = (2 + 3) * 4; // 20
+```
+
+When operators have the same precedence, associativity decides the grouping. Most operators group left to right.
+Assignment operators, the ternary operator, and prefix unary operators group right to left which is why chained
+assignment works:
+
+```c++
+int c = 10 - 4 - 3 - 2; // (((10 - 4) - 3) - 2) = 1
+
+int x;
+int y;
+x = y = 5; // x = (y = 5), both are now 5
+```
+
+The table below lists the C++ operators covered in this tutorial from highest precedence to lowest. You don't need to
+memorize it since it is easily referenced by searching online or visiting
+[cppreference](https://en.cppreference.com/cpp/language/operator_precedence). C++ operators mostly follow the same rules
+math uses and you can always add parentheses when you aren't sure.
+
+| Precedence | Operators                                                      | Associativity |
+| ---------- | -------------------------------------------------------------- | ------------- |
+| 1          | `::`                                                           | Left to right |
+| 2          | `a++` `a--` `f()` `a[i]` `.` `->`                              | Left to right |
+| 3          | `++a` `--a` `+a` `-a` `!` `~` `(type)` `*a` `&a` `sizeof`      | Right to left |
+| 4          | `*` `/` `%`                                                    | Left to right |
+| 5          | `+` `-`                                                        | Left to right |
+| 6          | `<<` `>>`                                                      | Left to right |
+| 7          | `<` `<=` `>` `>=`                                              | Left to right |
+| 8          | `==` `!=`                                                      | Left to right |
+| 9          | `&`                                                            | Left to right |
+| 10         | `^`                                                            | Left to right |
+| 11         | `\|`                                                           | Left to right |
+| 12         | `&&`                                                           | Left to right |
+| 13         | `\|\|`                                                         | Left to right |
+| 14         | `? :` `=` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `&=` `^=` `\|=` | Right to left |
+| 15         | `,`                                                            | Left to right |
+
+> [!WARNING]
+>
+> Precedence decides how an expression is grouped, not the order its parts run in. In `f() + g() * h()`, the
+> multiplication is grouped first, but the three functions can be called in any order. This is called
+> [order of evaluation](https://en.cppreference.com/cpp/language/eval_order).
+
+### Common Pitfalls
+
+A few precedence rules don't match what most people expect. Comparisons have higher precedence than bitwise operators
+(`&`, `^`, and `|`) so a bitwise check needs parentheses:
+
+```c++
+if (flags & MASK == 0) {   // Means flags & (MASK == 0) // [!code error]
+    // ...
+}
+if ((flags & MASK) == 0) { // [!code ++]
+    // ...
+}
+```
+
+Comparisons also can't be chained like in math. `1 < x < 3` first computes `1 < x`, which is `true` or `false`, and then
+compares that against `3`. Since `true` converts to `1` and `false` converts to `0`, the result is always `true`:
+
+```c++
+if (1 < x < 3) {      // Always true // [!code error]
+    // ...
+}
+if (1 < x && x < 3) { // [!code ++]
+    // ...
+}
+```
+
+Postfix operators have higher precedence than prefix ones, so `*ptr++` means `*(ptr++)`. It moves the pointer forward
+instead of incrementing the value it points to. To fix this use `(*ptr)++` or `*ptr += 1` to increment the value.
+
+Other pitfalls exist, but these are some of the most common. When in doubt, we recommend you use parentheses to make
+expressions clear.
+
 ## Experimenting with Operators
 
 As you continue learning C++, you'll discover that operators can be used in creative and powerful ways. Some of these
@@ -490,7 +571,7 @@ areas are operator overloading, combining operators, bitwise tricks, etc.
 The best way to master operators is through practice. Try:
 
 - Writing programs that use different combinations of operators
-- Experimenting with operator precedence to understand evaluation order
+- Experimenting with operator precedence and associativity
 - Implementing algorithms that leverage bitwise operations
 - Creating your own classes with overloaded operators
 
