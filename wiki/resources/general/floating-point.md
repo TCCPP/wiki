@@ -15,3 +15,5 @@ bot_article: |
 - [float.exposed](https://float.exposed)
 - [Herbie](https://herbie.uwplse.org/demo/): Tool for analyzing floating point error in equations and automatically
   rewriting for better accuracy or better performance
+- [FlashKit IEEE 754 converter](https://www.flashkit.tools/tool/ieee-754-converter/): Browser tool to encode and decode
+  float32 and float64 bits. Shows the exact stored decimal and the rounding error, and lets you click a bit to flip it.
